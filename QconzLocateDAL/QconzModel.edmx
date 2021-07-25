@@ -1,0 +1,2676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QCONZModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBL_CUSTOMER_PAYMENT_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="CUSTOMER_PAYMENT_ID" Type="bigint" Nullable="false" />
+          <Property Name="PAYMENT_DATE" Type="datetime" Nullable="false" />
+          <Property Name="CURRENT_PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CURRENT_RENT_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CURRENT_HANDLING_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CURRENT_VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CURRENT_OTHER_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_RENT_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_HANDLING_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_OTHER_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_CUSTOMER_PAYMENT_HD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="CUSTOMER_ID" Type="bigint" Nullable="false" />
+          <Property Name="OUTSTANDING_PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_RENT_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_HANDLING_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_OTHER_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_CUSTOMER_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SHORT_NAME" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="MOB1" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="MOB2" Type="varchar" MaxLength="13" />
+          <Property Name="EMAIL_ID" Type="varchar" MaxLength="50" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="DEPOSITE" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="AGREEMENT_BILL_NUMER" Type="int" />
+          <Property Name="ACTIVE" Type="bit" />
+          <Property Name="REGISTER_DATE" Type="datetime" />
+          <Property Name="IS_FLOW_METER_SALED" Type="bit" />
+          <Property Name="CLOSE_DATE" Type="datetime" />
+          <Property Name="DEPOSITE_RETURENED_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="varchar(max)" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_CYLINDER_MASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CYLINDER_SHORT_NAME" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="HSN_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="RENT_DAYS_SLAB1" Type="int" />
+          <Property Name="RENT_DAYS_SLAB2" Type="int" />
+          <Property Name="SELLING_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_CYLINDER_TRACKING">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="PURCHASE_ID" Type="bigint" Nullable="false" />
+          <Property Name="PARENT_CYLINDER_ID" Type="bigint" />
+          <Property Name="CHALLAN_NUMBER" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="CYLINDER_TYPE_ID" Type="bigint" Nullable="false" />
+          <Property Name="CYLINDER_QUANTITY" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="CYLINDER_NUMBER" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="OWN_CYLINDER" Type="varchar" MaxLength="1" />
+          <Property Name="IS_COMPLAINT" Type="varchar" MaxLength="1" />
+          <Property Name="SALED_TO_CUSTOMER" Type="varchar" MaxLength="1" />
+          <Property Name="SALED_TO_CUSTOMER_DATE" Type="datetime" />
+          <Property Name="RETURN_FROM_CUSTOMER" Type="varchar" MaxLength="1" />
+          <Property Name="RETURN_FROM_CUSTOMER_DATE" Type="datetime" />
+          <Property Name="RETURN_TO_DEALER" Type="varchar" MaxLength="1" />
+          <Property Name="RETURN_TO_DEALER_DATE" Type="datetime" />
+          <Property Name="ACTUAL_DEALER_RETURN" Type="varchar" MaxLength="1" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_DEALER_PAYMENT_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="DEALER_PAYMENT_ID" Type="bigint" Nullable="false" />
+          <Property Name="PAYMENT_DATE" Type="datetime" Nullable="false" />
+          <Property Name="CURRENT_PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CURRENT_RENT_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CURRENT_HANDLING_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CURRENT_VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CURRENT_OTHER_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_RENT_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_HANDLING_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PAID_OTHER_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_DEALER_PAYMENT_HD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="DEALER_ID" Type="bigint" Nullable="false" />
+          <Property Name="OUTSTANDING_PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_RENT_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_HANDLING_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_OTHER_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_OWN_CYLINDER_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="CYLINDR_TYPE_ID" Type="bigint" Nullable="false" />
+          <Property Name="NUMBER" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PURCHASE_DATE" Type="datetime" Nullable="false" />
+          <Property Name="LAST_TEST_DATE" Type="datetime" Nullable="false" />
+          <Property Name="NEXT_TEST_DATE" Type="datetime" Nullable="false" />
+          <Property Name="SALED_TO" Type="int" />
+          <Property Name="SALED_DATE" Type="datetime" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_PURCHASE_HD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="DEALER_ID" Type="bigint" Nullable="false" />
+          <Property Name="INVOICE_NUMER" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="BILL_NUMER" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="PURCHASE_DATE" Type="datetime" Nullable="false" />
+          <Property Name="STAFF_ID" Type="bigint" />
+          <Property Name="VECHICLE_ID" Type="bigint" />
+          <Property Name="TOTAL_CYLINDER" Type="int" Nullable="false" />
+          <Property Name="VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="HANDLING_CHARGE" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="IGST" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CGST" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="SGST" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_PURCHASE_INVOICE_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="PURCHASE_ID" Type="bigint" Nullable="false" />
+          <Property Name="PRODUCT_DESCRIPTION" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="HSN_CODE" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="TOTAL_CYLNIDER" Type="int" Nullable="false" />
+          <Property Name="QUATITY" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="RATE" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="HANDLING_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_SALE_HD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="CUSTOMER_ID" Type="bigint" Nullable="false" />
+          <Property Name="INVOICE_NUMER" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="BILL_NUMER" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="SALE_DATE" Type="datetime" Nullable="false" />
+          <Property Name="STAFF_ID" Type="bigint" />
+          <Property Name="VECHICLE_ID" Type="bigint" />
+          <Property Name="TOTAL_CYLINDER" Type="int" Nullable="false" />
+          <Property Name="VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="HANDLING_CHARGE" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="IGST" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CGST" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="SGST" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_SALE_INVOICE_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="SALE_ID" Type="bigint" Nullable="false" />
+          <Property Name="CYLINDER_ID" Type="bigint" Nullable="false" />
+          <Property Name="HANDLING_CHARGE" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="PURCHASE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="IGST" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="CGST" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="SGST" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_SHOP_DEALER_BANK_DETAILS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="SHOP_DEALER_ID" Type="bigint" />
+          <Property Name="HOLDER" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BANK_NAME" Type="varchar" MaxLength="25" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="AC_NUMBER" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="IFSC" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="DEFAULT" Type="varchar" MaxLength="1" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_SHOP_DEALER_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SHORT_NAME" Type="varchar" MaxLength="25" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="MOB1" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="MOB2" Type="varchar" MaxLength="13" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GST_NUM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="M_LICENCE_NUM1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="M_LICENCE_NUM2" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="D_LICENCE_NUM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="E_LICENCE_NUM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="SHOP_OR_DEALER" Type="varchar" MaxLength="10" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_STAFF_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="250" />
+          <Property Name="MOB1" Type="varchar" MaxLength="15" />
+          <Property Name="MOB2" Type="varchar" MaxLength="15" />
+          <Property Name="JOIN_DATE" Type="datetime" Nullable="false" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_STAFF_REGISTER_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="STAFF_ID" Type="bigint" Nullable="false" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="PAYMENT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_VECHICLE_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="NUMBER" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="PURCHASE_DATE" Type="datetime" />
+          <Property Name="TEST_DATE" Type="datetime" />
+          <Property Name="INSURANCE_DATE" Type="datetime" />
+          <Property Name="TAX_DATE" Type="datetime" />
+          <Property Name="POLUTION_DATE" Type="datetime" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_VECHICLE_REGISTER_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="VECHICLE_ID" Type="bigint" Nullable="false" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="PAYMENT" Type="numeric" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="MODIFIED_ON" Type="date" />
+        </EntityType>
+        <EntityType Name="tblCustomers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUSTOMERCODE" Type="varchar" MaxLength="100" />
+          <Property Name="FIRSTNAME" Type="varchar" MaxLength="75" />
+          <Property Name="LASTNAME" Type="varchar" MaxLength="75" />
+          <Property Name="OFFICENAME" Type="varchar" MaxLength="75" />
+          <Property Name="ADDRESS1" Type="varchar" MaxLength="200" />
+          <Property Name="ADDRESS2" Type="varchar" MaxLength="200" />
+          <Property Name="ZIPCODE" Type="varchar" MaxLength="20" />
+          <Property Name="PHONE_1" Type="varchar" MaxLength="20" />
+          <Property Name="PHONE_2" Type="varchar" MaxLength="20" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="75" />
+          <Property Name="WEBSITE" Type="varchar" MaxLength="75" />
+          <Property Name="LAT" Type="varchar" MaxLength="20" />
+          <Property Name="LNG" Type="varchar" MaxLength="20" />
+          <Property Name="ADDED_DATE" Type="datetime" />
+          <Property Name="COMPANYID" Type="int" />
+          <Property Name="ARCHIVE" Type="varchar" MaxLength="1" />
+          <Property Name="CITY" Type="varchar" MaxLength="75" />
+        </EntityType>
+        <EntityType Name="tblEmergency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="LAT" Type="varchar" MaxLength="20" />
+          <Property Name="LNG" Type="varchar" MaxLength="20" />
+          <Property Name="LOGTIME" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblNotification">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="TOKEN" Type="varchar(max)" />
+          <Property Name="DEVICEID" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblOrganizations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TITLE" Type="varchar" MaxLength="100" />
+          <Property Name="CONTACTNAME" Type="varchar" MaxLength="75" />
+          <Property Name="ADDRESS1" Type="varchar" MaxLength="200" />
+          <Property Name="ADDRESS2" Type="varchar" MaxLength="200" />
+          <Property Name="ZIPCODE" Type="varchar" MaxLength="20" />
+          <Property Name="PHONE_1" Type="varchar" MaxLength="20" />
+          <Property Name="PHONE_2" Type="varchar" MaxLength="20" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="75" />
+          <Property Name="WEBSITE" Type="varchar" MaxLength="75" />
+          <Property Name="LAT" Type="varchar" MaxLength="20" />
+          <Property Name="LNG" Type="varchar" MaxLength="20" />
+          <Property Name="ADDED_DATE" Type="datetime" />
+          <Property Name="ARCHIVE" Type="char" MaxLength="1" />
+          <Property Name="CITY" Type="varchar" MaxLength="75" />
+          <Property Name="IMAGE" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblRoaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="USERID" Type="varchar(max)" />
+          <Property Name="STARTTIME" Type="datetime" />
+          <Property Name="FINISHTIME" Type="datetime" />
+          <Property Name="COMPANYID" Type="int" />
+          <Property Name="ARCHIVE" Type="varchar" MaxLength="1" />
+          <Property Name="OVERRIDE" Type="varchar" MaxLength="200" />
+          <Property Name="OVERIDEDETAIL" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblStopTracking">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="HOURS" Type="int" />
+          <Property Name="STATUS" Type="varchar" MaxLength="10" />
+          <Property Name="LOGTIME" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTeamRoaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEAMID" Type="int" Nullable="false" />
+          <Property Name="ROASTERID" Type="int" Nullable="false" />
+          <Property Name="ARCHIVE" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="tblTeams">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEAMNAME" Type="varchar" MaxLength="100" />
+          <Property Name="TEAMDESC" Type="varchar(max)" />
+          <Property Name="TEAMCREATED" Type="datetime" />
+          <Property Name="TEAMSTATUS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="COMPANYID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUserLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="LAT" Type="varchar" MaxLength="20" />
+          <Property Name="LNG" Type="varchar" MaxLength="20" />
+          <Property Name="LOGTIME" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUserMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERTYPE" Type="int" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="USERSTATUS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="USERTEAMID" Type="int" />
+          <Property Name="COMPANYID" Type="int" />
+          <Property Name="USERTOKEN" Type="varchar(max)" />
+          <Property Name="FIRSTNAME" Type="varchar" MaxLength="75" />
+          <Property Name="SURNAME" Type="varchar" MaxLength="75" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="75" />
+          <Property Name="CELLPHONE" Type="varchar" MaxLength="20" />
+          <Property Name="WORKINGDAYS" Type="varchar" MaxLength="20" />
+          <Property Name="STARTTIME" Type="datetime" />
+          <Property Name="ENDTIME" Type="datetime" />
+          <Property Name="EMERGENCYCONTACT" Type="varchar" MaxLength="100" />
+          <Property Name="EMERGENCYCONTACTNO" Type="varchar" MaxLength="50" />
+          <Property Name="ONLINESTATUS" Type="int" />
+          <Property Name="ONLINESTATUSCHANGETIME" Type="datetime" />
+          <Property Name="ISCONTRACTOR" Type="varchar" MaxLength="1" />
+          <Property Name="BASE_LATITUDE" Type="varchar" MaxLength="100" />
+          <Property Name="BASE_LONGITUDE" Type="varchar" MaxLength="100" />
+          <Property Name="DEFAULT_GROUP" Type="int" />
+          <Property Name="ALLOW_NOTFICATION" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblUserRoaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="ROASTERID" Type="int" Nullable="false" />
+          <Property Name="ARCHIVE" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="tblUserTeam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="TEAMID" Type="int" Nullable="false" />
+          <Property Name="ARCHIVE" Type="char" MaxLength="1" />
+        </EntityType>
+        <Association Name="FK_TBL_CUSTOMER_PAYMENT_DT_CUSTOMER_PAYMENT_ID_TBL_CUSTOMER_PAYMENT_HD_ID">
+          <End Role="TBL_CUSTOMER_PAYMENT_HD" Type="Self.TBL_CUSTOMER_PAYMENT_HD" Multiplicity="1" />
+          <End Role="TBL_CUSTOMER_PAYMENT_DT" Type="Self.TBL_CUSTOMER_PAYMENT_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CUSTOMER_PAYMENT_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CUSTOMER_PAYMENT_DT">
+              <PropertyRef Name="CUSTOMER_PAYMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CUSTOMER_PAYMENT_HD_CUSTOMER_ID_TBL_CUSTOMER_REGISTER_ID">
+          <End Role="TBL_CUSTOMER_REGISTER" Type="Self.TBL_CUSTOMER_REGISTER" Multiplicity="1" />
+          <End Role="TBL_CUSTOMER_PAYMENT_HD" Type="Self.TBL_CUSTOMER_PAYMENT_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CUSTOMER_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CUSTOMER_PAYMENT_HD">
+              <PropertyRef Name="CUSTOMER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CUSTOMER_PAYMENT_HD_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID">
+          <End Role="TBL_SHOP_DEALER_REGISTER" Type="Self.TBL_SHOP_DEALER_REGISTER" Multiplicity="1" />
+          <End Role="TBL_DEALER_PAYMENT_HD" Type="Self.TBL_DEALER_PAYMENT_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_SHOP_DEALER_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_DEALER_PAYMENT_HD">
+              <PropertyRef Name="DEALER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CYLINDER_TRACKING_CYLINDER_TYPE_ID_TBL_CYLINDER_MASTER">
+          <End Role="TBL_CYLINDER_MASTER" Type="Self.TBL_CYLINDER_MASTER" Multiplicity="1" />
+          <End Role="TBL_CYLINDER_TRACKING" Type="Self.TBL_CYLINDER_TRACKING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CYLINDER_MASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CYLINDER_TRACKING">
+              <PropertyRef Name="CYLINDER_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CYLINDER_TRACKING_PURCHASE_ID_TBL_PURCHASE_HD_ID">
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="1" />
+          <End Role="TBL_CYLINDER_TRACKING" Type="Self.TBL_CYLINDER_TRACKING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CYLINDER_TRACKING">
+              <PropertyRef Name="PURCHASE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_DEALER_PAYMENT_DT_DEALER_PAYMENT_ID_TBL_DEALER_PAYMENT_HD_ID">
+          <End Role="TBL_DEALER_PAYMENT_HD" Type="Self.TBL_DEALER_PAYMENT_HD" Multiplicity="1" />
+          <End Role="TBL_DEALER_PAYMENT_DT" Type="Self.TBL_DEALER_PAYMENT_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_DEALER_PAYMENT_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_DEALER_PAYMENT_DT">
+              <PropertyRef Name="DEALER_PAYMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_OWN_CYLINDER_REGISTER_CYLINDR_TYPE_ID_TBL_CYLINDER_MASTER">
+          <End Role="TBL_CYLINDER_MASTER" Type="Self.TBL_CYLINDER_MASTER" Multiplicity="1" />
+          <End Role="TBL_OWN_CYLINDER_REGISTER" Type="Self.TBL_OWN_CYLINDER_REGISTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CYLINDER_MASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_OWN_CYLINDER_REGISTER">
+              <PropertyRef Name="CYLINDR_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PURCHASE_HDR_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID">
+          <End Role="TBL_SHOP_DEALER_REGISTER" Type="Self.TBL_SHOP_DEALER_REGISTER" Multiplicity="1" />
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_SHOP_DEALER_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="DEALER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PURCHASE_HDR_STAFF_ID_TBL_STAFF_REGISTER_ID">
+          <End Role="TBL_STAFF_REGISTER" Type="Self.TBL_STAFF_REGISTER" Multiplicity="0..1" />
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_STAFF_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PURCHASE_HDR_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID">
+          <End Role="TBL_VECHICLE_REGISTER" Type="Self.TBL_VECHICLE_REGISTER" Multiplicity="0..1" />
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_VECHICLE_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="VECHICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PURCHASE_INVOICE_DT_PURCHASE_ID_TBL_PURCHASE_HD_ID">
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="1" />
+          <End Role="TBL_PURCHASE_INVOICE_DT" Type="Self.TBL_PURCHASE_INVOICE_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PURCHASE_INVOICE_DT">
+              <PropertyRef Name="PURCHASE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SALE_HDR_TBL_CUSTOMER_ID_CUSTOMER_REGISTER_ID">
+          <End Role="TBL_CUSTOMER_REGISTER" Type="Self.TBL_CUSTOMER_REGISTER" Multiplicity="1" />
+          <End Role="TBL_SALE_HD" Type="Self.TBL_SALE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CUSTOMER_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SALE_HD">
+              <PropertyRef Name="CUSTOMER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SALE_HDR_TBL_STAFF_ID_STAFF_REGISTER_ID">
+          <End Role="TBL_STAFF_REGISTER" Type="Self.TBL_STAFF_REGISTER" Multiplicity="0..1" />
+          <End Role="TBL_SALE_HD" Type="Self.TBL_SALE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_STAFF_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SALE_HD">
+              <PropertyRef Name="STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SALE_HDR_TBL_VECHICLE_ID_VECHICLE_REGISTER_ID">
+          <End Role="TBL_VECHICLE_REGISTER" Type="Self.TBL_VECHICLE_REGISTER" Multiplicity="0..1" />
+          <End Role="TBL_SALE_HD" Type="Self.TBL_SALE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_VECHICLE_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SALE_HD">
+              <PropertyRef Name="VECHICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SALE_INVOICE_DT_SALE_ID_TBL_SALE_HD_ID">
+          <End Role="TBL_SALE_HD" Type="Self.TBL_SALE_HD" Multiplicity="1" />
+          <End Role="TBL_SALE_INVOICE_DT" Type="Self.TBL_SALE_INVOICE_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_SALE_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SALE_INVOICE_DT">
+              <PropertyRef Name="SALE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_STAFF_REGISTER_DT_STAFF_ID_TBL_STAFF_REGISTER">
+          <End Role="TBL_STAFF_REGISTER" Type="Self.TBL_STAFF_REGISTER" Multiplicity="1" />
+          <End Role="TBL_STAFF_REGISTER_DT" Type="Self.TBL_STAFF_REGISTER_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_STAFF_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_STAFF_REGISTER_DT">
+              <PropertyRef Name="STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_VECHICLE_REGISTER_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID">
+          <End Role="TBL_VECHICLE_REGISTER" Type="Self.TBL_VECHICLE_REGISTER" Multiplicity="1" />
+          <End Role="TBL_VECHICLE_REGISTER_DT" Type="Self.TBL_VECHICLE_REGISTER_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_VECHICLE_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_VECHICLE_REGISTER_DT">
+              <PropertyRef Name="VECHICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCustomers_COMPANYID_tblOrganizations_ID">
+          <End Role="tblOrganizations" Type="Self.tblOrganizations" Multiplicity="0..1" />
+          <End Role="tblCustomers" Type="Self.tblCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblCustomers">
+              <PropertyRef Name="COMPANYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblEmergency_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblEmergency" Type="Self.tblEmergency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblEmergency">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblNotification_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblNotification" Type="Self.tblNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblNotification">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRoaster_COMPANYID_tblOrganizations_ID">
+          <End Role="tblOrganizations" Type="Self.tblOrganizations" Multiplicity="0..1" />
+          <End Role="tblRoaster" Type="Self.tblRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblRoaster">
+              <PropertyRef Name="COMPANYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblStopTracking_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblStopTracking" Type="Self.tblStopTracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblStopTracking">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTeamRoaster_ROASTERID_tblRoaster_ID">
+          <End Role="tblRoaster" Type="Self.tblRoaster" Multiplicity="1" />
+          <End Role="tblTeamRoaster" Type="Self.tblTeamRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRoaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblTeamRoaster">
+              <PropertyRef Name="ROASTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTeamRoaster_TEAMID_tblTeams_ID">
+          <End Role="tblTeams" Type="Self.tblTeams" Multiplicity="1" />
+          <End Role="tblTeamRoaster" Type="Self.tblTeamRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTeams">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblTeamRoaster">
+              <PropertyRef Name="TEAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTeams_COMPANYID_tblOrganizations_ID">
+          <End Role="tblOrganizations" Type="Self.tblOrganizations" Multiplicity="1" />
+          <End Role="tblTeams" Type="Self.tblTeams" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblTeams">
+              <PropertyRef Name="COMPANYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserLog_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblUserLog" Type="Self.tblUserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserLog">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserMaster_COMPANYID_tblOrganizations_ID">
+          <End Role="tblOrganizations" Type="Self.tblOrganizations" Multiplicity="0..1" />
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserMaster">
+              <PropertyRef Name="COMPANYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserMaster_DEFAULT_GROUP_tblTeams_ID">
+          <End Role="tblTeams" Type="Self.tblTeams" Multiplicity="0..1" />
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTeams">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserMaster">
+              <PropertyRef Name="DEFAULT_GROUP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserRoaster_ROASTERID_tblRoaster_ID">
+          <End Role="tblRoaster" Type="Self.tblRoaster" Multiplicity="1" />
+          <End Role="tblUserRoaster" Type="Self.tblUserRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRoaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserRoaster">
+              <PropertyRef Name="ROASTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserRoaster_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblUserRoaster" Type="Self.tblUserRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserRoaster">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserTeam_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblUserTeam" Type="Self.tblUserTeam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserTeam">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserTeam_USERID_tblUserTeam_ID">
+          <End Role="tblTeams" Type="Self.tblTeams" Multiplicity="1" />
+          <End Role="tblUserTeam" Type="Self.tblUserTeam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTeams">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserTeam">
+              <PropertyRef Name="TEAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QCONZModelStoreContainer">
+          <EntitySet Name="TBL_CUSTOMER_PAYMENT_DT" EntityType="Self.TBL_CUSTOMER_PAYMENT_DT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CUSTOMER_PAYMENT_HD" EntityType="Self.TBL_CUSTOMER_PAYMENT_HD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CUSTOMER_REGISTER" EntityType="Self.TBL_CUSTOMER_REGISTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CYLINDER_MASTER" EntityType="Self.TBL_CYLINDER_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CYLINDER_TRACKING" EntityType="Self.TBL_CYLINDER_TRACKING" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_DEALER_PAYMENT_DT" EntityType="Self.TBL_DEALER_PAYMENT_DT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_DEALER_PAYMENT_HD" EntityType="Self.TBL_DEALER_PAYMENT_HD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_OWN_CYLINDER_REGISTER" EntityType="Self.TBL_OWN_CYLINDER_REGISTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PURCHASE_HD" EntityType="Self.TBL_PURCHASE_HD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PURCHASE_INVOICE_DT" EntityType="Self.TBL_PURCHASE_INVOICE_DT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SALE_HD" EntityType="Self.TBL_SALE_HD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SALE_INVOICE_DT" EntityType="Self.TBL_SALE_INVOICE_DT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SHOP_DEALER_BANK_DETAILS" EntityType="Self.TBL_SHOP_DEALER_BANK_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SHOP_DEALER_REGISTER" EntityType="Self.TBL_SHOP_DEALER_REGISTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_STAFF_REGISTER" EntityType="Self.TBL_STAFF_REGISTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_STAFF_REGISTER_DT" EntityType="Self.TBL_STAFF_REGISTER_DT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_VECHICLE_REGISTER" EntityType="Self.TBL_VECHICLE_REGISTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_VECHICLE_REGISTER_DT" EntityType="Self.TBL_VECHICLE_REGISTER_DT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCustomers" EntityType="Self.tblCustomers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmergency" EntityType="Self.tblEmergency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblNotification" EntityType="Self.tblNotification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOrganizations" EntityType="Self.tblOrganizations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRoaster" EntityType="Self.tblRoaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStopTracking" EntityType="Self.tblStopTracking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTeamRoaster" EntityType="Self.tblTeamRoaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTeams" EntityType="Self.tblTeams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserLog" EntityType="Self.tblUserLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserMaster" EntityType="Self.tblUserMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserRoaster" EntityType="Self.tblUserRoaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserTeam" EntityType="Self.tblUserTeam" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TBL_CUSTOMER_PAYMENT_DT_CUSTOMER_PAYMENT_ID_TBL_CUSTOMER_PAYMENT_HD_ID" Association="Self.FK_TBL_CUSTOMER_PAYMENT_DT_CUSTOMER_PAYMENT_ID_TBL_CUSTOMER_PAYMENT_HD_ID">
+            <End Role="TBL_CUSTOMER_PAYMENT_HD" EntitySet="TBL_CUSTOMER_PAYMENT_HD" />
+            <End Role="TBL_CUSTOMER_PAYMENT_DT" EntitySet="TBL_CUSTOMER_PAYMENT_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CUSTOMER_PAYMENT_HD_CUSTOMER_ID_TBL_CUSTOMER_REGISTER_ID" Association="Self.FK_TBL_CUSTOMER_PAYMENT_HD_CUSTOMER_ID_TBL_CUSTOMER_REGISTER_ID">
+            <End Role="TBL_CUSTOMER_REGISTER" EntitySet="TBL_CUSTOMER_REGISTER" />
+            <End Role="TBL_CUSTOMER_PAYMENT_HD" EntitySet="TBL_CUSTOMER_PAYMENT_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CUSTOMER_PAYMENT_HD_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" Association="Self.FK_TBL_CUSTOMER_PAYMENT_HD_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID">
+            <End Role="TBL_SHOP_DEALER_REGISTER" EntitySet="TBL_SHOP_DEALER_REGISTER" />
+            <End Role="TBL_DEALER_PAYMENT_HD" EntitySet="TBL_DEALER_PAYMENT_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CYLINDER_TRACKING_CYLINDER_TYPE_ID_TBL_CYLINDER_MASTER" Association="Self.FK_TBL_CYLINDER_TRACKING_CYLINDER_TYPE_ID_TBL_CYLINDER_MASTER">
+            <End Role="TBL_CYLINDER_MASTER" EntitySet="TBL_CYLINDER_MASTER" />
+            <End Role="TBL_CYLINDER_TRACKING" EntitySet="TBL_CYLINDER_TRACKING" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CYLINDER_TRACKING_PURCHASE_ID_TBL_PURCHASE_HD_ID" Association="Self.FK_TBL_CYLINDER_TRACKING_PURCHASE_ID_TBL_PURCHASE_HD_ID">
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+            <End Role="TBL_CYLINDER_TRACKING" EntitySet="TBL_CYLINDER_TRACKING" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_DEALER_PAYMENT_DT_DEALER_PAYMENT_ID_TBL_DEALER_PAYMENT_HD_ID" Association="Self.FK_TBL_DEALER_PAYMENT_DT_DEALER_PAYMENT_ID_TBL_DEALER_PAYMENT_HD_ID">
+            <End Role="TBL_DEALER_PAYMENT_HD" EntitySet="TBL_DEALER_PAYMENT_HD" />
+            <End Role="TBL_DEALER_PAYMENT_DT" EntitySet="TBL_DEALER_PAYMENT_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_OWN_CYLINDER_REGISTER_CYLINDR_TYPE_ID_TBL_CYLINDER_MASTER" Association="Self.FK_TBL_OWN_CYLINDER_REGISTER_CYLINDR_TYPE_ID_TBL_CYLINDER_MASTER">
+            <End Role="TBL_CYLINDER_MASTER" EntitySet="TBL_CYLINDER_MASTER" />
+            <End Role="TBL_OWN_CYLINDER_REGISTER" EntitySet="TBL_OWN_CYLINDER_REGISTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PURCHASE_HDR_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" Association="Self.FK_TBL_PURCHASE_HDR_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID">
+            <End Role="TBL_SHOP_DEALER_REGISTER" EntitySet="TBL_SHOP_DEALER_REGISTER" />
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PURCHASE_HDR_STAFF_ID_TBL_STAFF_REGISTER_ID" Association="Self.FK_TBL_PURCHASE_HDR_STAFF_ID_TBL_STAFF_REGISTER_ID">
+            <End Role="TBL_STAFF_REGISTER" EntitySet="TBL_STAFF_REGISTER" />
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PURCHASE_HDR_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID" Association="Self.FK_TBL_PURCHASE_HDR_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID">
+            <End Role="TBL_VECHICLE_REGISTER" EntitySet="TBL_VECHICLE_REGISTER" />
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PURCHASE_INVOICE_DT_PURCHASE_ID_TBL_PURCHASE_HD_ID" Association="Self.FK_TBL_PURCHASE_INVOICE_DT_PURCHASE_ID_TBL_PURCHASE_HD_ID">
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+            <End Role="TBL_PURCHASE_INVOICE_DT" EntitySet="TBL_PURCHASE_INVOICE_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SALE_HDR_TBL_CUSTOMER_ID_CUSTOMER_REGISTER_ID" Association="Self.FK_TBL_SALE_HDR_TBL_CUSTOMER_ID_CUSTOMER_REGISTER_ID">
+            <End Role="TBL_CUSTOMER_REGISTER" EntitySet="TBL_CUSTOMER_REGISTER" />
+            <End Role="TBL_SALE_HD" EntitySet="TBL_SALE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SALE_HDR_TBL_STAFF_ID_STAFF_REGISTER_ID" Association="Self.FK_TBL_SALE_HDR_TBL_STAFF_ID_STAFF_REGISTER_ID">
+            <End Role="TBL_STAFF_REGISTER" EntitySet="TBL_STAFF_REGISTER" />
+            <End Role="TBL_SALE_HD" EntitySet="TBL_SALE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SALE_HDR_TBL_VECHICLE_ID_VECHICLE_REGISTER_ID" Association="Self.FK_TBL_SALE_HDR_TBL_VECHICLE_ID_VECHICLE_REGISTER_ID">
+            <End Role="TBL_VECHICLE_REGISTER" EntitySet="TBL_VECHICLE_REGISTER" />
+            <End Role="TBL_SALE_HD" EntitySet="TBL_SALE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SALE_INVOICE_DT_SALE_ID_TBL_SALE_HD_ID" Association="Self.FK_TBL_SALE_INVOICE_DT_SALE_ID_TBL_SALE_HD_ID">
+            <End Role="TBL_SALE_HD" EntitySet="TBL_SALE_HD" />
+            <End Role="TBL_SALE_INVOICE_DT" EntitySet="TBL_SALE_INVOICE_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_STAFF_REGISTER_DT_STAFF_ID_TBL_STAFF_REGISTER" Association="Self.FK_TBL_STAFF_REGISTER_DT_STAFF_ID_TBL_STAFF_REGISTER">
+            <End Role="TBL_STAFF_REGISTER" EntitySet="TBL_STAFF_REGISTER" />
+            <End Role="TBL_STAFF_REGISTER_DT" EntitySet="TBL_STAFF_REGISTER_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_VECHICLE_REGISTER_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID" Association="Self.FK_TBL_VECHICLE_REGISTER_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID">
+            <End Role="TBL_VECHICLE_REGISTER" EntitySet="TBL_VECHICLE_REGISTER" />
+            <End Role="TBL_VECHICLE_REGISTER_DT" EntitySet="TBL_VECHICLE_REGISTER_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCustomers_COMPANYID_tblOrganizations_ID" Association="Self.FK_tblCustomers_COMPANYID_tblOrganizations_ID">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblCustomers" EntitySet="tblCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblEmergency_USERID_tblUserMaster_ID" Association="Self.FK_tblEmergency_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMaster" />
+            <End Role="tblEmergency" EntitySet="tblEmergency" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblNotification_USERID_tblUserMaster_ID" Association="Self.FK_tblNotification_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMaster" />
+            <End Role="tblNotification" EntitySet="tblNotification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRoaster_COMPANYID_tblOrganizations_ID" Association="Self.FK_tblRoaster_COMPANYID_tblOrganizations_ID">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblRoaster" EntitySet="tblRoaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblStopTracking_USERID_tblUserMaster_ID" Association="Self.FK_tblStopTracking_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMaster" />
+            <End Role="tblStopTracking" EntitySet="tblStopTracking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTeamRoaster_ROASTERID_tblRoaster_ID" Association="Self.FK_tblTeamRoaster_ROASTERID_tblRoaster_ID">
+            <End Role="tblRoaster" EntitySet="tblRoaster" />
+            <End Role="tblTeamRoaster" EntitySet="tblTeamRoaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTeamRoaster_TEAMID_tblTeams_ID" Association="Self.FK_tblTeamRoaster_TEAMID_tblTeams_ID">
+            <End Role="tblTeams" EntitySet="tblTeams" />
+            <End Role="tblTeamRoaster" EntitySet="tblTeamRoaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTeams_COMPANYID_tblOrganizations_ID" Association="Self.FK_tblTeams_COMPANYID_tblOrganizations_ID">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblTeams" EntitySet="tblTeams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserLog_USERID_tblUserMaster_ID" Association="Self.FK_tblUserLog_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMaster" />
+            <End Role="tblUserLog" EntitySet="tblUserLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserMaster_COMPANYID_tblOrganizations_ID" Association="Self.FK_tblUserMaster_COMPANYID_tblOrganizations_ID">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblUserMaster" EntitySet="tblUserMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserMaster_DEFAULT_GROUP_tblTeams_ID" Association="Self.FK_tblUserMaster_DEFAULT_GROUP_tblTeams_ID">
+            <End Role="tblTeams" EntitySet="tblTeams" />
+            <End Role="tblUserMaster" EntitySet="tblUserMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserRoaster_ROASTERID_tblRoaster_ID" Association="Self.FK_tblUserRoaster_ROASTERID_tblRoaster_ID">
+            <End Role="tblRoaster" EntitySet="tblRoaster" />
+            <End Role="tblUserRoaster" EntitySet="tblUserRoaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserRoaster_USERID_tblUserMaster_ID" Association="Self.FK_tblUserRoaster_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMaster" />
+            <End Role="tblUserRoaster" EntitySet="tblUserRoaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserTeam_USERID_tblUserMaster_ID" Association="Self.FK_tblUserTeam_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMaster" />
+            <End Role="tblUserTeam" EntitySet="tblUserTeam" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserTeam_USERID_tblUserTeam_ID" Association="Self.FK_tblUserTeam_USERID_tblUserTeam_ID">
+            <End Role="tblTeams" EntitySet="tblTeams" />
+            <End Role="tblUserTeam" EntitySet="tblUserTeam" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QCONZModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBL_CUSTOMER_PAYMENT_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="CUSTOMER_PAYMENT_ID" Type="Int64" Nullable="false" />
+          <Property Name="PAYMENT_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CURRENT_PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CURRENT_RENT_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CURRENT_HANDLING_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CURRENT_VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CURRENT_OTHER_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_RENT_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_HANDLING_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_OTHER_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CUSTOMER_PAYMENT_HD" Relationship="Self.FK_TBL_CUSTOMER_PAYMENT_DT_CUSTOMER_PAYMENT_ID_TBL_CUSTOMER_PAYMENT_HD_ID" FromRole="TBL_CUSTOMER_PAYMENT_DT" ToRole="TBL_CUSTOMER_PAYMENT_HD" />
+        </EntityType>
+        <EntityType Name="TBL_CUSTOMER_PAYMENT_HD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="CUSTOMER_ID" Type="Int64" Nullable="false" />
+          <Property Name="OUTSTANDING_PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_RENT_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_HANDLING_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_OTHER_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CUSTOMER_PAYMENT_DT" Relationship="Self.FK_TBL_CUSTOMER_PAYMENT_DT_CUSTOMER_PAYMENT_ID_TBL_CUSTOMER_PAYMENT_HD_ID" FromRole="TBL_CUSTOMER_PAYMENT_HD" ToRole="TBL_CUSTOMER_PAYMENT_DT" />
+          <NavigationProperty Name="TBL_CUSTOMER_REGISTER" Relationship="Self.FK_TBL_CUSTOMER_PAYMENT_HD_CUSTOMER_ID_TBL_CUSTOMER_REGISTER_ID" FromRole="TBL_CUSTOMER_PAYMENT_HD" ToRole="TBL_CUSTOMER_REGISTER" />
+        </EntityType>
+        <EntityType Name="TBL_CUSTOMER_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SHORT_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MOB1" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MOB2" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DEPOSITE" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="AGREEMENT_BILL_NUMER" Type="Int32" />
+          <Property Name="ACTIVE" Type="Boolean" />
+          <Property Name="REGISTER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="IS_FLOW_METER_SALED" Type="Boolean" />
+          <Property Name="CLOSE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DEPOSITE_RETURENED_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CUSTOMER_PAYMENT_HD" Relationship="Self.FK_TBL_CUSTOMER_PAYMENT_HD_CUSTOMER_ID_TBL_CUSTOMER_REGISTER_ID" FromRole="TBL_CUSTOMER_REGISTER" ToRole="TBL_CUSTOMER_PAYMENT_HD" />
+          <NavigationProperty Name="TBL_SALE_HD" Relationship="Self.FK_TBL_SALE_HDR_TBL_CUSTOMER_ID_CUSTOMER_REGISTER_ID" FromRole="TBL_CUSTOMER_REGISTER" ToRole="TBL_SALE_HD" />
+        </EntityType>
+        <EntityType Name="TBL_CYLINDER_MASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CYLINDER_SHORT_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HSN_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RENT_DAYS_SLAB1" Type="Int32" />
+          <Property Name="RENT_DAYS_SLAB2" Type="Int32" />
+          <Property Name="SELLING_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CYLINDER_TRACKING" Relationship="Self.FK_TBL_CYLINDER_TRACKING_CYLINDER_TYPE_ID_TBL_CYLINDER_MASTER" FromRole="TBL_CYLINDER_MASTER" ToRole="TBL_CYLINDER_TRACKING" />
+          <NavigationProperty Name="TBL_OWN_CYLINDER_REGISTER" Relationship="Self.FK_TBL_OWN_CYLINDER_REGISTER_CYLINDR_TYPE_ID_TBL_CYLINDER_MASTER" FromRole="TBL_CYLINDER_MASTER" ToRole="TBL_OWN_CYLINDER_REGISTER" />
+        </EntityType>
+        <EntityType Name="TBL_CYLINDER_TRACKING">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="PURCHASE_ID" Type="Int64" Nullable="false" />
+          <Property Name="PARENT_CYLINDER_ID" Type="Int64" />
+          <Property Name="CHALLAN_NUMBER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CYLINDER_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="CYLINDER_QUANTITY" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="CYLINDER_NUMBER" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="OWN_CYLINDER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="IS_COMPLAINT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SALED_TO_CUSTOMER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SALED_TO_CUSTOMER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="RETURN_FROM_CUSTOMER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="RETURN_FROM_CUSTOMER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="RETURN_TO_DEALER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="RETURN_TO_DEALER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ACTUAL_DEALER_RETURN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CYLINDER_MASTER" Relationship="Self.FK_TBL_CYLINDER_TRACKING_CYLINDER_TYPE_ID_TBL_CYLINDER_MASTER" FromRole="TBL_CYLINDER_TRACKING" ToRole="TBL_CYLINDER_MASTER" />
+          <NavigationProperty Name="TBL_PURCHASE_HD" Relationship="Self.FK_TBL_CYLINDER_TRACKING_PURCHASE_ID_TBL_PURCHASE_HD_ID" FromRole="TBL_CYLINDER_TRACKING" ToRole="TBL_PURCHASE_HD" />
+        </EntityType>
+        <EntityType Name="TBL_DEALER_PAYMENT_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="DEALER_PAYMENT_ID" Type="Int64" Nullable="false" />
+          <Property Name="PAYMENT_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CURRENT_PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CURRENT_RENT_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CURRENT_HANDLING_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CURRENT_VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CURRENT_OTHER_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_RENT_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_HANDLING_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PAID_OTHER_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_DEALER_PAYMENT_HD" Relationship="Self.FK_TBL_DEALER_PAYMENT_DT_DEALER_PAYMENT_ID_TBL_DEALER_PAYMENT_HD_ID" FromRole="TBL_DEALER_PAYMENT_DT" ToRole="TBL_DEALER_PAYMENT_HD" />
+        </EntityType>
+        <EntityType Name="TBL_DEALER_PAYMENT_HD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="DEALER_ID" Type="Int64" Nullable="false" />
+          <Property Name="OUTSTANDING_PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_RENT_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_HANDLING_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="OUTSTANDING_OTHER_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_DEALER_PAYMENT_DT" Relationship="Self.FK_TBL_DEALER_PAYMENT_DT_DEALER_PAYMENT_ID_TBL_DEALER_PAYMENT_HD_ID" FromRole="TBL_DEALER_PAYMENT_HD" ToRole="TBL_DEALER_PAYMENT_DT" />
+          <NavigationProperty Name="TBL_SHOP_DEALER_REGISTER" Relationship="Self.FK_TBL_CUSTOMER_PAYMENT_HD_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" FromRole="TBL_DEALER_PAYMENT_HD" ToRole="TBL_SHOP_DEALER_REGISTER" />
+        </EntityType>
+        <EntityType Name="TBL_OWN_CYLINDER_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="CYLINDR_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PURCHASE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LAST_TEST_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NEXT_TEST_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SALED_TO" Type="Int32" />
+          <Property Name="SALED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CYLINDER_MASTER" Relationship="Self.FK_TBL_OWN_CYLINDER_REGISTER_CYLINDR_TYPE_ID_TBL_CYLINDER_MASTER" FromRole="TBL_OWN_CYLINDER_REGISTER" ToRole="TBL_CYLINDER_MASTER" />
+        </EntityType>
+        <EntityType Name="TBL_PURCHASE_HD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="DEALER_ID" Type="Int64" Nullable="false" />
+          <Property Name="INVOICE_NUMER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BILL_NUMER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PURCHASE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="STAFF_ID" Type="Int64" />
+          <Property Name="VECHICLE_ID" Type="Int64" />
+          <Property Name="TOTAL_CYLINDER" Type="Int32" Nullable="false" />
+          <Property Name="VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="HANDLING_CHARGE" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="IGST" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CGST" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="SGST" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CYLINDER_TRACKING" Relationship="Self.FK_TBL_CYLINDER_TRACKING_PURCHASE_ID_TBL_PURCHASE_HD_ID" FromRole="TBL_PURCHASE_HD" ToRole="TBL_CYLINDER_TRACKING" />
+          <NavigationProperty Name="TBL_SHOP_DEALER_REGISTER" Relationship="Self.FK_TBL_PURCHASE_HDR_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" FromRole="TBL_PURCHASE_HD" ToRole="TBL_SHOP_DEALER_REGISTER" />
+          <NavigationProperty Name="TBL_STAFF_REGISTER" Relationship="Self.FK_TBL_PURCHASE_HDR_STAFF_ID_TBL_STAFF_REGISTER_ID" FromRole="TBL_PURCHASE_HD" ToRole="TBL_STAFF_REGISTER" />
+          <NavigationProperty Name="TBL_VECHICLE_REGISTER" Relationship="Self.FK_TBL_PURCHASE_HDR_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID" FromRole="TBL_PURCHASE_HD" ToRole="TBL_VECHICLE_REGISTER" />
+          <NavigationProperty Name="TBL_PURCHASE_INVOICE_DT" Relationship="Self.FK_TBL_PURCHASE_INVOICE_DT_PURCHASE_ID_TBL_PURCHASE_HD_ID" FromRole="TBL_PURCHASE_HD" ToRole="TBL_PURCHASE_INVOICE_DT" />
+        </EntityType>
+        <EntityType Name="TBL_PURCHASE_INVOICE_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="PURCHASE_ID" Type="Int64" Nullable="false" />
+          <Property Name="PRODUCT_DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HSN_CODE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TOTAL_CYLNIDER" Type="Int32" Nullable="false" />
+          <Property Name="QUATITY" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="RATE" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="HANDLING_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_PURCHASE_HD" Relationship="Self.FK_TBL_PURCHASE_INVOICE_DT_PURCHASE_ID_TBL_PURCHASE_HD_ID" FromRole="TBL_PURCHASE_INVOICE_DT" ToRole="TBL_PURCHASE_HD" />
+        </EntityType>
+        <EntityType Name="TBL_SALE_HD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="CUSTOMER_ID" Type="Int64" Nullable="false" />
+          <Property Name="INVOICE_NUMER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BILL_NUMER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SALE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="STAFF_ID" Type="Int64" />
+          <Property Name="VECHICLE_ID" Type="Int64" />
+          <Property Name="TOTAL_CYLINDER" Type="Int32" Nullable="false" />
+          <Property Name="VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="HANDLING_CHARGE" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="IGST" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CGST" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="SGST" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CUSTOMER_REGISTER" Relationship="Self.FK_TBL_SALE_HDR_TBL_CUSTOMER_ID_CUSTOMER_REGISTER_ID" FromRole="TBL_SALE_HD" ToRole="TBL_CUSTOMER_REGISTER" />
+          <NavigationProperty Name="TBL_STAFF_REGISTER" Relationship="Self.FK_TBL_SALE_HDR_TBL_STAFF_ID_STAFF_REGISTER_ID" FromRole="TBL_SALE_HD" ToRole="TBL_STAFF_REGISTER" />
+          <NavigationProperty Name="TBL_VECHICLE_REGISTER" Relationship="Self.FK_TBL_SALE_HDR_TBL_VECHICLE_ID_VECHICLE_REGISTER_ID" FromRole="TBL_SALE_HD" ToRole="TBL_VECHICLE_REGISTER" />
+          <NavigationProperty Name="TBL_SALE_INVOICE_DT" Relationship="Self.FK_TBL_SALE_INVOICE_DT_SALE_ID_TBL_SALE_HD_ID" FromRole="TBL_SALE_HD" ToRole="TBL_SALE_INVOICE_DT" />
+        </EntityType>
+        <EntityType Name="TBL_SALE_INVOICE_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="SALE_ID" Type="Int64" Nullable="false" />
+          <Property Name="CYLINDER_ID" Type="Int64" Nullable="false" />
+          <Property Name="HANDLING_CHARGE" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="PURCHASE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="IGST" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CGST" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="SGST" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_SALE_HD" Relationship="Self.FK_TBL_SALE_INVOICE_DT_SALE_ID_TBL_SALE_HD_ID" FromRole="TBL_SALE_INVOICE_DT" ToRole="TBL_SALE_HD" />
+        </EntityType>
+        <EntityType Name="TBL_SHOP_DEALER_BANK_DETAILS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="SHOP_DEALER_ID" Type="Int64" />
+          <Property Name="HOLDER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BANK_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AC_NUMBER" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IFSC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DEFAULT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TBL_SHOP_DEALER_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SHORT_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MOB1" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MOB2" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GST_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="M_LICENCE_NUM1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="M_LICENCE_NUM2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="D_LICENCE_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="E_LICENCE_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SHOP_OR_DEALER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_DEALER_PAYMENT_HD" Relationship="Self.FK_TBL_CUSTOMER_PAYMENT_HD_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" FromRole="TBL_SHOP_DEALER_REGISTER" ToRole="TBL_DEALER_PAYMENT_HD" />
+          <NavigationProperty Name="TBL_PURCHASE_HD" Relationship="Self.FK_TBL_PURCHASE_HDR_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" FromRole="TBL_SHOP_DEALER_REGISTER" ToRole="TBL_PURCHASE_HD" />
+        </EntityType>
+        <EntityType Name="TBL_STAFF_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="MOB1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MOB2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="JOIN_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_PURCHASE_HD" Relationship="Self.FK_TBL_PURCHASE_HDR_STAFF_ID_TBL_STAFF_REGISTER_ID" FromRole="TBL_STAFF_REGISTER" ToRole="TBL_PURCHASE_HD" />
+          <NavigationProperty Name="TBL_SALE_HD" Relationship="Self.FK_TBL_SALE_HDR_TBL_STAFF_ID_STAFF_REGISTER_ID" FromRole="TBL_STAFF_REGISTER" ToRole="TBL_SALE_HD" />
+          <NavigationProperty Name="TBL_STAFF_REGISTER_DT" Relationship="Self.FK_TBL_STAFF_REGISTER_DT_STAFF_ID_TBL_STAFF_REGISTER" FromRole="TBL_STAFF_REGISTER" ToRole="TBL_STAFF_REGISTER_DT" />
+        </EntityType>
+        <EntityType Name="TBL_STAFF_REGISTER_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="STAFF_ID" Type="Int64" Nullable="false" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="PAYMENT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_STAFF_REGISTER" Relationship="Self.FK_TBL_STAFF_REGISTER_DT_STAFF_ID_TBL_STAFF_REGISTER" FromRole="TBL_STAFF_REGISTER_DT" ToRole="TBL_STAFF_REGISTER" />
+        </EntityType>
+        <EntityType Name="TBL_VECHICLE_REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="NUMBER" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PURCHASE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="TEST_DATE" Type="DateTime" Precision="3" />
+          <Property Name="INSURANCE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="TAX_DATE" Type="DateTime" Precision="3" />
+          <Property Name="POLUTION_DATE" Type="DateTime" Precision="3" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_PURCHASE_HD" Relationship="Self.FK_TBL_PURCHASE_HDR_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID" FromRole="TBL_VECHICLE_REGISTER" ToRole="TBL_PURCHASE_HD" />
+          <NavigationProperty Name="TBL_SALE_HD" Relationship="Self.FK_TBL_SALE_HDR_TBL_VECHICLE_ID_VECHICLE_REGISTER_ID" FromRole="TBL_VECHICLE_REGISTER" ToRole="TBL_SALE_HD" />
+          <NavigationProperty Name="TBL_VECHICLE_REGISTER_DT" Relationship="Self.FK_TBL_VECHICLE_REGISTER_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID" FromRole="TBL_VECHICLE_REGISTER" ToRole="TBL_VECHICLE_REGISTER_DT" />
+        </EntityType>
+        <EntityType Name="TBL_VECHICLE_REGISTER_DT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="VECHICLE_ID" Type="Int64" Nullable="false" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="PAYMENT" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_VECHICLE_REGISTER" Relationship="Self.FK_TBL_VECHICLE_REGISTER_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID" FromRole="TBL_VECHICLE_REGISTER_DT" ToRole="TBL_VECHICLE_REGISTER" />
+        </EntityType>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUSTOMERCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FIRSTNAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LASTNAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="OFFICENAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="WEBSITE" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LAT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LNG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ADDED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="COMPANYID" Type="Int32" />
+          <Property Name="ARCHIVE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblOrganization" Relationship="Self.FK_tblCustomers_COMPANYID_tblOrganizations_ID" FromRole="tblCustomers" ToRole="tblOrganizations" />
+        </EntityType>
+        <EntityType Name="tblEmergency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="LAT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LNG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LOGTIME" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tblUserMaster" Relationship="Self.FK_tblEmergency_USERID_tblUserMaster_ID" FromRole="tblEmergency" ToRole="tblUserMaster" />
+        </EntityType>
+        <EntityType Name="tblNotification">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="TOKEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DEVICEID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblUserMaster" Relationship="Self.FK_tblNotification_USERID_tblUserMaster_ID" FromRole="tblNotification" ToRole="tblUserMaster" />
+        </EntityType>
+        <EntityType Name="tblOrganization">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CONTACTNAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="WEBSITE" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LAT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LNG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ADDED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ARCHIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="IMAGE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblCustomers" Relationship="Self.FK_tblCustomers_COMPANYID_tblOrganizations_ID" FromRole="tblOrganizations" ToRole="tblCustomers" />
+          <NavigationProperty Name="tblRoasters" Relationship="Self.FK_tblRoaster_COMPANYID_tblOrganizations_ID" FromRole="tblOrganizations" ToRole="tblRoaster" />
+          <NavigationProperty Name="tblTeams" Relationship="Self.FK_tblTeams_COMPANYID_tblOrganizations_ID" FromRole="tblOrganizations" ToRole="tblTeams" />
+          <NavigationProperty Name="tblUserMasters" Relationship="Self.FK_tblUserMaster_COMPANYID_tblOrganizations_ID" FromRole="tblOrganizations" ToRole="tblUserMaster" />
+        </EntityType>
+        <EntityType Name="tblRoaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="USERID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="STARTTIME" Type="DateTime" Precision="3" />
+          <Property Name="FINISHTIME" Type="DateTime" Precision="3" />
+          <Property Name="COMPANYID" Type="Int32" />
+          <Property Name="ARCHIVE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="OVERRIDE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OVERIDEDETAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblOrganization" Relationship="Self.FK_tblRoaster_COMPANYID_tblOrganizations_ID" FromRole="tblRoaster" ToRole="tblOrganizations" />
+          <NavigationProperty Name="tblTeamRoasters" Relationship="Self.FK_tblTeamRoaster_ROASTERID_tblRoaster_ID" FromRole="tblRoaster" ToRole="tblTeamRoaster" />
+          <NavigationProperty Name="tblUserRoasters" Relationship="Self.FK_tblUserRoaster_ROASTERID_tblRoaster_ID" FromRole="tblRoaster" ToRole="tblUserRoaster" />
+        </EntityType>
+        <EntityType Name="tblStopTracking">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="HOURS" Type="Int32" />
+          <Property Name="STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LOGTIME" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tblUserMaster" Relationship="Self.FK_tblStopTracking_USERID_tblUserMaster_ID" FromRole="tblStopTracking" ToRole="tblUserMaster" />
+        </EntityType>
+        <EntityType Name="tblTeamRoaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEAMID" Type="Int32" Nullable="false" />
+          <Property Name="ROASTERID" Type="Int32" Nullable="false" />
+          <Property Name="ARCHIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="tblRoaster" Relationship="Self.FK_tblTeamRoaster_ROASTERID_tblRoaster_ID" FromRole="tblTeamRoaster" ToRole="tblRoaster" />
+          <NavigationProperty Name="tblTeam" Relationship="Self.FK_tblTeamRoaster_TEAMID_tblTeams_ID" FromRole="tblTeamRoaster" ToRole="tblTeams" />
+        </EntityType>
+        <EntityType Name="tblTeam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEAMNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TEAMDESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TEAMCREATED" Type="DateTime" Precision="3" />
+          <Property Name="TEAMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="COMPANYID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblOrganization" Relationship="Self.FK_tblTeams_COMPANYID_tblOrganizations_ID" FromRole="tblTeams" ToRole="tblOrganizations" />
+          <NavigationProperty Name="tblTeamRoasters" Relationship="Self.FK_tblTeamRoaster_TEAMID_tblTeams_ID" FromRole="tblTeams" ToRole="tblTeamRoaster" />
+          <NavigationProperty Name="tblUserMasters" Relationship="Self.FK_tblUserMaster_DEFAULT_GROUP_tblTeams_ID" FromRole="tblTeams" ToRole="tblUserMaster" />
+          <NavigationProperty Name="tblUserTeams" Relationship="Self.FK_tblUserTeam_USERID_tblUserTeam_ID" FromRole="tblTeams" ToRole="tblUserTeam" />
+        </EntityType>
+        <EntityType Name="tblUserLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="LAT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LNG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LOGTIME" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tblUserMaster" Relationship="Self.FK_tblUserLog_USERID_tblUserMaster_ID" FromRole="tblUserLog" ToRole="tblUserMaster" />
+        </EntityType>
+        <EntityType Name="tblUserMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERTYPE" Type="Int32" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USERSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="USERTEAMID" Type="Int32" />
+          <Property Name="COMPANYID" Type="Int32" />
+          <Property Name="USERTOKEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FIRSTNAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="SURNAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="CELLPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="WORKINGDAYS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="STARTTIME" Type="DateTime" Precision="3" />
+          <Property Name="ENDTIME" Type="DateTime" Precision="3" />
+          <Property Name="EMERGENCYCONTACT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMERGENCYCONTACTNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ONLINESTATUS" Type="Int32" />
+          <Property Name="ONLINESTATUSCHANGETIME" Type="DateTime" Precision="3" />
+          <Property Name="ISCONTRACTOR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BASE_LATITUDE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BASE_LONGITUDE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DEFAULT_GROUP" Type="Int32" />
+          <Property Name="ALLOW_NOTFICATION" Type="Boolean" />
+          <NavigationProperty Name="tblEmergencies" Relationship="Self.FK_tblEmergency_USERID_tblUserMaster_ID" FromRole="tblUserMaster" ToRole="tblEmergency" />
+          <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotification_USERID_tblUserMaster_ID" FromRole="tblUserMaster" ToRole="tblNotification" />
+          <NavigationProperty Name="tblOrganization" Relationship="Self.FK_tblUserMaster_COMPANYID_tblOrganizations_ID" FromRole="tblUserMaster" ToRole="tblOrganizations" />
+          <NavigationProperty Name="tblStopTrackings" Relationship="Self.FK_tblStopTracking_USERID_tblUserMaster_ID" FromRole="tblUserMaster" ToRole="tblStopTracking" />
+          <NavigationProperty Name="tblTeam" Relationship="Self.FK_tblUserMaster_DEFAULT_GROUP_tblTeams_ID" FromRole="tblUserMaster" ToRole="tblTeams" />
+          <NavigationProperty Name="tblUserLogs" Relationship="Self.FK_tblUserLog_USERID_tblUserMaster_ID" FromRole="tblUserMaster" ToRole="tblUserLog" />
+          <NavigationProperty Name="tblUserRoasters" Relationship="Self.FK_tblUserRoaster_USERID_tblUserMaster_ID" FromRole="tblUserMaster" ToRole="tblUserRoaster" />
+          <NavigationProperty Name="tblUserTeams" Relationship="Self.FK_tblUserTeam_USERID_tblUserMaster_ID" FromRole="tblUserMaster" ToRole="tblUserTeam" />
+        </EntityType>
+        <EntityType Name="tblUserRoaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="ROASTERID" Type="Int32" Nullable="false" />
+          <Property Name="ARCHIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="tblRoaster" Relationship="Self.FK_tblUserRoaster_ROASTERID_tblRoaster_ID" FromRole="tblUserRoaster" ToRole="tblRoaster" />
+          <NavigationProperty Name="tblUserMaster" Relationship="Self.FK_tblUserRoaster_USERID_tblUserMaster_ID" FromRole="tblUserRoaster" ToRole="tblUserMaster" />
+        </EntityType>
+        <EntityType Name="tblUserTeam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="TEAMID" Type="Int32" Nullable="false" />
+          <Property Name="ARCHIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="tblTeam" Relationship="Self.FK_tblUserTeam_USERID_tblUserTeam_ID" FromRole="tblUserTeam" ToRole="tblTeams" />
+          <NavigationProperty Name="tblUserMaster" Relationship="Self.FK_tblUserTeam_USERID_tblUserMaster_ID" FromRole="tblUserTeam" ToRole="tblUserMaster" />
+        </EntityType>
+        <Association Name="FK_TBL_CUSTOMER_PAYMENT_DT_CUSTOMER_PAYMENT_ID_TBL_CUSTOMER_PAYMENT_HD_ID">
+          <End Role="TBL_CUSTOMER_PAYMENT_HD" Type="Self.TBL_CUSTOMER_PAYMENT_HD" Multiplicity="1" />
+          <End Role="TBL_CUSTOMER_PAYMENT_DT" Type="Self.TBL_CUSTOMER_PAYMENT_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CUSTOMER_PAYMENT_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CUSTOMER_PAYMENT_DT">
+              <PropertyRef Name="CUSTOMER_PAYMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CUSTOMER_PAYMENT_HD_CUSTOMER_ID_TBL_CUSTOMER_REGISTER_ID">
+          <End Role="TBL_CUSTOMER_REGISTER" Type="Self.TBL_CUSTOMER_REGISTER" Multiplicity="1" />
+          <End Role="TBL_CUSTOMER_PAYMENT_HD" Type="Self.TBL_CUSTOMER_PAYMENT_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CUSTOMER_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CUSTOMER_PAYMENT_HD">
+              <PropertyRef Name="CUSTOMER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SALE_HDR_TBL_CUSTOMER_ID_CUSTOMER_REGISTER_ID">
+          <End Role="TBL_CUSTOMER_REGISTER" Type="Self.TBL_CUSTOMER_REGISTER" Multiplicity="1" />
+          <End Role="TBL_SALE_HD" Type="Self.TBL_SALE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CUSTOMER_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SALE_HD">
+              <PropertyRef Name="CUSTOMER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CYLINDER_TRACKING_CYLINDER_TYPE_ID_TBL_CYLINDER_MASTER">
+          <End Role="TBL_CYLINDER_MASTER" Type="Self.TBL_CYLINDER_MASTER" Multiplicity="1" />
+          <End Role="TBL_CYLINDER_TRACKING" Type="Self.TBL_CYLINDER_TRACKING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CYLINDER_MASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CYLINDER_TRACKING">
+              <PropertyRef Name="CYLINDER_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_OWN_CYLINDER_REGISTER_CYLINDR_TYPE_ID_TBL_CYLINDER_MASTER">
+          <End Role="TBL_CYLINDER_MASTER" Type="Self.TBL_CYLINDER_MASTER" Multiplicity="1" />
+          <End Role="TBL_OWN_CYLINDER_REGISTER" Type="Self.TBL_OWN_CYLINDER_REGISTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CYLINDER_MASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_OWN_CYLINDER_REGISTER">
+              <PropertyRef Name="CYLINDR_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CYLINDER_TRACKING_PURCHASE_ID_TBL_PURCHASE_HD_ID">
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="1" />
+          <End Role="TBL_CYLINDER_TRACKING" Type="Self.TBL_CYLINDER_TRACKING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CYLINDER_TRACKING">
+              <PropertyRef Name="PURCHASE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_DEALER_PAYMENT_DT_DEALER_PAYMENT_ID_TBL_DEALER_PAYMENT_HD_ID">
+          <End Role="TBL_DEALER_PAYMENT_HD" Type="Self.TBL_DEALER_PAYMENT_HD" Multiplicity="1" />
+          <End Role="TBL_DEALER_PAYMENT_DT" Type="Self.TBL_DEALER_PAYMENT_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_DEALER_PAYMENT_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_DEALER_PAYMENT_DT">
+              <PropertyRef Name="DEALER_PAYMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CUSTOMER_PAYMENT_HD_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID">
+          <End Role="TBL_SHOP_DEALER_REGISTER" Type="Self.TBL_SHOP_DEALER_REGISTER" Multiplicity="1" />
+          <End Role="TBL_DEALER_PAYMENT_HD" Type="Self.TBL_DEALER_PAYMENT_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_SHOP_DEALER_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_DEALER_PAYMENT_HD">
+              <PropertyRef Name="DEALER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PURCHASE_HDR_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID">
+          <End Role="TBL_SHOP_DEALER_REGISTER" Type="Self.TBL_SHOP_DEALER_REGISTER" Multiplicity="1" />
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_SHOP_DEALER_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="DEALER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PURCHASE_HDR_STAFF_ID_TBL_STAFF_REGISTER_ID">
+          <End Role="TBL_STAFF_REGISTER" Type="Self.TBL_STAFF_REGISTER" Multiplicity="0..1" />
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_STAFF_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PURCHASE_HDR_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID">
+          <End Role="TBL_VECHICLE_REGISTER" Type="Self.TBL_VECHICLE_REGISTER" Multiplicity="0..1" />
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_VECHICLE_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="VECHICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PURCHASE_INVOICE_DT_PURCHASE_ID_TBL_PURCHASE_HD_ID">
+          <End Role="TBL_PURCHASE_HD" Type="Self.TBL_PURCHASE_HD" Multiplicity="1" />
+          <End Role="TBL_PURCHASE_INVOICE_DT" Type="Self.TBL_PURCHASE_INVOICE_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PURCHASE_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PURCHASE_INVOICE_DT">
+              <PropertyRef Name="PURCHASE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SALE_HDR_TBL_STAFF_ID_STAFF_REGISTER_ID">
+          <End Role="TBL_STAFF_REGISTER" Type="Self.TBL_STAFF_REGISTER" Multiplicity="0..1" />
+          <End Role="TBL_SALE_HD" Type="Self.TBL_SALE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_STAFF_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SALE_HD">
+              <PropertyRef Name="STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SALE_HDR_TBL_VECHICLE_ID_VECHICLE_REGISTER_ID">
+          <End Role="TBL_VECHICLE_REGISTER" Type="Self.TBL_VECHICLE_REGISTER" Multiplicity="0..1" />
+          <End Role="TBL_SALE_HD" Type="Self.TBL_SALE_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_VECHICLE_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SALE_HD">
+              <PropertyRef Name="VECHICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SALE_INVOICE_DT_SALE_ID_TBL_SALE_HD_ID">
+          <End Role="TBL_SALE_HD" Type="Self.TBL_SALE_HD" Multiplicity="1" />
+          <End Role="TBL_SALE_INVOICE_DT" Type="Self.TBL_SALE_INVOICE_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_SALE_HD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SALE_INVOICE_DT">
+              <PropertyRef Name="SALE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_STAFF_REGISTER_DT_STAFF_ID_TBL_STAFF_REGISTER">
+          <End Role="TBL_STAFF_REGISTER" Type="Self.TBL_STAFF_REGISTER" Multiplicity="1" />
+          <End Role="TBL_STAFF_REGISTER_DT" Type="Self.TBL_STAFF_REGISTER_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_STAFF_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_STAFF_REGISTER_DT">
+              <PropertyRef Name="STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_VECHICLE_REGISTER_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID">
+          <End Role="TBL_VECHICLE_REGISTER" Type="Self.TBL_VECHICLE_REGISTER" Multiplicity="1" />
+          <End Role="TBL_VECHICLE_REGISTER_DT" Type="Self.TBL_VECHICLE_REGISTER_DT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_VECHICLE_REGISTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_VECHICLE_REGISTER_DT">
+              <PropertyRef Name="VECHICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCustomers_COMPANYID_tblOrganizations_ID">
+          <End Role="tblOrganizations" Type="Self.tblOrganization" Multiplicity="0..1" />
+          <End Role="tblCustomers" Type="Self.tblCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblCustomers">
+              <PropertyRef Name="COMPANYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblEmergency_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblEmergency" Type="Self.tblEmergency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblEmergency">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblNotification_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblNotification" Type="Self.tblNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblNotification">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRoaster_COMPANYID_tblOrganizations_ID">
+          <End Role="tblOrganizations" Type="Self.tblOrganization" Multiplicity="0..1" />
+          <End Role="tblRoaster" Type="Self.tblRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblRoaster">
+              <PropertyRef Name="COMPANYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTeams_COMPANYID_tblOrganizations_ID">
+          <End Role="tblOrganizations" Type="Self.tblOrganization" Multiplicity="1" />
+          <End Role="tblTeams" Type="Self.tblTeam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblTeams">
+              <PropertyRef Name="COMPANYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserMaster_COMPANYID_tblOrganizations_ID">
+          <End Role="tblOrganizations" Type="Self.tblOrganization" Multiplicity="0..1" />
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserMaster">
+              <PropertyRef Name="COMPANYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTeamRoaster_ROASTERID_tblRoaster_ID">
+          <End Role="tblRoaster" Type="Self.tblRoaster" Multiplicity="1" />
+          <End Role="tblTeamRoaster" Type="Self.tblTeamRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRoaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblTeamRoaster">
+              <PropertyRef Name="ROASTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserRoaster_ROASTERID_tblRoaster_ID">
+          <End Role="tblRoaster" Type="Self.tblRoaster" Multiplicity="1" />
+          <End Role="tblUserRoaster" Type="Self.tblUserRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRoaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserRoaster">
+              <PropertyRef Name="ROASTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblStopTracking_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblStopTracking" Type="Self.tblStopTracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblStopTracking">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTeamRoaster_TEAMID_tblTeams_ID">
+          <End Role="tblTeams" Type="Self.tblTeam" Multiplicity="1" />
+          <End Role="tblTeamRoaster" Type="Self.tblTeamRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTeams">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblTeamRoaster">
+              <PropertyRef Name="TEAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserMaster_DEFAULT_GROUP_tblTeams_ID">
+          <End Role="tblTeams" Type="Self.tblTeam" Multiplicity="0..1" />
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTeams">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserMaster">
+              <PropertyRef Name="DEFAULT_GROUP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserTeam_USERID_tblUserTeam_ID">
+          <End Role="tblTeams" Type="Self.tblTeam" Multiplicity="1" />
+          <End Role="tblUserTeam" Type="Self.tblUserTeam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTeams">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserTeam">
+              <PropertyRef Name="TEAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserLog_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblUserLog" Type="Self.tblUserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserLog">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserRoaster_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblUserRoaster" Type="Self.tblUserRoaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserRoaster">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUserTeam_USERID_tblUserMaster_ID">
+          <End Role="tblUserMaster" Type="Self.tblUserMaster" Multiplicity="1" />
+          <End Role="tblUserTeam" Type="Self.tblUserTeam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserTeam">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QCONZEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBL_CUSTOMER_PAYMENT_DT" EntityType="Self.TBL_CUSTOMER_PAYMENT_DT" />
+          <EntitySet Name="TBL_CUSTOMER_PAYMENT_HD" EntityType="Self.TBL_CUSTOMER_PAYMENT_HD" />
+          <EntitySet Name="TBL_CUSTOMER_REGISTER" EntityType="Self.TBL_CUSTOMER_REGISTER" />
+          <EntitySet Name="TBL_CYLINDER_MASTER" EntityType="Self.TBL_CYLINDER_MASTER" />
+          <EntitySet Name="TBL_CYLINDER_TRACKING" EntityType="Self.TBL_CYLINDER_TRACKING" />
+          <EntitySet Name="TBL_DEALER_PAYMENT_DT" EntityType="Self.TBL_DEALER_PAYMENT_DT" />
+          <EntitySet Name="TBL_DEALER_PAYMENT_HD" EntityType="Self.TBL_DEALER_PAYMENT_HD" />
+          <EntitySet Name="TBL_OWN_CYLINDER_REGISTER" EntityType="Self.TBL_OWN_CYLINDER_REGISTER" />
+          <EntitySet Name="TBL_PURCHASE_HD" EntityType="Self.TBL_PURCHASE_HD" />
+          <EntitySet Name="TBL_PURCHASE_INVOICE_DT" EntityType="Self.TBL_PURCHASE_INVOICE_DT" />
+          <EntitySet Name="TBL_SALE_HD" EntityType="Self.TBL_SALE_HD" />
+          <EntitySet Name="TBL_SALE_INVOICE_DT" EntityType="Self.TBL_SALE_INVOICE_DT" />
+          <EntitySet Name="TBL_SHOP_DEALER_BANK_DETAILS" EntityType="Self.TBL_SHOP_DEALER_BANK_DETAILS" />
+          <EntitySet Name="TBL_SHOP_DEALER_REGISTER" EntityType="Self.TBL_SHOP_DEALER_REGISTER" />
+          <EntitySet Name="TBL_STAFF_REGISTER" EntityType="Self.TBL_STAFF_REGISTER" />
+          <EntitySet Name="TBL_STAFF_REGISTER_DT" EntityType="Self.TBL_STAFF_REGISTER_DT" />
+          <EntitySet Name="TBL_VECHICLE_REGISTER" EntityType="Self.TBL_VECHICLE_REGISTER" />
+          <EntitySet Name="TBL_VECHICLE_REGISTER_DT" EntityType="Self.TBL_VECHICLE_REGISTER_DT" />
+          <EntitySet Name="tblCustomers" EntityType="Self.tblCustomer" />
+          <EntitySet Name="tblEmergencies" EntityType="Self.tblEmergency" />
+          <EntitySet Name="tblNotifications" EntityType="Self.tblNotification" />
+          <EntitySet Name="tblOrganizations" EntityType="Self.tblOrganization" />
+          <EntitySet Name="tblRoasters" EntityType="Self.tblRoaster" />
+          <EntitySet Name="tblStopTrackings" EntityType="Self.tblStopTracking" />
+          <EntitySet Name="tblTeamRoasters" EntityType="Self.tblTeamRoaster" />
+          <EntitySet Name="tblTeams" EntityType="Self.tblTeam" />
+          <EntitySet Name="tblUserLogs" EntityType="Self.tblUserLog" />
+          <EntitySet Name="tblUserMasters" EntityType="Self.tblUserMaster" />
+          <EntitySet Name="tblUserRoasters" EntityType="Self.tblUserRoaster" />
+          <EntitySet Name="tblUserTeams" EntityType="Self.tblUserTeam" />
+          <AssociationSet Name="FK_TBL_CUSTOMER_PAYMENT_DT_CUSTOMER_PAYMENT_ID_TBL_CUSTOMER_PAYMENT_HD_ID" Association="Self.FK_TBL_CUSTOMER_PAYMENT_DT_CUSTOMER_PAYMENT_ID_TBL_CUSTOMER_PAYMENT_HD_ID">
+            <End Role="TBL_CUSTOMER_PAYMENT_HD" EntitySet="TBL_CUSTOMER_PAYMENT_HD" />
+            <End Role="TBL_CUSTOMER_PAYMENT_DT" EntitySet="TBL_CUSTOMER_PAYMENT_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CUSTOMER_PAYMENT_HD_CUSTOMER_ID_TBL_CUSTOMER_REGISTER_ID" Association="Self.FK_TBL_CUSTOMER_PAYMENT_HD_CUSTOMER_ID_TBL_CUSTOMER_REGISTER_ID">
+            <End Role="TBL_CUSTOMER_REGISTER" EntitySet="TBL_CUSTOMER_REGISTER" />
+            <End Role="TBL_CUSTOMER_PAYMENT_HD" EntitySet="TBL_CUSTOMER_PAYMENT_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SALE_HDR_TBL_CUSTOMER_ID_CUSTOMER_REGISTER_ID" Association="Self.FK_TBL_SALE_HDR_TBL_CUSTOMER_ID_CUSTOMER_REGISTER_ID">
+            <End Role="TBL_CUSTOMER_REGISTER" EntitySet="TBL_CUSTOMER_REGISTER" />
+            <End Role="TBL_SALE_HD" EntitySet="TBL_SALE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CYLINDER_TRACKING_CYLINDER_TYPE_ID_TBL_CYLINDER_MASTER" Association="Self.FK_TBL_CYLINDER_TRACKING_CYLINDER_TYPE_ID_TBL_CYLINDER_MASTER">
+            <End Role="TBL_CYLINDER_MASTER" EntitySet="TBL_CYLINDER_MASTER" />
+            <End Role="TBL_CYLINDER_TRACKING" EntitySet="TBL_CYLINDER_TRACKING" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_OWN_CYLINDER_REGISTER_CYLINDR_TYPE_ID_TBL_CYLINDER_MASTER" Association="Self.FK_TBL_OWN_CYLINDER_REGISTER_CYLINDR_TYPE_ID_TBL_CYLINDER_MASTER">
+            <End Role="TBL_CYLINDER_MASTER" EntitySet="TBL_CYLINDER_MASTER" />
+            <End Role="TBL_OWN_CYLINDER_REGISTER" EntitySet="TBL_OWN_CYLINDER_REGISTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CYLINDER_TRACKING_PURCHASE_ID_TBL_PURCHASE_HD_ID" Association="Self.FK_TBL_CYLINDER_TRACKING_PURCHASE_ID_TBL_PURCHASE_HD_ID">
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+            <End Role="TBL_CYLINDER_TRACKING" EntitySet="TBL_CYLINDER_TRACKING" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_DEALER_PAYMENT_DT_DEALER_PAYMENT_ID_TBL_DEALER_PAYMENT_HD_ID" Association="Self.FK_TBL_DEALER_PAYMENT_DT_DEALER_PAYMENT_ID_TBL_DEALER_PAYMENT_HD_ID">
+            <End Role="TBL_DEALER_PAYMENT_HD" EntitySet="TBL_DEALER_PAYMENT_HD" />
+            <End Role="TBL_DEALER_PAYMENT_DT" EntitySet="TBL_DEALER_PAYMENT_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CUSTOMER_PAYMENT_HD_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" Association="Self.FK_TBL_CUSTOMER_PAYMENT_HD_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID">
+            <End Role="TBL_SHOP_DEALER_REGISTER" EntitySet="TBL_SHOP_DEALER_REGISTER" />
+            <End Role="TBL_DEALER_PAYMENT_HD" EntitySet="TBL_DEALER_PAYMENT_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PURCHASE_HDR_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" Association="Self.FK_TBL_PURCHASE_HDR_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID">
+            <End Role="TBL_SHOP_DEALER_REGISTER" EntitySet="TBL_SHOP_DEALER_REGISTER" />
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PURCHASE_HDR_STAFF_ID_TBL_STAFF_REGISTER_ID" Association="Self.FK_TBL_PURCHASE_HDR_STAFF_ID_TBL_STAFF_REGISTER_ID">
+            <End Role="TBL_STAFF_REGISTER" EntitySet="TBL_STAFF_REGISTER" />
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PURCHASE_HDR_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID" Association="Self.FK_TBL_PURCHASE_HDR_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID">
+            <End Role="TBL_VECHICLE_REGISTER" EntitySet="TBL_VECHICLE_REGISTER" />
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PURCHASE_INVOICE_DT_PURCHASE_ID_TBL_PURCHASE_HD_ID" Association="Self.FK_TBL_PURCHASE_INVOICE_DT_PURCHASE_ID_TBL_PURCHASE_HD_ID">
+            <End Role="TBL_PURCHASE_HD" EntitySet="TBL_PURCHASE_HD" />
+            <End Role="TBL_PURCHASE_INVOICE_DT" EntitySet="TBL_PURCHASE_INVOICE_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SALE_HDR_TBL_STAFF_ID_STAFF_REGISTER_ID" Association="Self.FK_TBL_SALE_HDR_TBL_STAFF_ID_STAFF_REGISTER_ID">
+            <End Role="TBL_STAFF_REGISTER" EntitySet="TBL_STAFF_REGISTER" />
+            <End Role="TBL_SALE_HD" EntitySet="TBL_SALE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SALE_HDR_TBL_VECHICLE_ID_VECHICLE_REGISTER_ID" Association="Self.FK_TBL_SALE_HDR_TBL_VECHICLE_ID_VECHICLE_REGISTER_ID">
+            <End Role="TBL_VECHICLE_REGISTER" EntitySet="TBL_VECHICLE_REGISTER" />
+            <End Role="TBL_SALE_HD" EntitySet="TBL_SALE_HD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SALE_INVOICE_DT_SALE_ID_TBL_SALE_HD_ID" Association="Self.FK_TBL_SALE_INVOICE_DT_SALE_ID_TBL_SALE_HD_ID">
+            <End Role="TBL_SALE_HD" EntitySet="TBL_SALE_HD" />
+            <End Role="TBL_SALE_INVOICE_DT" EntitySet="TBL_SALE_INVOICE_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_STAFF_REGISTER_DT_STAFF_ID_TBL_STAFF_REGISTER" Association="Self.FK_TBL_STAFF_REGISTER_DT_STAFF_ID_TBL_STAFF_REGISTER">
+            <End Role="TBL_STAFF_REGISTER" EntitySet="TBL_STAFF_REGISTER" />
+            <End Role="TBL_STAFF_REGISTER_DT" EntitySet="TBL_STAFF_REGISTER_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_VECHICLE_REGISTER_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID" Association="Self.FK_TBL_VECHICLE_REGISTER_VECHICLE_ID_TBL_VECHICLE_REGISTER_ID">
+            <End Role="TBL_VECHICLE_REGISTER" EntitySet="TBL_VECHICLE_REGISTER" />
+            <End Role="TBL_VECHICLE_REGISTER_DT" EntitySet="TBL_VECHICLE_REGISTER_DT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCustomers_COMPANYID_tblOrganizations_ID" Association="Self.FK_tblCustomers_COMPANYID_tblOrganizations_ID">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblCustomers" EntitySet="tblCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblEmergency_USERID_tblUserMaster_ID" Association="Self.FK_tblEmergency_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMasters" />
+            <End Role="tblEmergency" EntitySet="tblEmergencies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblNotification_USERID_tblUserMaster_ID" Association="Self.FK_tblNotification_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMasters" />
+            <End Role="tblNotification" EntitySet="tblNotifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRoaster_COMPANYID_tblOrganizations_ID" Association="Self.FK_tblRoaster_COMPANYID_tblOrganizations_ID">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblRoaster" EntitySet="tblRoasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTeams_COMPANYID_tblOrganizations_ID" Association="Self.FK_tblTeams_COMPANYID_tblOrganizations_ID">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblTeams" EntitySet="tblTeams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserMaster_COMPANYID_tblOrganizations_ID" Association="Self.FK_tblUserMaster_COMPANYID_tblOrganizations_ID">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblUserMaster" EntitySet="tblUserMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTeamRoaster_ROASTERID_tblRoaster_ID" Association="Self.FK_tblTeamRoaster_ROASTERID_tblRoaster_ID">
+            <End Role="tblRoaster" EntitySet="tblRoasters" />
+            <End Role="tblTeamRoaster" EntitySet="tblTeamRoasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserRoaster_ROASTERID_tblRoaster_ID" Association="Self.FK_tblUserRoaster_ROASTERID_tblRoaster_ID">
+            <End Role="tblRoaster" EntitySet="tblRoasters" />
+            <End Role="tblUserRoaster" EntitySet="tblUserRoasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblStopTracking_USERID_tblUserMaster_ID" Association="Self.FK_tblStopTracking_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMasters" />
+            <End Role="tblStopTracking" EntitySet="tblStopTrackings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTeamRoaster_TEAMID_tblTeams_ID" Association="Self.FK_tblTeamRoaster_TEAMID_tblTeams_ID">
+            <End Role="tblTeams" EntitySet="tblTeams" />
+            <End Role="tblTeamRoaster" EntitySet="tblTeamRoasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserMaster_DEFAULT_GROUP_tblTeams_ID" Association="Self.FK_tblUserMaster_DEFAULT_GROUP_tblTeams_ID">
+            <End Role="tblTeams" EntitySet="tblTeams" />
+            <End Role="tblUserMaster" EntitySet="tblUserMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserTeam_USERID_tblUserTeam_ID" Association="Self.FK_tblUserTeam_USERID_tblUserTeam_ID">
+            <End Role="tblTeams" EntitySet="tblTeams" />
+            <End Role="tblUserTeam" EntitySet="tblUserTeams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserLog_USERID_tblUserMaster_ID" Association="Self.FK_tblUserLog_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMasters" />
+            <End Role="tblUserLog" EntitySet="tblUserLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserRoaster_USERID_tblUserMaster_ID" Association="Self.FK_tblUserRoaster_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMasters" />
+            <End Role="tblUserRoaster" EntitySet="tblUserRoasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUserTeam_USERID_tblUserMaster_ID" Association="Self.FK_tblUserTeam_USERID_tblUserMaster_ID">
+            <End Role="tblUserMaster" EntitySet="tblUserMasters" />
+            <End Role="tblUserTeam" EntitySet="tblUserTeams" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QCONZModelStoreContainer" CdmEntityContainer="QCONZEntities">
+          <EntitySetMapping Name="TBL_CUSTOMER_PAYMENT_DT">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_CUSTOMER_PAYMENT_DT">
+              <MappingFragment StoreEntitySet="TBL_CUSTOMER_PAYMENT_DT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CUSTOMER_PAYMENT_ID" ColumnName="CUSTOMER_PAYMENT_ID" />
+                <ScalarProperty Name="PAYMENT_DATE" ColumnName="PAYMENT_DATE" />
+                <ScalarProperty Name="CURRENT_PURCHASE_AMOUNT" ColumnName="CURRENT_PURCHASE_AMOUNT" />
+                <ScalarProperty Name="CURRENT_RENT_AMOUNT" ColumnName="CURRENT_RENT_AMOUNT" />
+                <ScalarProperty Name="CURRENT_HANDLING_AMOUNT" ColumnName="CURRENT_HANDLING_AMOUNT" />
+                <ScalarProperty Name="CURRENT_VECHICLE_AMOUNT" ColumnName="CURRENT_VECHICLE_AMOUNT" />
+                <ScalarProperty Name="CURRENT_OTHER_AMOUNT" ColumnName="CURRENT_OTHER_AMOUNT" />
+                <ScalarProperty Name="PAID_PURCHASE_AMOUNT" ColumnName="PAID_PURCHASE_AMOUNT" />
+                <ScalarProperty Name="PAID_RENT_AMOUNT" ColumnName="PAID_RENT_AMOUNT" />
+                <ScalarProperty Name="PAID_HANDLING_AMOUNT" ColumnName="PAID_HANDLING_AMOUNT" />
+                <ScalarProperty Name="PAID_VECHICLE_AMOUNT" ColumnName="PAID_VECHICLE_AMOUNT" />
+                <ScalarProperty Name="PAID_OTHER_AMOUNT" ColumnName="PAID_OTHER_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CUSTOMER_PAYMENT_HD">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_CUSTOMER_PAYMENT_HD">
+              <MappingFragment StoreEntitySet="TBL_CUSTOMER_PAYMENT_HD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="OUTSTANDING_PURCHASE_AMOUNT" ColumnName="OUTSTANDING_PURCHASE_AMOUNT" />
+                <ScalarProperty Name="OUTSTANDING_RENT_AMOUNT" ColumnName="OUTSTANDING_RENT_AMOUNT" />
+                <ScalarProperty Name="OUTSTANDING_HANDLING_AMOUNT" ColumnName="OUTSTANDING_HANDLING_AMOUNT" />
+                <ScalarProperty Name="OUTSTANDING_VECHICLE_AMOUNT" ColumnName="OUTSTANDING_VECHICLE_AMOUNT" />
+                <ScalarProperty Name="OUTSTANDING_OTHER_AMOUNT" ColumnName="OUTSTANDING_OTHER_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CUSTOMER_REGISTER">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_CUSTOMER_REGISTER">
+              <MappingFragment StoreEntitySet="TBL_CUSTOMER_REGISTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SHORT_NAME" ColumnName="SHORT_NAME" />
+                <ScalarProperty Name="MOB1" ColumnName="MOB1" />
+                <ScalarProperty Name="MOB2" ColumnName="MOB2" />
+                <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="DEPOSITE" ColumnName="DEPOSITE" />
+                <ScalarProperty Name="AGREEMENT_BILL_NUMER" ColumnName="AGREEMENT_BILL_NUMER" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="REGISTER_DATE" ColumnName="REGISTER_DATE" />
+                <ScalarProperty Name="IS_FLOW_METER_SALED" ColumnName="IS_FLOW_METER_SALED" />
+                <ScalarProperty Name="CLOSE_DATE" ColumnName="CLOSE_DATE" />
+                <ScalarProperty Name="DEPOSITE_RETURENED_AMOUNT" ColumnName="DEPOSITE_RETURENED_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CYLINDER_MASTER">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_CYLINDER_MASTER">
+              <MappingFragment StoreEntitySet="TBL_CYLINDER_MASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CYLINDER_SHORT_NAME" ColumnName="CYLINDER_SHORT_NAME" />
+                <ScalarProperty Name="HSN_CODE" ColumnName="HSN_CODE" />
+                <ScalarProperty Name="RENT_DAYS_SLAB1" ColumnName="RENT_DAYS_SLAB1" />
+                <ScalarProperty Name="RENT_DAYS_SLAB2" ColumnName="RENT_DAYS_SLAB2" />
+                <ScalarProperty Name="SELLING_AMOUNT" ColumnName="SELLING_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CYLINDER_TRACKING">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_CYLINDER_TRACKING">
+              <MappingFragment StoreEntitySet="TBL_CYLINDER_TRACKING">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PURCHASE_ID" ColumnName="PURCHASE_ID" />
+                <ScalarProperty Name="PARENT_CYLINDER_ID" ColumnName="PARENT_CYLINDER_ID" />
+                <ScalarProperty Name="CHALLAN_NUMBER" ColumnName="CHALLAN_NUMBER" />
+                <ScalarProperty Name="CYLINDER_TYPE_ID" ColumnName="CYLINDER_TYPE_ID" />
+                <ScalarProperty Name="CYLINDER_QUANTITY" ColumnName="CYLINDER_QUANTITY" />
+                <ScalarProperty Name="CYLINDER_NUMBER" ColumnName="CYLINDER_NUMBER" />
+                <ScalarProperty Name="OWN_CYLINDER" ColumnName="OWN_CYLINDER" />
+                <ScalarProperty Name="IS_COMPLAINT" ColumnName="IS_COMPLAINT" />
+                <ScalarProperty Name="SALED_TO_CUSTOMER" ColumnName="SALED_TO_CUSTOMER" />
+                <ScalarProperty Name="SALED_TO_CUSTOMER_DATE" ColumnName="SALED_TO_CUSTOMER_DATE" />
+                <ScalarProperty Name="RETURN_FROM_CUSTOMER" ColumnName="RETURN_FROM_CUSTOMER" />
+                <ScalarProperty Name="RETURN_FROM_CUSTOMER_DATE" ColumnName="RETURN_FROM_CUSTOMER_DATE" />
+                <ScalarProperty Name="RETURN_TO_DEALER" ColumnName="RETURN_TO_DEALER" />
+                <ScalarProperty Name="RETURN_TO_DEALER_DATE" ColumnName="RETURN_TO_DEALER_DATE" />
+                <ScalarProperty Name="ACTUAL_DEALER_RETURN" ColumnName="ACTUAL_DEALER_RETURN" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_DEALER_PAYMENT_DT">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_DEALER_PAYMENT_DT">
+              <MappingFragment StoreEntitySet="TBL_DEALER_PAYMENT_DT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DEALER_PAYMENT_ID" ColumnName="DEALER_PAYMENT_ID" />
+                <ScalarProperty Name="PAYMENT_DATE" ColumnName="PAYMENT_DATE" />
+                <ScalarProperty Name="CURRENT_PURCHASE_AMOUNT" ColumnName="CURRENT_PURCHASE_AMOUNT" />
+                <ScalarProperty Name="CURRENT_RENT_AMOUNT" ColumnName="CURRENT_RENT_AMOUNT" />
+                <ScalarProperty Name="CURRENT_HANDLING_AMOUNT" ColumnName="CURRENT_HANDLING_AMOUNT" />
+                <ScalarProperty Name="CURRENT_VECHICLE_AMOUNT" ColumnName="CURRENT_VECHICLE_AMOUNT" />
+                <ScalarProperty Name="CURRENT_OTHER_AMOUNT" ColumnName="CURRENT_OTHER_AMOUNT" />
+                <ScalarProperty Name="PAID_PURCHASE_AMOUNT" ColumnName="PAID_PURCHASE_AMOUNT" />
+                <ScalarProperty Name="PAID_RENT_AMOUNT" ColumnName="PAID_RENT_AMOUNT" />
+                <ScalarProperty Name="PAID_HANDLING_AMOUNT" ColumnName="PAID_HANDLING_AMOUNT" />
+                <ScalarProperty Name="PAID_VECHICLE_AMOUNT" ColumnName="PAID_VECHICLE_AMOUNT" />
+                <ScalarProperty Name="PAID_OTHER_AMOUNT" ColumnName="PAID_OTHER_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_DEALER_PAYMENT_HD">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_DEALER_PAYMENT_HD">
+              <MappingFragment StoreEntitySet="TBL_DEALER_PAYMENT_HD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DEALER_ID" ColumnName="DEALER_ID" />
+                <ScalarProperty Name="OUTSTANDING_PURCHASE_AMOUNT" ColumnName="OUTSTANDING_PURCHASE_AMOUNT" />
+                <ScalarProperty Name="OUTSTANDING_RENT_AMOUNT" ColumnName="OUTSTANDING_RENT_AMOUNT" />
+                <ScalarProperty Name="OUTSTANDING_HANDLING_AMOUNT" ColumnName="OUTSTANDING_HANDLING_AMOUNT" />
+                <ScalarProperty Name="OUTSTANDING_VECHICLE_AMOUNT" ColumnName="OUTSTANDING_VECHICLE_AMOUNT" />
+                <ScalarProperty Name="OUTSTANDING_OTHER_AMOUNT" ColumnName="OUTSTANDING_OTHER_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_OWN_CYLINDER_REGISTER">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_OWN_CYLINDER_REGISTER">
+              <MappingFragment StoreEntitySet="TBL_OWN_CYLINDER_REGISTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CYLINDR_TYPE_ID" ColumnName="CYLINDR_TYPE_ID" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="PURCHASE_DATE" ColumnName="PURCHASE_DATE" />
+                <ScalarProperty Name="LAST_TEST_DATE" ColumnName="LAST_TEST_DATE" />
+                <ScalarProperty Name="NEXT_TEST_DATE" ColumnName="NEXT_TEST_DATE" />
+                <ScalarProperty Name="SALED_TO" ColumnName="SALED_TO" />
+                <ScalarProperty Name="SALED_DATE" ColumnName="SALED_DATE" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PURCHASE_HD">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_PURCHASE_HD">
+              <MappingFragment StoreEntitySet="TBL_PURCHASE_HD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DEALER_ID" ColumnName="DEALER_ID" />
+                <ScalarProperty Name="INVOICE_NUMER" ColumnName="INVOICE_NUMER" />
+                <ScalarProperty Name="BILL_NUMER" ColumnName="BILL_NUMER" />
+                <ScalarProperty Name="PURCHASE_DATE" ColumnName="PURCHASE_DATE" />
+                <ScalarProperty Name="STAFF_ID" ColumnName="STAFF_ID" />
+                <ScalarProperty Name="VECHICLE_ID" ColumnName="VECHICLE_ID" />
+                <ScalarProperty Name="TOTAL_CYLINDER" ColumnName="TOTAL_CYLINDER" />
+                <ScalarProperty Name="VECHICLE_AMOUNT" ColumnName="VECHICLE_AMOUNT" />
+                <ScalarProperty Name="HANDLING_CHARGE" ColumnName="HANDLING_CHARGE" />
+                <ScalarProperty Name="PURCHASE_AMOUNT" ColumnName="PURCHASE_AMOUNT" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PURCHASE_INVOICE_DT">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_PURCHASE_INVOICE_DT">
+              <MappingFragment StoreEntitySet="TBL_PURCHASE_INVOICE_DT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PURCHASE_ID" ColumnName="PURCHASE_ID" />
+                <ScalarProperty Name="PRODUCT_DESCRIPTION" ColumnName="PRODUCT_DESCRIPTION" />
+                <ScalarProperty Name="HSN_CODE" ColumnName="HSN_CODE" />
+                <ScalarProperty Name="TOTAL_CYLNIDER" ColumnName="TOTAL_CYLNIDER" />
+                <ScalarProperty Name="QUATITY" ColumnName="QUATITY" />
+                <ScalarProperty Name="RATE" ColumnName="RATE" />
+                <ScalarProperty Name="PURCHASE_AMOUNT" ColumnName="PURCHASE_AMOUNT" />
+                <ScalarProperty Name="HANDLING_AMOUNT" ColumnName="HANDLING_AMOUNT" />
+                <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SALE_HD">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_SALE_HD">
+              <MappingFragment StoreEntitySet="TBL_SALE_HD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="INVOICE_NUMER" ColumnName="INVOICE_NUMER" />
+                <ScalarProperty Name="BILL_NUMER" ColumnName="BILL_NUMER" />
+                <ScalarProperty Name="SALE_DATE" ColumnName="SALE_DATE" />
+                <ScalarProperty Name="STAFF_ID" ColumnName="STAFF_ID" />
+                <ScalarProperty Name="VECHICLE_ID" ColumnName="VECHICLE_ID" />
+                <ScalarProperty Name="TOTAL_CYLINDER" ColumnName="TOTAL_CYLINDER" />
+                <ScalarProperty Name="VECHICLE_AMOUNT" ColumnName="VECHICLE_AMOUNT" />
+                <ScalarProperty Name="HANDLING_CHARGE" ColumnName="HANDLING_CHARGE" />
+                <ScalarProperty Name="PURCHASE_AMOUNT" ColumnName="PURCHASE_AMOUNT" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SALE_INVOICE_DT">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_SALE_INVOICE_DT">
+              <MappingFragment StoreEntitySet="TBL_SALE_INVOICE_DT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SALE_ID" ColumnName="SALE_ID" />
+                <ScalarProperty Name="CYLINDER_ID" ColumnName="CYLINDER_ID" />
+                <ScalarProperty Name="HANDLING_CHARGE" ColumnName="HANDLING_CHARGE" />
+                <ScalarProperty Name="PURCHASE_AMOUNT" ColumnName="PURCHASE_AMOUNT" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SHOP_DEALER_BANK_DETAILS">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_SHOP_DEALER_BANK_DETAILS">
+              <MappingFragment StoreEntitySet="TBL_SHOP_DEALER_BANK_DETAILS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SHOP_DEALER_ID" ColumnName="SHOP_DEALER_ID" />
+                <ScalarProperty Name="HOLDER" ColumnName="HOLDER" />
+                <ScalarProperty Name="BANK_NAME" ColumnName="BANK_NAME" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="AC_NUMBER" ColumnName="AC_NUMBER" />
+                <ScalarProperty Name="IFSC" ColumnName="IFSC" />
+                <ScalarProperty Name="DEFAULT" ColumnName="DEFAULT" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SHOP_DEALER_REGISTER">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_SHOP_DEALER_REGISTER">
+              <MappingFragment StoreEntitySet="TBL_SHOP_DEALER_REGISTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SHORT_NAME" ColumnName="SHORT_NAME" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="MOB1" ColumnName="MOB1" />
+                <ScalarProperty Name="MOB2" ColumnName="MOB2" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="GST_NUM" ColumnName="GST_NUM" />
+                <ScalarProperty Name="M_LICENCE_NUM1" ColumnName="M_LICENCE_NUM1" />
+                <ScalarProperty Name="M_LICENCE_NUM2" ColumnName="M_LICENCE_NUM2" />
+                <ScalarProperty Name="D_LICENCE_NUM" ColumnName="D_LICENCE_NUM" />
+                <ScalarProperty Name="E_LICENCE_NUM" ColumnName="E_LICENCE_NUM" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="SHOP_OR_DEALER" ColumnName="SHOP_OR_DEALER" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_STAFF_REGISTER">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_STAFF_REGISTER">
+              <MappingFragment StoreEntitySet="TBL_STAFF_REGISTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="MOB1" ColumnName="MOB1" />
+                <ScalarProperty Name="MOB2" ColumnName="MOB2" />
+                <ScalarProperty Name="JOIN_DATE" ColumnName="JOIN_DATE" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_STAFF_REGISTER_DT">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_STAFF_REGISTER_DT">
+              <MappingFragment StoreEntitySet="TBL_STAFF_REGISTER_DT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="STAFF_ID" ColumnName="STAFF_ID" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="PAYMENT" ColumnName="PAYMENT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_VECHICLE_REGISTER">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_VECHICLE_REGISTER">
+              <MappingFragment StoreEntitySet="TBL_VECHICLE_REGISTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="PURCHASE_DATE" ColumnName="PURCHASE_DATE" />
+                <ScalarProperty Name="TEST_DATE" ColumnName="TEST_DATE" />
+                <ScalarProperty Name="INSURANCE_DATE" ColumnName="INSURANCE_DATE" />
+                <ScalarProperty Name="TAX_DATE" ColumnName="TAX_DATE" />
+                <ScalarProperty Name="POLUTION_DATE" ColumnName="POLUTION_DATE" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_VECHICLE_REGISTER_DT">
+            <EntityTypeMapping TypeName="QCONZModel.TBL_VECHICLE_REGISTER_DT">
+              <MappingFragment StoreEntitySet="TBL_VECHICLE_REGISTER_DT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VECHICLE_ID" ColumnName="VECHICLE_ID" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="PAYMENT" ColumnName="PAYMENT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCustomers">
+            <EntityTypeMapping TypeName="QCONZModel.tblCustomer">
+              <MappingFragment StoreEntitySet="tblCustomers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CUSTOMERCODE" ColumnName="CUSTOMERCODE" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="OFFICENAME" ColumnName="OFFICENAME" />
+                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+                <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="PHONE_1" ColumnName="PHONE_1" />
+                <ScalarProperty Name="PHONE_2" ColumnName="PHONE_2" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+                <ScalarProperty Name="LAT" ColumnName="LAT" />
+                <ScalarProperty Name="LNG" ColumnName="LNG" />
+                <ScalarProperty Name="ADDED_DATE" ColumnName="ADDED_DATE" />
+                <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+                <ScalarProperty Name="ARCHIVE" ColumnName="ARCHIVE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEmergencies">
+            <EntityTypeMapping TypeName="QCONZModel.tblEmergency">
+              <MappingFragment StoreEntitySet="tblEmergency">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="LAT" ColumnName="LAT" />
+                <ScalarProperty Name="LNG" ColumnName="LNG" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblNotifications">
+            <EntityTypeMapping TypeName="QCONZModel.tblNotification">
+              <MappingFragment StoreEntitySet="tblNotification">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+                <ScalarProperty Name="DEVICEID" ColumnName="DEVICEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrganizations">
+            <EntityTypeMapping TypeName="QCONZModel.tblOrganization">
+              <MappingFragment StoreEntitySet="tblOrganizations">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="CONTACTNAME" ColumnName="CONTACTNAME" />
+                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+                <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="PHONE_1" ColumnName="PHONE_1" />
+                <ScalarProperty Name="PHONE_2" ColumnName="PHONE_2" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+                <ScalarProperty Name="LAT" ColumnName="LAT" />
+                <ScalarProperty Name="LNG" ColumnName="LNG" />
+                <ScalarProperty Name="ADDED_DATE" ColumnName="ADDED_DATE" />
+                <ScalarProperty Name="ARCHIVE" ColumnName="ARCHIVE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRoasters">
+            <EntityTypeMapping TypeName="QCONZModel.tblRoaster">
+              <MappingFragment StoreEntitySet="tblRoaster">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+                <ScalarProperty Name="FINISHTIME" ColumnName="FINISHTIME" />
+                <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+                <ScalarProperty Name="ARCHIVE" ColumnName="ARCHIVE" />
+                <ScalarProperty Name="OVERRIDE" ColumnName="OVERRIDE" />
+                <ScalarProperty Name="OVERIDEDETAIL" ColumnName="OVERIDEDETAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStopTrackings">
+            <EntityTypeMapping TypeName="QCONZModel.tblStopTracking">
+              <MappingFragment StoreEntitySet="tblStopTracking">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="HOURS" ColumnName="HOURS" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTeamRoasters">
+            <EntityTypeMapping TypeName="QCONZModel.tblTeamRoaster">
+              <MappingFragment StoreEntitySet="tblTeamRoaster">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEAMID" ColumnName="TEAMID" />
+                <ScalarProperty Name="ROASTERID" ColumnName="ROASTERID" />
+                <ScalarProperty Name="ARCHIVE" ColumnName="ARCHIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTeams">
+            <EntityTypeMapping TypeName="QCONZModel.tblTeam">
+              <MappingFragment StoreEntitySet="tblTeams">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEAMNAME" ColumnName="TEAMNAME" />
+                <ScalarProperty Name="TEAMDESC" ColumnName="TEAMDESC" />
+                <ScalarProperty Name="TEAMCREATED" ColumnName="TEAMCREATED" />
+                <ScalarProperty Name="TEAMSTATUS" ColumnName="TEAMSTATUS" />
+                <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserLogs">
+            <EntityTypeMapping TypeName="QCONZModel.tblUserLog">
+              <MappingFragment StoreEntitySet="tblUserLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="LAT" ColumnName="LAT" />
+                <ScalarProperty Name="LNG" ColumnName="LNG" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserMasters">
+            <EntityTypeMapping TypeName="QCONZModel.tblUserMaster">
+              <MappingFragment StoreEntitySet="tblUserMaster">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERTYPE" ColumnName="USERTYPE" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERSTATUS" ColumnName="USERSTATUS" />
+                <ScalarProperty Name="USERTEAMID" ColumnName="USERTEAMID" />
+                <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+                <ScalarProperty Name="USERTOKEN" ColumnName="USERTOKEN" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CELLPHONE" ColumnName="CELLPHONE" />
+                <ScalarProperty Name="WORKINGDAYS" ColumnName="WORKINGDAYS" />
+                <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+                <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+                <ScalarProperty Name="EMERGENCYCONTACT" ColumnName="EMERGENCYCONTACT" />
+                <ScalarProperty Name="EMERGENCYCONTACTNO" ColumnName="EMERGENCYCONTACTNO" />
+                <ScalarProperty Name="ONLINESTATUS" ColumnName="ONLINESTATUS" />
+                <ScalarProperty Name="ONLINESTATUSCHANGETIME" ColumnName="ONLINESTATUSCHANGETIME" />
+                <ScalarProperty Name="ISCONTRACTOR" ColumnName="ISCONTRACTOR" />
+                <ScalarProperty Name="BASE_LATITUDE" ColumnName="BASE_LATITUDE" />
+                <ScalarProperty Name="BASE_LONGITUDE" ColumnName="BASE_LONGITUDE" />
+                <ScalarProperty Name="DEFAULT_GROUP" ColumnName="DEFAULT_GROUP" />
+                <ScalarProperty Name="ALLOW_NOTFICATION" ColumnName="ALLOW_NOTFICATION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserRoasters">
+            <EntityTypeMapping TypeName="QCONZModel.tblUserRoaster">
+              <MappingFragment StoreEntitySet="tblUserRoaster">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="ROASTERID" ColumnName="ROASTERID" />
+                <ScalarProperty Name="ARCHIVE" ColumnName="ARCHIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserTeams">
+            <EntityTypeMapping TypeName="QCONZModel.tblUserTeam">
+              <MappingFragment StoreEntitySet="tblUserTeam">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="TEAMID" ColumnName="TEAMID" />
+                <ScalarProperty Name="ARCHIVE" ColumnName="ARCHIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

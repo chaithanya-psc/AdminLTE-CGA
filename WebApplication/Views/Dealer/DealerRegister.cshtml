@@ -1,0 +1,224 @@
+﻿
+
+@{
+    ViewBag.Title = "Dealer Details";
+    ViewBag.SubTitle = "Team Map";
+}
+
+@section Menu {
+    @Scripts.Render("~/Scripts/Bundle/Dealer/Dealer/menu")
+}
+
+@Styles.Render("~/AdminLTE/Bundle/plugins/daterangepicker/css")
+@Styles.Render("~/AdminLTE/Bundle/plugins/colorpicker/css")
+@Styles.Render("~/AdminLTE/Bundle/plugins/timepicker/css")
+@Styles.Render("~/AdminLTE/Bundle/plugins/select2/css")
+@Styles.Render("~/AdminLTE/Bundle/dist/css")
+@Styles.Render("~/AdminLTE/Bundle/dist/css/skins")
+@Styles.Render("~/Styles/Bundle/Elements/Modals")
+<style>
+    .error {
+        color: red
+    }
+</style>
+<div class="box box-default">
+    <div class="box-header with-border">
+        @*<h3 class="box-title">Select2</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>*@
+    </div>
+    <form id="form1" name="form1">
+        <div class="box-body">
+            <div class="row" style="  width: 25%;height:15%" hidden>
+                @*<div class="col-md-6">
+                        <div class="form-group">
+                            <div class="form-group">
+
+                                <img style="width: 125px;height:125px;display:block; background: url(../../Image/imageadd.jpg)  ;border:solid; object-fit: contain" id="blah" src="@Model.Image"   />
+                            </div>
+                            <label for="exampleInputEmail1">Dealer logo</label>
+                            <input type='file' id="imgInp" />
+                        </div>
+                    </div>*@
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Dealer</label>
+                            <input type="text" class="form-control required" id="Dealer" tabindex="1" name="Dealer" value="@Model.Name" placeholder="Enter Dealer">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <input type="text" class="form-control" id="Address" name="Address" tabindex="3" value="@Model.Address" placeholder="Enter address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mobile Number 2</label>
+                            <input type="text" class="form-control" id="Mob2" tabindex="8" name="Mob2" value="@Model.Mob2" placeholder="Enter Enter second Mobile Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Remarks</label>
+                            <input type="text" class="form-control" id="Remarks" tabindex="10" name="Remarks" value="@Model.Remarks" placeholder="Enter Remarks">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Short Name</label>
+                            <input type="text" class="form-control" id="ShortName" tabindex="2" name="ShortName" value="@Model.ShortName" placeholder="Enter Short Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">GST Num</label>
+                            <input type="text" class="form-control" id="GSTNum" tabindex="4" name="GSTNum" value="@Model.GST_Num" placeholder="Enter GST Num">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mobile Number 1</label>
+                            <input type="text" class="form-control" id="Mob1" name="Mob1" tabindex="6" value="@Model.Mob1" placeholder="Enter first Mobile Number">
+                        </div>
+                    </div>
+                   
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="box-footer">
+        <button id="First" class="btn btn-primary">Save</button>
+        <button id="Second" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Save</button>
+    </div>
+
+    @*<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Launch demo modal
+        </button>*@
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    Save changes?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="savebtn" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/AdminLTE/Bundle/plugins/select2/js")
+    @Scripts.Render("~/AdminLTE/Bundle/plugins/momentjs/js")
+    @Scripts.Render("~/AdminLTE/Bundle/plugins/colorpicker/js")
+    @Scripts.Render("~/AdminLTE/Bundle/plugins/timepicker/js")
+    @Scripts.Render("~/AdminLTE/Bundle/plugins/icheck/js")
+    @Scripts.Render("~/Scripts/Bundle/Company/Advanced")
+    @Scripts.Render("~/AdminLTE/Bundle/plugins/jquery-validate/js")
+    <script type="text/javascript">
+        $('#First').click(function(){
+            if( !$("#form1").valid())
+            {
+                return
+            }
+            else{
+                $('#Second').click()
+            }
+        })
+
+
+            $(document).ready(function () {
+
+                $('#Second').hide();
+                $("#form1").validate({
+                    rules: {
+                        Name: {
+                            required: true
+                        },
+                        ShortName: {
+                            required: true
+                        },
+                        Email: {
+                            email: true
+                        },
+                        Mob1:{
+                            required:true
+                        },
+                        GST_Num:{
+                            required:true
+                        }
+                    },
+                    messages: {
+                        Name: "Name is required",
+                        ShortName: "Short Name is required",
+                        Email:"Please enter a valid email address",
+                        Mob1:"Mobile Number is required",
+                        GST_Num:"GST_Num is required"
+                    }
+                });
+                $('#savebtn').click(function(){
+                    if( !$("#form1").valid())
+                    {
+                        $('#myModal').modal('hide');
+                        return
+                    }
+                    var data = {
+                        Id: @Model.DealerDetails.Id,
+                        Address: $('#Address').val(),
+                        GST_Num: $('#GST_Num').val(),
+                        Mob1: $('#Mob1').val(),
+                        Mob2: $('#Mob2').val(),
+                        ShortName: $('#ShortName').val(),
+                        Email: $('#Email').val(),
+                        M_Licence1: $('#M_Licence1').val(),
+                        M_Licence2: $('#M_Licence2').val(),
+                        Remarks: $('#Remarks').val(),
+                        D_Licence: $('#D_Licence').val(),
+                        E_Licence: $('#E_Licence').val(),
+                        Shop_Dealer: "SH"
+                    }
+
+                    var url='@Url.Action("SaveDetails", "Dealer")';
+                    $.ajax({
+                        type:"POST",
+                        url:url,
+                        data: JSON.stringify(data) ,
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function () {
+                            window.location.href= '@Url.Action("DealerReport", "Dealer")';
+                        },
+                        error: function () {
+                            alert("Error while inserting data");
+                        }
+                    })
+                });
+            });
+    </script>
+
+}
+
+
+
+
+
