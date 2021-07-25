@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F49DC7B7-E7A4-45A9-8599-5BDCA9981A28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QconzLocateDAL</RootNamespace>
+    <AssemblyName>QconzLocateDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiQconzRepositoryInterface\ILoginRepository.cs" />
+    <Compile Include="ApiQconzRepositoryInterface\IUserLocationRepository.cs" />
+    <Compile Include="ApiQconzRepositoryInterface\IUserWorkRepository.cs" />
+    <Compile Include="ApiQconzRepository\LoginRepository.cs" />
+    <Compile Include="ApiQconzRepository\UserLocationRepository.cs" />
+    <Compile Include="ApiQconzRepository\UserWorkRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QconzModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QconzModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QconzModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QconzModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QconzModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="QConzRepositoryInterface\IAgencyRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\ICompanyRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\ICustomerRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\ICylinderRegisterRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\IDealerRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\IEmergencyCallRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\ILocationRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\IOwnCylinderRegisterRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\IRosterRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\IStaffRegisterRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\IStopTrackingRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\ITeamRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\IUserRepository.cs" />
+    <Compile Include="QConzRepositoryInterface\IVechicleRegisterRepository.cs" />
+    <Compile Include="QConzRepositoryModel\AgencyModel.cs" />
+    <Compile Include="QConzRepositoryModel\CommonModel.cs" />
+    <Compile Include="QConzRepositoryModel\CompanyModel.cs" />
+    <Compile Include="QConzRepositoryModel\CustomerModel.cs" />
+    <Compile Include="QConzRepositoryModel\CylinderRegisterModel.cs" />
+    <Compile Include="QConzRepositoryModel\DealerModel.cs" />
+    <Compile Include="QConzRepositoryModel\EmergencyCallModel.cs" />
+    <Compile Include="QConzRepositoryModel\LocationModel.cs" />
+    <Compile Include="QConzRepositoryModel\LoginModel.cs" />
+    <Compile Include="QConzRepositoryModel\OwnCylinderRegisterModel.cs" />
+    <Compile Include="QConzRepositoryModel\RosterModel.cs" />
+    <Compile Include="QConzRepositoryModel\StaffRegisterModel.cs" />
+    <Compile Include="QConzRepositoryModel\StopTrackingModel.cs" />
+    <Compile Include="QConzRepositoryModel\TeamModel.cs" />
+    <Compile Include="QConzRepositoryModel\UserAuthRepositoryModel.cs" />
+    <Compile Include="QConzRepositoryModel\UserLocationModel.cs" />
+    <Compile Include="QConzRepositoryModel\UserModel.cs" />
+    <Compile Include="QConzRepositoryModel\VechicleRegisterModel.cs" />
+    <Compile Include="QConzRepository\AgencyRepository.cs" />
+    <Compile Include="QConzRepository\CommonRepository.cs" />
+    <Compile Include="QConzRepository\CompanyRepository.cs" />
+    <Compile Include="QConzRepository\CustomerRepository.cs" />
+    <Compile Include="QConzRepository\CylinderRegisterRepository.cs" />
+    <Compile Include="QConzRepository\DealerRepository.cs" />
+    <Compile Include="QConzRepository\EmergencyCallRepository.cs" />
+    <Compile Include="QConzRepository\LocationRepository.cs" />
+    <Compile Include="QConzRepository\OwnCylinderRegisterRepository.cs" />
+    <Compile Include="QConzRepository\RosterRepository.cs" />
+    <Compile Include="QConzRepository\StaffRegisterRepository.cs" />
+    <Compile Include="QConzRepository\StopTrackingRepository.cs" />
+    <Compile Include="QConzRepository\TeamRepository.cs" />
+    <Compile Include="QConzRepository\UserRepository.cs" />
+    <Compile Include="QConzRepository\VechicleRegisterRepository.cs" />
+    <Compile Include="tblCustomer.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmergency.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNotification.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOrganization.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRoaster.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStopTracking.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTeam.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTeamRoaster.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserLog.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserMaster.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserRoaster.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserTeam.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_CUSTOMER_PAYMENT_DT.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_CUSTOMER_PAYMENT_HD.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_CUSTOMER_REGISTER.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_CYLINDER_MASTER.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_CYLINDER_TRACKING.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_DEALER_PAYMENT_DT.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_DEALER_PAYMENT_HD.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_OWN_CYLINDER_REGISTER.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_PURCHASE_HD.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_PURCHASE_INVOICE_DT.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_SALE_HD.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_SALE_INVOICE_DT.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_SHOP_DEALER_BANK_DETAILS.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_SHOP_DEALER_REGISTER.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_STAFF_REGISTER.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_STAFF_REGISTER_DT.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_VECHICLE_REGISTER.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_VECHICLE_REGISTER_DT.cs">
+      <DependentUpon>QconzModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="QconzModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QconzModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QconzModel.edmx.diagram">
+      <DependentUpon>QconzModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QconzModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QconzModel.edmx</DependentUpon>
+      <LastGenOutput>QconzModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QconzModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QconzModel.edmx</DependentUpon>
+      <LastGenOutput>QconzModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

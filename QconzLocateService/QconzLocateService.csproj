@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A54C694C-BCDA-430C-9E92-BD0BC4A97845}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QconzLocateService</RootNamespace>
+    <AssemblyName>QconzLocateService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiQconzLocateInterface\IUserLocationService.cs" />
+    <Compile Include="ApiQconzLocateInterface\ILoginService.cs" />
+    <Compile Include="ApiQconzLocateService\UserLocationService.cs" />
+    <Compile Include="ApiQconzLocateService\LoginService.cs" />
+    <Compile Include="Models\AgencyServiceModel.cs" />
+    <Compile Include="Models\ClientTokenServiceModel.cs" />
+    <Compile Include="Models\CommonServiceModel.cs" />
+    <Compile Include="Models\CompanyServiceModel.cs" />
+    <Compile Include="Models\CustomerServiceModel.cs" />
+    <Compile Include="Models\CylinderRegisterServiceModel.cs" />
+    <Compile Include="Models\DealerServiceModel.cs" />
+    <Compile Include="Models\EmergencyCallServiceModel.cs" />
+    <Compile Include="Models\OwnCylinderRegisterServiceModel.cs" />
+    <Compile Include="Models\StaffRegisterServiceModel.cs" />
+    <Compile Include="Models\VechicleRegisterServiceModel.cs" />
+    <Compile Include="QconzLocateInterface\IStaffRegisterService.cs" />
+    <Compile Include="QconzLocateInterface\IVechicleRegisterService.cs" />
+    <Compile Include="Models\LocationServiceModel.cs" />
+    <Compile Include="Models\LoginServiceModel.cs" />
+    <Compile Include="Models\RosterServiceModel.cs" />
+    <Compile Include="Models\StopTrackingServiceModel.cs" />
+    <Compile Include="Models\TeamServiceModel.cs" />
+    <Compile Include="Models\TokenServiceModel.cs" />
+    <Compile Include="Models\UserAuthServiceModel.cs" />
+    <Compile Include="Models\UserLocationServiceModel.cs" />
+    <Compile Include="Models\UserServiceModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QconzLocateInterface\IAgencyService.cs" />
+    <Compile Include="QconzLocateInterface\ICompanyService.cs" />
+    <Compile Include="QconzLocateInterface\ICustomerService.cs" />
+    <Compile Include="QconzLocateInterface\ICylinderRegisterService.cs" />
+    <Compile Include="QconzLocateInterface\IDealerService.cs" />
+    <Compile Include="QconzLocateInterface\IEmergencyCallService.cs" />
+    <Compile Include="QconzLocateInterface\ILocationService.cs" />
+    <Compile Include="QconzLocateInterface\IOwnCylinderRegisterService.cs" />
+    <Compile Include="QconzLocateInterface\IRosterService.cs" />
+    <Compile Include="QconzLocateInterface\IStopTrackingService.cs" />
+    <Compile Include="QconzLocateInterface\ITeamService.cs" />
+    <Compile Include="QconzLocateInterface\IUserService.cs" />
+    <Compile Include="ApiQconzLocateInterface\IUserWorkService.cs" />
+    <Compile Include="QconzLocateService\AgencyService.cs" />
+    <Compile Include="QconzLocateService\CommonService.cs" />
+    <Compile Include="QconzLocateService\CompanyService.cs" />
+    <Compile Include="QconzLocateService\CustomerService.cs" />
+    <Compile Include="QconzLocateService\CylinderRegisterService.cs" />
+    <Compile Include="QconzLocateService\DealerService.cs" />
+    <Compile Include="QconzLocateService\EmergencyCallService.cs" />
+    <Compile Include="QconzLocateService\LocationService.cs" />
+    <Compile Include="QconzLocateService\OwnCylinderRegisterService.cs" />
+    <Compile Include="QconzLocateService\RosterService.cs" />
+    <Compile Include="QconzLocateService\StaffRegisterService.cs" />
+    <Compile Include="QconzLocateService\StopTrackingService.cs" />
+    <Compile Include="QconzLocateService\TeamService.cs" />
+    <Compile Include="QconzLocateService\UserService.cs" />
+    <Compile Include="ApiQconzLocateService\UserWorkService.cs" />
+    <Compile Include="QconzLocateService\VechicleRegisterService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QconzLocateDAL\QconzLocateDAL.csproj">
+      <Project>{f49dc7b7-e7a4-45a9-8599-5bdca9981a28}</Project>
+      <Name>QconzLocateDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
