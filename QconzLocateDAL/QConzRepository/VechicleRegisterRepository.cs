@@ -87,7 +87,7 @@ namespace QconzLocateDAL.QConzRepository
                     y.TEST_DATE = c.TestDate;
                     y.PURCHASE_DATE = c.RegistratioDate;
                     y.POLUTION_DATE = c.PolutionDate;
-                        y.REMARKS = c.Remarks  
+                    y.REMARKS = c.Remarks;  
                 }
                 entity.SaveChanges();
             }
