@@ -96,7 +96,9 @@ namespace QconzLocateDAL.QConzRepository
                         D_LICENCE_NUM = c.D_Licence,
                         E_LICENCE_NUM = c.E_Licence,
                         EMAIL = c.Email,
-                        SHOP_OR_DEALER = "SH"
+                        SHOP_OR_DEALER = "SH",
+                        CREATED_ON = DateTime.Now,
+                        MODIFIED_ON =DateTime.Now
                     };
                     entity.TBL_SHOP_DEALER_REGISTER.Add(Agency);
                 }
@@ -116,6 +118,7 @@ namespace QconzLocateDAL.QConzRepository
                         y.E_LICENCE_NUM = c.E_Licence;
                     y.EMAIL = c.Email;
                     y.SHOP_OR_DEALER = c.Shop_Dealer;
+                    y.MODIFIED_ON = DateTime.Now;
                 }
                 entity.SaveChanges();
             }
@@ -150,7 +153,10 @@ namespace QconzLocateDAL.QConzRepository
                         D_LICENCE_NUM = c.D_Licence,
                         E_LICENCE_NUM = c.E_Licence,
                         EMAIL = c.Email,
-                        SHOP_OR_DEALER = "SH"
+                        SHOP_OR_DEALER = "SH",
+
+                        CREATED_ON = DateTime.Now,
+                        MODIFIED_ON = DateTime.Now
                     };
                     entity.TBL_SHOP_DEALER_REGISTER.Add(Agency);
                 }

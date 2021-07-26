@@ -25,18 +25,13 @@ namespace QconzLocateService.QconzLocateService
                 {
                     Id = c.Id,
                     Name = c.Name,
-                    Address = c.Address,
-                    ShortName = c.ShortName,
+                    Adrees = c.Adrees,
+
                     Mob1 = c.Mob1,
                     Mob2 = c.Mob2,
-                    GST_Num = c.GST_Num,
+
                     Remarks = c.Remarks,
-                    M_Licence1 = c.M_Licence1,
-                    M_Licence2 = c.M_Licence2,
-                    D_Licence = c.D_Licence,
-                    E_Licence = c.E_Licence,
-                    Email = c.Email,
-                    Shop_Dealer = c.Shop_Dealer
+                    JoinDate = c.JoinDate
                 }).ToList();
             }
             catch (Exception ex)
@@ -56,18 +51,13 @@ namespace QconzLocateService.QconzLocateService
                 {
                     Id = c.Id,
                     Name = c.Name,
-                    Address = c.Address,
-                    ShortName = c.ShortName,
+                    Adrees = c.Adrees,
+
                     Mob1 = c.Mob1,
                     Mob2 = c.Mob2,
-                    GST_Num = c.GST_Num,
+
                     Remarks = c.Remarks,
-                    M_Licence1 = c.M_Licence1,
-                    M_Licence2 = c.M_Licence2,
-                    D_Licence = c.D_Licence,
-                    E_Licence = c.E_Licence,
-                    Email = c.Email,
-                    Shop_Dealer = c.Shop_Dealer
+                    JoinDate = c.JoinDate
                 };
             }
             catch
@@ -83,18 +73,13 @@ namespace QconzLocateService.QconzLocateService
             {
                 Id = StaffRegisterDetails.Id,
                 Name = StaffRegisterDetails.Name,
-                Address = StaffRegisterDetails.Address,
-                ShortName = StaffRegisterDetails.ShortName,
+                Adrees = StaffRegisterDetails.Adrees,
+
                 Mob1 = StaffRegisterDetails.Mob1,
                 Mob2 = StaffRegisterDetails.Mob2,
-                GST_Num = StaffRegisterDetails.GST_Num,
+
                 Remarks = StaffRegisterDetails.Remarks,
-                M_Licence1 = StaffRegisterDetails.M_Licence1,
-                M_Licence2 = StaffRegisterDetails.M_Licence2,
-                D_Licence = StaffRegisterDetails.D_Licence,
-                E_Licence = StaffRegisterDetails.E_Licence,
-                Email = StaffRegisterDetails.Email,
-                Shop_Dealer = StaffRegisterDetails.Shop_Dealer
+                JoinDate = StaffRegisterDetails.JoinDate
             };
             _IStaffRegisterRepository.SaveStaffRegisterDetails(StaffRegister);
         }
@@ -106,18 +91,13 @@ namespace QconzLocateService.QconzLocateService
             {
                 Id = c.Id,
                 Name = c.Name,
-                Address = c.Address,
-                ShortName = c.ShortName,
+                Adrees = c.Adrees,
+
                 Mob1 = c.Mob1,
                 Mob2 = c.Mob2,
-                GST_Num = c.GST_Num,
+
                 Remarks = c.Remarks,
-                M_Licence1 = c.M_Licence1,
-                M_Licence2 = c.M_Licence2,
-                D_Licence = c.D_Licence,
-                E_Licence = c.E_Licence,
-                Email = c.Email,
-                Shop_Dealer = c.Shop_Dealer
+                JoinDate = c.JoinDate
             }).ToList();
             _IStaffRegisterRepository.SaveBulkStaffRegisterDetails(StaffRegister);
         }
