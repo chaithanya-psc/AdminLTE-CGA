@@ -27,7 +27,7 @@ namespace QconzLocateService.QconzLocateService
                     Number = c.Number,
                     InsuranceDate = c.InsuranceDate,
                     TestDate = c.TestDate,
-                    RegistratioDate = c.RegistratioDate,
+                    RegisterDate = c.RegistratioDate,
                     PolutionDate = c.PolutionDate,
                     Remarks = c.Remarks
                    
@@ -52,7 +52,7 @@ namespace QconzLocateService.QconzLocateService
                     Number = c.Number,
                     InsuranceDate = c.InsuranceDate,
                     TestDate = c.TestDate,
-                    RegistratioDate = c.RegistratioDate,
+                    RegisterDate = c.RegistratioDate,
                     PolutionDate = c.PolutionDate,
                     Remarks = c.Remarks
                 };
@@ -72,7 +72,7 @@ namespace QconzLocateService.QconzLocateService
                 Number = VechicleRegisterDetails.Number,
                 InsuranceDate = VechicleRegisterDetails.InsuranceDate,
                 TestDate = VechicleRegisterDetails.TestDate,
-                RegistratioDate = VechicleRegisterDetails.RegistratioDate,
+                RegistratioDate = VechicleRegisterDetails.RegisterDate,
                 PolutionDate = VechicleRegisterDetails.PolutionDate,
                 Remarks = VechicleRegisterDetails.Remarks
             };
@@ -88,7 +88,7 @@ namespace QconzLocateService.QconzLocateService
                 Number = c.Number,
                 InsuranceDate = c.InsuranceDate,
                 TestDate = c.TestDate,
-                RegistratioDate = c.RegistratioDate,
+                RegistratioDate = c.RegisterDate,
                 PolutionDate = c.PolutionDate,
                 Remarks = c.Remarks
             }).ToList();

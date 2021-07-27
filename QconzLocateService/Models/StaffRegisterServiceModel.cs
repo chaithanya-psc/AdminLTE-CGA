@@ -10,7 +10,7 @@ namespace QconzLocateService.Models
     {
         public Int64 Id { get; set; }
         public string Name { get; set; }
-        public string Adrees { get; set; }
+        public string Address { get; set; }
         public string Mob1 { get; set; }
         public string Mob2 { get; set; }
         public DateTime JoinDate { get; set; }

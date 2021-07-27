@@ -23,7 +23,7 @@ namespace QconzLocateDAL.QConzRepository
                 {
                     Id = c.ID,
                     Name = c.NAME,
-                    Adrees = c.ADDRESS,
+                    Address = c.ADDRESS,
                    
                     Mob1 = c.MOB1,
                     Mob2 = c.MOB2,
@@ -50,7 +50,7 @@ namespace QconzLocateDAL.QConzRepository
                          {
                              Id = c.ID,
                              Name = c.NAME,
-                             Adrees = c.ADDRESS,
+                             Address = c.ADDRESS,
 
                              Mob1 = c.MOB1,
                              Mob2 = c.MOB2,
@@ -75,7 +75,7 @@ namespace QconzLocateDAL.QConzRepository
                     var StaffRegister = new TBL_STAFF_REGISTER()
                     {
                         NAME = c.Name,
-                        ADDRESS = c.Adrees,
+                        ADDRESS = c.Address,
                         MOB1 = c.Mob1,
                         MOB2 = c.Mob2,
                         REMARKS = c.Remarks,
@@ -89,7 +89,7 @@ namespace QconzLocateDAL.QConzRepository
                 {
                     var y = entity.TBL_STAFF_REGISTER.FirstOrDefault(t => t.ID == c.Id);
                     y.NAME = c.Name;
-                    y.ADDRESS = c.Adrees;
+                    y.ADDRESS = c.Address;
                     y.MOB1 = c.Mob1;
                     y.MOB2 = c.Mob2;
                     y.REMARKS = c.Remarks;
@@ -120,7 +120,7 @@ namespace QconzLocateDAL.QConzRepository
                     var StaffRegister = new TBL_STAFF_REGISTER()
                     {
                         NAME = c.Name,
-                        ADDRESS = c.Adrees,
+                        ADDRESS = c.Address,
                         MOB1 = c.Mob1,
                         MOB2 = c.Mob2,
                         REMARKS = c.Remarks,

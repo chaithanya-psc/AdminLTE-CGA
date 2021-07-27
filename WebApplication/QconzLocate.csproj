@@ -201,11 +201,13 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RosterController.cs" />
     <Compile Include="Controllers\SessionExpireFilterAttribute.cs" />
+    <Compile Include="Controllers\StaffRegisterController.cs" />
     <Compile Include="Controllers\StopTrackingController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UserLocationController.cs" />
     <Compile Include="Controllers\UserWorkController.cs" />
+    <Compile Include="Controllers\VechicleRegisterController.cs" />
     <Compile Include="DAL\Repository.cs" />
     <Compile Include="DAL\User.cs" />
     <Compile Include="Extensions\ClaimsExtensions.cs" />
@@ -433,6 +435,7 @@
     <Content Include="Content\typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Image\chaithanyagasagencylogo.jpg" />
     <Content Include="Image\imageadd.jpg" />
     <Content Include="Image\QCONZ.jpg" />
     <Content Include="Scripts\Account\Login.js" />
@@ -563,11 +566,16 @@
     <Content Include="Views\Agency\AgencyRegister.cshtml" />
     <Content Include="Views\Dealer\DealerList.cshtml" />
     <Content Include="Views\Dealer\DealerRegister.cshtml" />
+    <Content Include="Views\CylinderRegister\CylinderRegisterList.cshtml" />
+    <Content Include="Views\CylinderRegister\CylinderRegisterRegister.cshtml" />
+    <Content Include="Views\StaffRegister\StaffRegisterList.cshtml" />
+    <Content Include="Views\StaffRegister\StaffRegisterRegister.cshtml" />
+    <Content Include="Views\VechicleRegister\VechicleRegisterList.cshtml" />
+    <Content Include="Views\VechicleRegister\VechicleRegisterRegister.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\images\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CylinderRegister\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

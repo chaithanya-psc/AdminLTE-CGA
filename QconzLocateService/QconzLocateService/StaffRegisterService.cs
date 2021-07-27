@@ -25,7 +25,7 @@ namespace QconzLocateService.QconzLocateService
                 {
                     Id = c.Id,
                     Name = c.Name,
-                    Adrees = c.Adrees,
+                    Address = c.Address,
 
                     Mob1 = c.Mob1,
                     Mob2 = c.Mob2,
@@ -51,7 +51,7 @@ namespace QconzLocateService.QconzLocateService
                 {
                     Id = c.Id,
                     Name = c.Name,
-                    Adrees = c.Adrees,
+                    Address = c.Address,
 
                     Mob1 = c.Mob1,
                     Mob2 = c.Mob2,
@@ -73,7 +73,7 @@ namespace QconzLocateService.QconzLocateService
             {
                 Id = StaffRegisterDetails.Id,
                 Name = StaffRegisterDetails.Name,
-                Adrees = StaffRegisterDetails.Adrees,
+                Address = StaffRegisterDetails.Address,
 
                 Mob1 = StaffRegisterDetails.Mob1,
                 Mob2 = StaffRegisterDetails.Mob2,
@@ -91,7 +91,7 @@ namespace QconzLocateService.QconzLocateService
             {
                 Id = c.Id,
                 Name = c.Name,
-                Adrees = c.Adrees,
+                Address = c.Address,
 
                 Mob1 = c.Mob1,
                 Mob2 = c.Mob2,

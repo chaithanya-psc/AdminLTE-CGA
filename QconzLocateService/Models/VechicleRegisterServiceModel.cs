@@ -10,7 +10,7 @@ namespace QconzLocateService.Models
     {
         public Int64 Id { get; set; }
         public string Number { get; set; }
-        public DateTime? RegistratioDate { get; set; }
+        public DateTime? RegisterDate { get; set; }
         public DateTime? PolutionDate { get; set; }
         public DateTime? InsuranceDate { get; set; }
         public DateTime? TestDate { get; set; }
