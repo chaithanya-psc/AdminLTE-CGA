@@ -15,30 +15,29 @@ namespace QconzLocateService.QconzLocateService
     {
         private ICustomerRepository _ICustomerRepository = new CustomerRepository();
         //Get all companies
-        public List<CustomerServiceModel> GetAllCustomer(int CompanyId,string Status)
+        public List<CustomerServiceModel> GetAllCustomer(string Status)
         {
             try
             {
-                var y = _ICustomerRepository.GetAllCustomer(CompanyId,Status);
+                var y = _ICustomerRepository.GetAllCustomer(Status);
                 return y.Select(c => new CustomerServiceModel
                 {
                     Id = c.Id,
-                    Address1 = c.Address1,
-                    Address2 = c.Address2,
-                    AddedDate=c.AddedDate,
-                    CompanyId=c.CompanyId,
-                    City=c.City,
-                    CustomerCode=c.CustomerCode,
-                    FirstName=c.FirstName,
-                    LastName=c.LastName,
-                    OfficeName=c.OfficeName,
-                    Email = c.Email,
-                    Lat = c.Lat,
-                    Lng = c.Lng,
-                    Phone1 = c.Phone1,
-                    Phone2 = c.Phone2,
-                    Website = c.Website,
-                    ZipCode = c.ZipCode
+                    NAME = c.NAME,
+                    SHORT_NAME = c.SHORT_NAME,
+                    MOB1 = c.MOB1,
+                    MOB2 = c.MOB2,
+                    EMAIL_ID = c.EMAIL_ID,
+                    ADDRESS = c.ADDRESS,
+                    DEPOSITE = c.DEPOSITE,
+                    AGREEMENT_BILL_NUMER = c.AGREEMENT_BILL_NUMER,
+                    ACTIVE = c.ACTIVE,
+                    REGISTER_DATE = c.REGISTER_DATE,
+                    IS_FLOW_METER_SALED = c.IS_FLOW_METER_SALED,
+                    CLOSE_DATE = c.CLOSE_DATE,
+                    DEPOSITE_RETURENED_AMOUNT = c.DEPOSITE_RETURENED_AMOUNT,
+                    REMARKS = c.REMARKS,
+                    MODE = c.MODE
                 }).ToList();
             }
             catch (Exception ex)
@@ -57,23 +56,21 @@ namespace QconzLocateService.QconzLocateService
                 return new CustomerServiceModel
                 {
                     Id = c.Id,
-                    Address1 = c.Address1,
-                    Address2 = c.Address2,
-                    City=c.City,
-                    AddedDate = c.AddedDate,
-                    CompanyId = c.CompanyId,
-                    CustomerCode = c.CustomerCode,
-                    FirstName = c.FirstName,
-                    LastName = c.LastName,
-                    OfficeName = c.OfficeName,
-                    Email = c.Email,
-                    Lat = c.Lat,
-                    Lng = c.Lng,
-                    Phone1 = c.Phone1,
-                    Phone2 = c.Phone2,
-                    Website = c.Website,
-                    ZipCode = c.ZipCode,
-                    Archive=c.Archive
+                    NAME = c.NAME,
+                    SHORT_NAME = c.SHORT_NAME,
+                    MOB1 = c.MOB1,
+                    MOB2 = c.MOB2,
+                    EMAIL_ID = c.EMAIL_ID,
+                    ADDRESS = c.ADDRESS,
+                    DEPOSITE = c.DEPOSITE,
+                    AGREEMENT_BILL_NUMER = c.AGREEMENT_BILL_NUMER,
+                    ACTIVE = c.ACTIVE,
+                    REGISTER_DATE = c.REGISTER_DATE,
+                    IS_FLOW_METER_SALED = c.IS_FLOW_METER_SALED,
+                    CLOSE_DATE = c.CLOSE_DATE,
+                    DEPOSITE_RETURENED_AMOUNT = c.DEPOSITE_RETURENED_AMOUNT,
+                    REMARKS = c.REMARKS,
+                    MODE = c.MODE
                 };
             }
             catch
@@ -82,29 +79,27 @@ namespace QconzLocateService.QconzLocateService
             }
         }
 
-        public void SaveCustomerDetails(CustomerServiceModel CustomerDetails)
+        public void SaveCustomerDetails(CustomerServiceModel c)
         {
 
             var customer = new CustomerModel()
             {
-                Id = CustomerDetails.Id,
-                Address1 = CustomerDetails.Address1,
-                Address2 = CustomerDetails.Address2,
-                City=CustomerDetails.City,
-                AddedDate = CustomerDetails.AddedDate,
-                CompanyId = CustomerDetails.CompanyId,
-                CustomerCode = CustomerDetails.CustomerCode,
-                FirstName = CustomerDetails.FirstName,
-                LastName = CustomerDetails.LastName,
-                OfficeName = CustomerDetails.OfficeName,
-                Email = CustomerDetails.Email,
-                Lat = CustomerDetails.Lat,
-                Lng = CustomerDetails.Lng,
-                Phone1 = CustomerDetails.Phone1,
-                Phone2 = CustomerDetails.Phone2,
-                Website = CustomerDetails.Website,
-                ZipCode = CustomerDetails.ZipCode,
-                Archive=CustomerDetails.Archive
+                Id = c.Id,
+                NAME = c.NAME,
+                SHORT_NAME = c.SHORT_NAME,
+                MOB1 = c.MOB1,
+                MOB2 = c.MOB2,
+                EMAIL_ID = c.EMAIL_ID,
+                ADDRESS = c.ADDRESS,
+                DEPOSITE = c.DEPOSITE,
+                AGREEMENT_BILL_NUMER = c.AGREEMENT_BILL_NUMER,
+                ACTIVE = c.ACTIVE,
+                REGISTER_DATE = c.REGISTER_DATE,
+                IS_FLOW_METER_SALED = c.IS_FLOW_METER_SALED,
+                CLOSE_DATE = c.CLOSE_DATE,
+                DEPOSITE_RETURENED_AMOUNT = c.DEPOSITE_RETURENED_AMOUNT,
+                REMARKS = c.REMARKS,
+                MODE = c.MODE
             };
             _ICustomerRepository.SaveCustomerDetails(customer);
         }
@@ -112,26 +107,24 @@ namespace QconzLocateService.QconzLocateService
         public void SaveBulkCustomerDetails(List<CustomerServiceModel> CustomerDetails)
         {
 
-            var customer = CustomerDetails.Select(t=> new CustomerModel()
+            var customer = CustomerDetails.Select(c=> new CustomerModel()
             {
-                Id = t.Id,
-                Address1 = t.Address1,
-                Address2 = t.Address2,
-                City=t.City,
-                AddedDate = t.AddedDate,
-                CompanyId = t.CompanyId,
-                CustomerCode = t.CustomerCode,
-                FirstName = t.FirstName,
-                LastName = t.LastName,
-                OfficeName = t.OfficeName,
-                Email = t.Email,
-                Lat = t.Lat,
-                Lng = t.Lng,
-                Phone1 = t.Phone1,
-                Phone2 = t.Phone2,
-                Website = t.Website,
-                ZipCode = t.ZipCode,
-                Archive=t.Archive
+                Id = c.Id,
+                NAME = c.NAME,
+                SHORT_NAME = c.SHORT_NAME,
+                MOB1 = c.MOB1,
+                MOB2 = c.MOB2,
+                EMAIL_ID = c.EMAIL_ID,
+                ADDRESS = c.ADDRESS,
+                DEPOSITE = c.DEPOSITE,
+                AGREEMENT_BILL_NUMER = c.AGREEMENT_BILL_NUMER,
+                ACTIVE = c.ACTIVE,
+                REGISTER_DATE = c.REGISTER_DATE,
+                IS_FLOW_METER_SALED = c.IS_FLOW_METER_SALED,
+                CLOSE_DATE = c.CLOSE_DATE,
+                DEPOSITE_RETURENED_AMOUNT = c.DEPOSITE_RETURENED_AMOUNT,
+                REMARKS = c.REMARKS,
+                MODE = c.MODE
             }).ToList();
             _ICustomerRepository.SaveBulkCustomerDetails(customer);
         }

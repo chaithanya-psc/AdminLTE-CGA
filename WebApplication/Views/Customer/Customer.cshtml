@@ -52,9 +52,9 @@
                                 <tr>
                                     <th>Customer Code</th>
                                     <th>Customer Name</th>
-                                    <th>Contact Name</th>
-                                    <th>Landline</th>
-                                    <th>Email</th>
+                                    <th>Mob1</th>
+                                    <th>Mode</th>
+                                   
                                     <th></th>
                                     @*<th></th>*@
                                 </tr>
@@ -65,20 +65,18 @@
 
                                     <tr>
                                         <td>
-                                            @item.CustomerCode
+                                            @item.ShortName
                                         </td>
                                         <td>
-                                            @item.OfficeName
+                                            @item.Name
                                         </td>
                                         <td>
-                                            @item.FirstName
+                                            @item.Mob1
                                         </td>
                                         <td>
-                                            @item.Phone1
+                                            @item.Mode
                                         </td>
-                                        <td>
-                                            @item.Email
-                                        </td>
+                                       
                                         <td width="5%">
                                             <button type="button" onclick="window.location.href= '@Url.Action("CustomerDetails", "Customer", new { id = item.Id })'" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-edit"></span></button>
                                         </td>
@@ -138,11 +136,11 @@
                 var content = '';
                 for (var i = 0; i < json.length; i++) {
                     content += '<tr>';
-                    content += '<td>' + json[i].CustomerCode + '</td>';
-                    content += '<td>' + json[i].OfficeName + '</td>';
-                    content += '<td>' + json[i].FirstName + '</td>';
-                    content += '<td>' + json[i].Phone1 + '</td>';
-                    content += '<td>' + json[i].Email + '</td>';
+                    content += '<td>' + json[i].ShortName + '</td>';
+                    content += '<td>' + json[i].Name + '</td>';
+                    content += '<td>' + json[i].Mob1 + '</td>';
+                    content += '<td>' + json[i].Mode + '</td>';
+                   
                     content += '<td >  <button type="button" onclick="window.location.href=\'../Customer/CustomerDetails/' + json[i].Id + '\'"class="btn btn-block btn-primary"><span class="glyphicon glyphicon-edit"></span></button></td>';
                     content += '</tr>';
                 }

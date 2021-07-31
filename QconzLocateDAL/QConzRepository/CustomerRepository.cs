@@ -12,31 +12,30 @@ namespace QconzLocateDAL.QConzRepository
     {
         QCONZEntities entity = new QCONZEntities();
 
-        public List<CustomerModel> GetAllCustomer(int CompanyId,string Status)
+        public List<CustomerModel> GetAllCustomer(string Status)
         {
             try
             {
                 List<CustomerModel> CustomerList = new List<CustomerModel>();
-                var y = (from t in entity.tblCustomers where (t.COMPANYID == CompanyId || CompanyId == 0) && t.ARCHIVE==Status select t).ToList();
+                var y = (from t in entity.TBL_CUSTOMER_REGISTER  select t).ToList();
                 CustomerList = y.Select(c => new CustomerModel
                 {
                     Id = c.ID,
-                    Address1 = c.ADDRESS1,
-                    Address2 = c.ADDRESS2,
-                    City = c.CITY,
-                    AddedDate = c.ADDED_DATE,
-                    CompanyId = c.COMPANYID,
-                    CustomerCode = c.CUSTOMERCODE,
-                    FirstName = c.FIRSTNAME,
-                    LastName = c.LASTNAME,
-                    OfficeName = c.OFFICENAME,
-                    Email = c.EMAIL,
-                    Lat = c.LAT,
-                    Lng = c.LNG,
-                    Phone1 = c.PHONE_1,
-                    Phone2 = c.PHONE_2,
-                    Website = c.WEBSITE,
-                    ZipCode = c.ZIPCODE
+                    NAME = c.NAME,
+                    SHORT_NAME = c.SHORT_NAME,
+                    MOB1 = c.MOB1,
+                    MOB2 = c.MOB2,
+                    EMAIL_ID = c.EMAIL_ID,
+                    ADDRESS = c.ADDRESS,
+                    DEPOSITE = c.DEPOSITE,
+                    AGREEMENT_BILL_NUMER = c.AGREEMENT_BILL_NUMER,
+                    ACTIVE = c.ACTIVE,
+                    REGISTER_DATE = c.REGISTER_DATE,
+                    IS_FLOW_METER_SALED = c.IS_FLOW_METER_SALED,
+                    CLOSE_DATE = c.CLOSE_DATE,
+                    DEPOSITE_RETURENED_AMOUNT = c.DEPOSITE_RETURENED_AMOUNT,
+                    REMARKS = c.REMARKS,
+                    MODE = c.MODE
                 }
                 ).ToList();
                 return CustomerList;
@@ -51,28 +50,26 @@ namespace QconzLocateDAL.QConzRepository
         {
             try
             {
-                var y = (from c in entity.tblCustomers
+                var y = (from c in entity.TBL_CUSTOMER_REGISTER
                          where c.ID == Id
                          select new CustomerModel
                          {
                              Id = c.ID,
-                             Address1 = c.ADDRESS1,
-                             Address2 = c.ADDRESS2,
-                             City = c.CITY,
-                             AddedDate = c.ADDED_DATE,
-                             CompanyId = c.COMPANYID,
-                             CustomerCode = c.CUSTOMERCODE,
-                             FirstName = c.FIRSTNAME,
-                             LastName = c.LASTNAME,
-                             OfficeName = c.OFFICENAME,
-                             Email = c.EMAIL,
-                             Lat = c.LAT,
-                             Lng = c.LNG,
-                             Phone1 = c.PHONE_1,
-                             Phone2 = c.PHONE_2,
-                             Website = c.WEBSITE,
-                             ZipCode = c.ZIPCODE,
-                             Archive=c.ARCHIVE
+                             NAME = c.NAME,
+                             SHORT_NAME = c.SHORT_NAME,
+                             MOB1 = c.MOB1,
+                             MOB2 = c.MOB2,
+                             EMAIL_ID = c.EMAIL_ID,
+                             ADDRESS = c.ADDRESS,
+                             DEPOSITE = c.DEPOSITE,
+                             AGREEMENT_BILL_NUMER = c.AGREEMENT_BILL_NUMER,
+                             ACTIVE = c.ACTIVE,
+                             REGISTER_DATE = c.REGISTER_DATE,
+                             IS_FLOW_METER_SALED = c.IS_FLOW_METER_SALED,
+                             CLOSE_DATE = c.CLOSE_DATE,
+                             DEPOSITE_RETURENED_AMOUNT = c.DEPOSITE_RETURENED_AMOUNT,
+                             REMARKS = c.REMARKS,
+                             MODE = c.MODE
                          }).FirstOrDefault();
                 return y;
             }
@@ -82,54 +79,51 @@ namespace QconzLocateDAL.QConzRepository
             }
         }
 
-        public void SaveCustomerDetails(CustomerModel CustomerModel)
+        public void SaveCustomerDetails(CustomerModel c)
         {
             try
             {
-                if (CustomerModel.Id == 0)
+                if (c.Id == 0)
                 {
-                    var customer = new tblCustomer()
+                    var customer = new TBL_CUSTOMER_REGISTER()
                     {
-                        ADDRESS1 = CustomerModel.Address1,
-                        ADDRESS2 = CustomerModel.Address2,
-                        CITY = CustomerModel.City,
-                        ADDED_DATE = CustomerModel.AddedDate,
-                        COMPANYID = CustomerModel.CompanyId,
-                        CUSTOMERCODE = CustomerModel.CustomerCode,
-                        FIRSTNAME = CustomerModel.FirstName,
-                        LASTNAME = CustomerModel.LastName,
-                        OFFICENAME = CustomerModel.OfficeName,
-                        EMAIL = CustomerModel.Email,
-                        LAT = CustomerModel.Lat,
-                        LNG = CustomerModel.Lng,
-                        PHONE_1 = CustomerModel.Phone1,
-                        PHONE_2 = CustomerModel.Phone2,
-                        WEBSITE = CustomerModel.Website,
-                        ZIPCODE = CustomerModel.ZipCode,
-                        ARCHIVE= "A"
+                        NAME = c.NAME,
+                        SHORT_NAME = c.SHORT_NAME,
+                        MOB1 = c.MOB1,
+                        MOB2 = c.MOB2,
+                        EMAIL_ID = c.EMAIL_ID,
+                        ADDRESS = c.ADDRESS,
+                        DEPOSITE = c.DEPOSITE,
+                        AGREEMENT_BILL_NUMER = c.AGREEMENT_BILL_NUMER,
+                        ACTIVE = c.ACTIVE,
+                        REGISTER_DATE = c.REGISTER_DATE,
+                        IS_FLOW_METER_SALED = c.IS_FLOW_METER_SALED,
+                        CLOSE_DATE = c.CLOSE_DATE,
+                        DEPOSITE_RETURENED_AMOUNT = c.DEPOSITE_RETURENED_AMOUNT,
+                        REMARKS = c.REMARKS,
+                        MODE = c.MODE
                     };
-                    entity.tblCustomers.Add(customer);
+                    entity.TBL_CUSTOMER_REGISTER.Add(customer);
                 }
                 else
                 {
-                    var y = entity.tblCustomers.FirstOrDefault(t => t.ID == CustomerModel.Id);
-                    y.ADDRESS1 = CustomerModel.Address1;
-                    y.ADDRESS2 = CustomerModel.Address2;
-                    y.CITY = CustomerModel.City;
-                    y.ADDED_DATE = CustomerModel.AddedDate;
-                    y.COMPANYID = CustomerModel.CompanyId;
-                    y.CUSTOMERCODE = CustomerModel.CustomerCode;
-                    y.FIRSTNAME = CustomerModel.FirstName;
-                    y.LASTNAME = CustomerModel.LastName;
-                    y.OFFICENAME = CustomerModel.OfficeName;
-                    y.EMAIL = CustomerModel.Email;
-                    y.LAT = CustomerModel.Lat;
-                    y.LNG = CustomerModel.Lng;
-                    y.PHONE_1 = CustomerModel.Phone1;
-                    y.PHONE_2 = CustomerModel.Phone2;
-                    y.WEBSITE = CustomerModel.Website;
-                    y.ZIPCODE = CustomerModel.ZipCode;
-                    y.ARCHIVE = CustomerModel.Archive;
+                    var y = entity.TBL_CUSTOMER_REGISTER.FirstOrDefault(t => t.ID == c.Id);
+                    y.NAME = c.NAME;
+                    y.SHORT_NAME = c.SHORT_NAME;
+                    y.MOB1 = c.MOB1;
+                    y.MOB2 = c.MOB2;
+                    y.EMAIL_ID = c.EMAIL_ID;
+                    y.ADDRESS = c.ADDRESS;
+                    y.DEPOSITE = c.DEPOSITE;
+                    y.AGREEMENT_BILL_NUMER = c.AGREEMENT_BILL_NUMER;
+                    y.ACTIVE = c.ACTIVE;
+                    y.REGISTER_DATE = c.REGISTER_DATE;
+                    y.IS_FLOW_METER_SALED = c.IS_FLOW_METER_SALED;
+                    y.CLOSE_DATE = c.CLOSE_DATE;
+                    y.DEPOSITE_RETURENED_AMOUNT = c.DEPOSITE_RETURENED_AMOUNT;
+                    y.REMARKS = c.REMARKS;
+                    y.MODE = c.MODE;
+                  
                 }
                 entity.SaveChanges();
             }
@@ -142,35 +136,33 @@ namespace QconzLocateDAL.QConzRepository
         {
             try
             {
-                var CompanyId = CustomerModel.Select(t => t.CompanyId).FirstOrDefault();
-                var customers = entity.tblCustomers.Where(c => c.COMPANYID == CompanyId);
+                
+                var customers = entity.TBL_CUSTOMER_REGISTER;
                 foreach (var item in customers)
                 {
-                    entity.tblCustomers.Remove(item);
+                    entity.TBL_CUSTOMER_REGISTER.Remove(item);
                 }
                 foreach (var item in CustomerModel)
                 {
-                    var customer = new tblCustomer()
+                    var customer = new TBL_CUSTOMER_REGISTER()
                     {
-                        ADDRESS1 = item.Address1,
-                        ADDRESS2 = item.Address2,
-                        CITY = item.City,
-                        ADDED_DATE = item.AddedDate,
-                        COMPANYID = item.CompanyId,
-                        CUSTOMERCODE = item.CustomerCode,
-                        FIRSTNAME = item.FirstName,
-                        LASTNAME = item.LastName,
-                        OFFICENAME = item.OfficeName,
-                        EMAIL = item.Email,
-                        LAT = item.Lat,
-                        LNG = item.Lng,
-                        PHONE_1 = item.Phone1,
-                        PHONE_2 = item.Phone2,
-                        WEBSITE = item.Website,
-                        ZIPCODE = item.ZipCode,
-                        ARCHIVE="A"
+                        NAME = item.NAME,
+                        SHORT_NAME = item.SHORT_NAME,
+                        MOB1 = item.MOB1,
+                        MOB2 = item.MOB2,
+                        EMAIL_ID = item.EMAIL_ID,
+                        ADDRESS = item.ADDRESS,
+                        DEPOSITE = item.DEPOSITE,
+                        AGREEMENT_BILL_NUMER = item.AGREEMENT_BILL_NUMER,
+                        ACTIVE = item.ACTIVE,
+                        REGISTER_DATE = item.REGISTER_DATE,
+                        IS_FLOW_METER_SALED = item.IS_FLOW_METER_SALED,
+                        CLOSE_DATE = item.CLOSE_DATE,
+                        DEPOSITE_RETURENED_AMOUNT = item.DEPOSITE_RETURENED_AMOUNT,
+                        REMARKS = item.REMARKS,
+                        MODE = item.MODE
                     };
-                    entity.tblCustomers.Add(customer);
+                    entity.TBL_CUSTOMER_REGISTER.Add(customer);
                 }
                 entity.SaveChanges();
             }

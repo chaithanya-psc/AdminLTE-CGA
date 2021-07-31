@@ -35,6 +35,7 @@ namespace QconzLocateDAL
         public Nullable<bool> IS_FLOW_METER_SALED { get; set; }
         public Nullable<System.DateTime> CLOSE_DATE { get; set; }
         public Nullable<decimal> DEPOSITE_RETURENED_AMOUNT { get; set; }
+        public string MODE { get; set; }
         public string REMARKS { get; set; }
         public Nullable<System.DateTime> CREATED_ON { get; set; }
         public Nullable<System.DateTime> MODIFIED_ON { get; set; }

@@ -8,23 +8,23 @@ namespace QconzLocateService.Models
 {
     public class CustomerServiceModel
     {
-        public int Id { get; set; }
-        public string CustomerCode { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string OfficeName { get; set; }
-        public string Address1 { get; set; }
-        public string Address2 { get; set; }
-        public string City { get; set; }
-        public string ZipCode { get; set; }
-        public string Phone1 { get; set; }
-        public string Phone2 { get; set; }
-        public string Email { get; set; }
-        public string Website { get; set; }
-        public string Lat { get; set; }
-        public string Lng { get; set; }
-        public DateTime? AddedDate { get; set; }
-        public int? CompanyId { get; set; }
-        public string Archive { get; set; }
+        public Int64 Id { get; set; }
+        public string NAME { get; set; }
+        public string SHORT_NAME { get; set; }
+        public string MOB1 { get; set; }
+        public string MOB2 { get; set; }
+        public string EMAIL_ID { get; set; }
+        public string ADDRESS { get; set; }
+        public decimal? DEPOSITE { get; set; }
+        public int? AGREEMENT_BILL_NUMER { get; set; }
+        public bool? ACTIVE { get; set; }
+        public DateTime? REGISTER_DATE { get; set; }
+        public bool? IS_FLOW_METER_SALED { get; set; }
+        public DateTime? CLOSE_DATE { get; set; }
+        public decimal? DEPOSITE_RETURENED_AMOUNT { get; set; }
+        public string REMARKS { get; set; }
+        public string MODE { get; set; }
+       
+   
     }
 }

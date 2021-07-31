@@ -222,7 +222,6 @@
     <Compile Include="Models\ApiUserLocationViewModel.cs" />
     <Compile Include="Models\CompanyListViewModel.cs" />
     <Compile Include="Models\CompanyViewModel.cs" />
-    <Compile Include="Models\CustomerRegisterModel.cs" />
     <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\CylinderRegisterModel.cs" />
     <Compile Include="Models\DealerRegisterModel.cs" />

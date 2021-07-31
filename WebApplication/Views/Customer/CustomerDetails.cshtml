@@ -34,49 +34,49 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Customer code<font color="red">*</font></label>
-                            <input type="text" class="form-control" id="CustomerCode" tabindex="1" name="CustomerCode" value="@Model.CustomerDetails.CustomerCode" placeholder="Enter customer code">
+                            <label for="exampleInputEmail1">Name<font color="red">*</font></label>
+                            <input type="text" class="form-control" id="NAME" tabindex="1" name="NAME" value="@Model.CustomerDetails.NAME" placeholder="Enter customer Name">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Latitude<font color="red">*</font></label>
-                            <input type="text" class="form-control" id="Lat" tabindex="3" name="Lat" value="@Model.CustomerDetails.Lat" placeholder="Enter latitude">
+                            <label for="exampleInputEmail1">Short Name<font color="red">*</font></label>
+                            <input type="text" class="form-control" id="SHORT_NAME" tabindex="3" name="SHORT_NAME" value="@Model.CustomerDetails.SHORT_NAME" placeholder="Enter Customer Code">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Contact name</label>
-                            <input type="text" class="form-control" id="FirstName" tabindex="5" name="FirstName" value="@Model.CustomerDetails.FirstName" placeholder="Enter first name">
+                            <label for="exampleInputEmail1">Address</label>
+                            <input type="text" class="form-control" id="ADDRESS" tabindex="5" name="ADDRESS" value="@Model.CustomerDetails.ADDRESS" placeholder="Enter Address">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Address1</label>
-                            <input type="text" class="form-control" id="Address1" tabindex="7" name="Address1" value="@Model.CustomerDetails.Address1" placeholder="Enter address1">
+                            <label for="exampleInputEmail1">Mob1</label>
+                            <input type="text" class="form-control" id="MOB1" tabindex="7" name="MOB1" value="@Model.CustomerDetails.MOB1" placeholder="Enter Mobile Number">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">City</label>
-                            <input type="text" class="form-control" id="City" tabindex="9" name="City" value="@Model.CustomerDetails.City" placeholder="Enter city">
+                            <label for="exampleInputEmail1">Mob2</label>
+                            <input type="text" class="form-control" id="MOB2" tabindex="9" name="MOB2" value="@Model.CustomerDetails.MOB2" placeholder="Enter Mobile Number">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Landline</label>
-                            <input type="text" class="form-control" id="Phone1" tabindex="11" name="Phone1" value="@Model.CustomerDetails.Phone1" placeholder="Enter phone1">
+                            <label for="exampleInputEmail1">Deposite</label>
+                            <input type="text" class="form-control" id="DEPOSITE" tabindex="11" name="DEPOSITE" value="@Model.CustomerDetails.DEPOSITE" placeholder="Enter Deposite">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="text" class="form-control" id="Email" tabindex="13" name="Email" value="@Model.CustomerDetails.Email" placeholder="Enter email">
+                            <input type="text" class="form-control" id="EMAIL_ID" tabindex="13" name="EMAIL_ID" value="@Model.CustomerDetails.EMAIL_ID" placeholder="Enter email">
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Status</label>
-                        <select id="Archive" name="Archive" class="form-control select2" value="@Model.CustomerDetails.Archive" style="width: 100%;">
+                        <select id="Archive" name="Active" class="form-control select2" value="@Model.CustomerDetails.ACTIVE" style="width: 100%;">
                             <option value="A">Active</option>
                             <option value="N">Archived</option>
                         </select>
@@ -86,59 +86,49 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Customer name<font color="red">*</font></label>
-                            <input type="text" class="form-control" id="OfficeName" tabindex="2" name="OfficeName" value="@Model.CustomerDetails.OfficeName" placeholder="Enter customer name">
+                            <label for="exampleInputEmail1">Agreement Bill Number<font color="red">*</font></label>
+                            <input type="text" class="form-control" id="AGREEMENT_BILL_NUMER" tabindex="2" name="AGREEMENT_BILL_NUMER" value="@Model.CustomerDetails.AGREEMENT_BILL_NUMER" placeholder="Enter Agrement Bill Number">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Longitude<font color="red">*</font></label>
-                            <input type="text" class="form-control" id="Lng" tabindex="4" name="Lng" value="@Model.CustomerDetails.Lng" placeholder="Enter longitude">
+                            <label for="exampleInputEmail1">Register Date<font color="red">*</font></label>
+                            <input type="text" class="form-control" id="REGISTER_DATE" tabindex="4" name="REGISTER_DATE" value="@Model.CustomerDetails.REGISTER_DATE" placeholder="Enter Register Date">
                         </div>
                     </div>
-                    @if (User.IsInRole("SUPER"))
-                    {
-                        <div class="form-group">
-                            <div class="form-group">
-                                <label>Company</label>
-                                <select id="Company" class="form-control select2" tabindex="6" value="@Model.CustomerDetails.CompanyId" style="width: 100%;"></select>
-                            </div>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="form-group">
-                            <div class="form-group">
-                                <label>Company</label>
-                                <select id="Company" class="form-control select2" disabled tabindex="8" value="@Model.CustomerDetails.CompanyId" style="width: 100%;"></select>
-                            </div>
-                        </div>
-                    }
+
+
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Address2</label>
-                            <input type="text" class="form-control" id="Address2" tabindex="10" name="Address2" value="@Model.CustomerDetails.Address2" placeholder="Enter address2">
+                            <label for="exampleInputEmail1">Is Flow Meter Saled<font color="red">*</font></label>
+                            <input type="text" class="form-control" id="IS_FLOW_METER_SALED" tabindex="4" name="IS_FLOW_METER_SALED" value="@Model.CustomerDetails.IS_FLOW_METER_SALED" placeholder="Enter Is Flow Meter Saled">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">PostCode/Zip</label>
-                            <input type="text" class="form-control" id="ZipCode" tabindex="12" name="ZipCode" value="@Model.CustomerDetails.ZipCode" placeholder="Enter Postcode/Zip">
+                            <label for="exampleInputEmail1">Closed Date</label>
+                            <input type="text" class="form-control" id="CLOSE_DATE" tabindex="10" name="CLOSE_DATE" value="@Model.CustomerDetails.CLOSE_DATE" placeholder="Enter Closed Date">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Cellphone</label>
-                            <input type="text" class="form-control" id="Phone2" tabindex="14" name="Phone2" value="@Model.CustomerDetails.Phone2" placeholder="Enter phone2">
+                            <label for="exampleInputEmail1">Deposite Refund Amount</label>
+                            <input type="text" class="form-control" id="DEPOSITE_RETURENED_AMOUNT" tabindex="12" name="ZipCode" value="@Model.CustomerDetails.DEPOSITE_RETURENED_AMOUNT" placeholder="Enter Deposite Refund Amount">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Website</label>
-                            <input type="text" class="form-control" id="Website" tabindex="16" name="Website" value="@Model.CustomerDetails.Website" placeholder="Enter website">
+                            <label for="exampleInputEmail1">Remarks</label>
+                            <input type="text" class="form-control" id="REMARKS" tabindex="14" name="REMARKS" value="@Model.CustomerDetails.REMARKS" placeholder="Enter Remarks">
                         </div>
                     </div>
-                   
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mode</label>
+                            <input type="text" class="form-control" id="MODE" tabindex="16" name="MODE" value="@Model.CustomerDetails.MODE" placeholder="Enter Mode">
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -191,48 +181,35 @@
             }
         })
 
-            var jsontext = '@Html.Raw(Json.Encode(Model.CompanyList))';
+           
             var data = JSON.parse(jsontext);
-            $('#Company').select2({
-                data: data
-            })
-            $("#Company").val("@Model.CustomerDetails.CompanyId").trigger("change");
-
+          
             $(document).ready(function () {
                 // 1. prepare the validation rules and messages.
-                $('#Archive').select2({
+                $('#ACTIVE').select2({
 
                 })
-                $("#Archive").val("@Model.CustomerDetails.Archive").trigger("change");
+                $("#ACTIVE").val("@Model.CustomerDetails.ACTIVE").trigger("change");
                 $('#Second').hide();
                 $("#form1").validate({
                     rules: {
-                        CustomerCode: {
+                        NAME: {
                             required: true
                         },
-                        Company: {
-                            required: true
-                        },
-                        Email: {
+                        
+                        SHORT_NAME: {
                             email: true
                         },
-                        Lat:{
+                        MOB1:{
                             required:true
                         },
-                        Lng:{
-                            required:true
-                        },
-                        OfficeName:{
-                            required:true
-                        },
+                        
                     },
                     messages: {
-                        CustomerCode: "Customer Code is required",
-                        Company: "Company is required",
-                        Email:"Please enter a valid email address",
-                        Lat:"Latitude is required",
-                        Lng:"Longitude is required",
-                        OfficeName:"Customer name is required"
+                        NAME: "Customer Name is required",
+                        SHORT_NAME: "Customer Code is required",
+                        MOB1:"Please enter a Mobile Number",
+                        
                     }
                 });
                 $('#savebtn').click(function(){
@@ -242,22 +219,21 @@
                         return
                     }
                     var data={ Id : @Model.CustomerDetails.Id,
-                        Address1 : $('#Address1').val(),
-                        Address2 : $('#Address2').val(),
-                        CustomerCode: $('#CustomerCode').val(),
-                        FirstName : $('#FirstName').val(),
-                        LastName : $('#LastName').val(),
-                        CompanyId:$('#Company').val(),
-                        Email : $('#Email').val(),
-                        City : $('#City').val(),
-                        Lat : $('#Lat').val(),
-                        Lng : $('#Lng').val(),
-                        Phone1 : $('#Phone1').val(),
-                        Phone2 : $('#Phone2').val(),
-                        OfficeName : $('#OfficeName').val(),
-                        Website : $('#Website').val(),
-                        ZipCode : $('#ZipCode').val(),
-                        Archive:$('#Archive').val()}
+                        NAME: $('#NAME').val(),
+                        SHORT_NAME: $('#SHORT_NAME').val(),
+                        MOB1: $('#MOB1').val(),
+                        MOB2: $('#MOB2').val(),
+                        ADDRESS: $('#ADDRESS').val(),
+                        DEPOSITE: $('#DEPOSITE').val(),
+                        EMAIL_ID: $('#EMAIL_ID').val(),
+                        AGREEMENT_BILL_NUMER: $('#AGREEMENT_BILL_NUMER').val(),
+                        ACTIVE: $('#ACTIVE').val(),
+                        REGISTER_DATE: $('#REGISTER_DATE').val(),
+                        IS_FLOW_METER_SALED: $('#IS_FLOW_METER_SALED').val(),
+                        CLOSE_DATE: $('#CLOSE_DATE').val(),
+                        DEPOSITE_RETURENED_AMOUNT: $('#DEPOSITE_RETURENED_AMOUNT').val(),
+                        REMARKS: $('#REMARKS').val(),
+                        MODE: $('#MODE').val()}
                     var url='@Url.Action("SaveDetails", "Customer")';
                     $.ajax({
                         type:"POST",
