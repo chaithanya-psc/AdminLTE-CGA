@@ -18,7 +18,7 @@ namespace QconzLocateDAL.QConzRepository
             try
             {
                 List<AgencyModel> AgencyList = new List<AgencyModel>();
-                var y = (from t in entity.TBL_SHOP_DEALER_REGISTER select t).ToList();
+                var y = (from t in entity.TBL_SHOP_DEALER_REGISTER where(t.SHOP_OR_DEALER == "SH" )select t).ToList();
                 AgencyList = y.Select(c => new AgencyModel
                 {
                     Id = c.ID,

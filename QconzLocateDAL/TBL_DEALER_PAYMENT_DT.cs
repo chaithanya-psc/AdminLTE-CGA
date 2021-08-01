@@ -28,6 +28,7 @@ namespace QconzLocateDAL
         public Nullable<decimal> PAID_VECHICLE_AMOUNT { get; set; }
         public Nullable<decimal> PAID_OTHER_AMOUNT { get; set; }
         public string REMARKS { get; set; }
+        public Nullable<long> PURCHASE_ID { get; set; }
         public Nullable<System.DateTime> CREATED_ON { get; set; }
         public Nullable<System.DateTime> MODIFIED_ON { get; set; }
     

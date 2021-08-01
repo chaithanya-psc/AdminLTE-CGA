@@ -23,6 +23,7 @@
           <Property Name="PAID_VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
           <Property Name="PAID_OTHER_AMOUNT" Type="numeric" Precision="15" Scale="2" />
           <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="SALE_ID" Type="bigint" />
           <Property Name="CREATED_ON" Type="date" />
           <Property Name="MODIFIED_ON" Type="date" />
         </EntityType>
@@ -45,7 +46,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SHORT_NAME" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="MOB1" Type="varchar" MaxLength="13" Nullable="false" />
@@ -60,6 +61,7 @@
           <Property Name="CLOSE_DATE" Type="datetime" />
           <Property Name="DEPOSITE_RETURENED_AMOUNT" Type="numeric" Precision="15" Scale="2" />
           <Property Name="REMARKS" Type="varchar(max)" />
+          <Property Name="MODE" Type="varchar" MaxLength="50" />
           <Property Name="CREATED_ON" Type="date" />
           <Property Name="MODIFIED_ON" Type="date" />
         </EntityType>
@@ -67,7 +69,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CYLINDER_SHORT_NAME" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="HSN_CODE" Type="varchar" MaxLength="50" />
@@ -120,6 +122,7 @@
           <Property Name="PAID_VECHICLE_AMOUNT" Type="numeric" Precision="15" Scale="2" />
           <Property Name="PAID_OTHER_AMOUNT" Type="numeric" Precision="15" Scale="2" />
           <Property Name="REMARKS" Type="varchar" MaxLength="250" />
+          <Property Name="PURCHASE_ID" Type="bigint" />
           <Property Name="CREATED_ON" Type="date" />
           <Property Name="MODIFIED_ON" Type="date" />
         </EntityType>
@@ -142,7 +145,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CYLINDR_TYPE_ID" Type="bigint" Nullable="false" />
           <Property Name="NUMBER" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PURCHASE_DATE" Type="datetime" Nullable="false" />
@@ -239,7 +242,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SHOP_DEALER_ID" Type="bigint" />
           <Property Name="HOLDER" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="BANK_NAME" Type="varchar" MaxLength="25" />
@@ -254,28 +257,28 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SHORT_NAME" Type="varchar" MaxLength="25" />
+          <Property Name="SHORT_NAME" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="ADDRESS" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="MOB1" Type="varchar" MaxLength="13" Nullable="false" />
           <Property Name="MOB2" Type="varchar" MaxLength="13" />
           <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="GST_NUM" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="M_LICENCE_NUM1" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="M_LICENCE_NUM2" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="D_LICENCE_NUM" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="E_LICENCE_NUM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="M_LICENCE_NUM1" Type="varchar" MaxLength="50" />
+          <Property Name="M_LICENCE_NUM2" Type="varchar" MaxLength="50" />
+          <Property Name="D_LICENCE_NUM" Type="varchar" MaxLength="50" />
+          <Property Name="E_LICENCE_NUM" Type="varchar" MaxLength="50" />
           <Property Name="REMARKS" Type="varchar" MaxLength="250" />
           <Property Name="SHOP_OR_DEALER" Type="varchar" MaxLength="10" />
-          <Property Name="CREATED_ON" Type="date" />
-          <Property Name="MODIFIED_ON" Type="date" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
         </EntityType>
         <EntityType Name="TBL_STAFF_REGISTER">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NAME" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="ADDRESS" Type="varchar" MaxLength="250" />
           <Property Name="MOB1" Type="varchar" MaxLength="15" />
@@ -289,7 +292,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="STAFF_ID" Type="bigint" Nullable="false" />
           <Property Name="DATE" Type="datetime" />
           <Property Name="PAYMENT" Type="numeric" Precision="15" Scale="2" />
@@ -301,7 +304,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NUMBER" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="PURCHASE_DATE" Type="datetime" />
           <Property Name="TEST_DATE" Type="datetime" />
@@ -316,7 +319,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="VECHICLE_ID" Type="bigint" Nullable="false" />
           <Property Name="DATE" Type="datetime" />
           <Property Name="PAYMENT" Type="numeric" Precision="15" Scale="2" />
@@ -873,6 +876,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="get_notification_users" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="QCONZModelStoreContainer">
           <EntitySet Name="TBL_CUSTOMER_PAYMENT_DT" EntityType="Self.TBL_CUSTOMER_PAYMENT_DT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_CUSTOMER_PAYMENT_HD" EntityType="Self.TBL_CUSTOMER_PAYMENT_HD" Schema="dbo" store:Type="Tables" />
@@ -1056,6 +1060,7 @@
           <Property Name="PAID_VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
           <Property Name="PAID_OTHER_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
           <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SALE_ID" Type="Int64" />
           <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TBL_CUSTOMER_PAYMENT_HD" Relationship="Self.FK_TBL_CUSTOMER_PAYMENT_DT_CUSTOMER_PAYMENT_ID_TBL_CUSTOMER_PAYMENT_HD_ID" FromRole="TBL_CUSTOMER_PAYMENT_DT" ToRole="TBL_CUSTOMER_PAYMENT_HD" />
@@ -1081,7 +1086,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SHORT_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MOB1" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1096,6 +1101,7 @@
           <Property Name="CLOSE_DATE" Type="DateTime" Precision="3" />
           <Property Name="DEPOSITE_RETURENED_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
           <Property Name="REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TBL_CUSTOMER_PAYMENT_HD" Relationship="Self.FK_TBL_CUSTOMER_PAYMENT_HD_CUSTOMER_ID_TBL_CUSTOMER_REGISTER_ID" FromRole="TBL_CUSTOMER_REGISTER" ToRole="TBL_CUSTOMER_PAYMENT_HD" />
@@ -1105,7 +1111,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CYLINDER_SHORT_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="HSN_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -1162,6 +1168,7 @@
           <Property Name="PAID_VECHICLE_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
           <Property Name="PAID_OTHER_AMOUNT" Type="Decimal" Precision="15" Scale="2" />
           <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PURCHASE_ID" Type="Int64" />
           <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TBL_DEALER_PAYMENT_HD" Relationship="Self.FK_TBL_DEALER_PAYMENT_DT_DEALER_PAYMENT_ID_TBL_DEALER_PAYMENT_HD_ID" FromRole="TBL_DEALER_PAYMENT_DT" ToRole="TBL_DEALER_PAYMENT_HD" />
@@ -1187,7 +1194,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CYLINDR_TYPE_ID" Type="Int64" Nullable="false" />
           <Property Name="NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PURCHASE_DATE" Type="DateTime" Nullable="false" Precision="3" />
@@ -1296,7 +1303,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SHOP_DEALER_ID" Type="Int64" />
           <Property Name="HOLDER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="BANK_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -1311,22 +1318,22 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SHORT_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SHORT_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MOB1" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MOB2" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
           <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="GST_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="M_LICENCE_NUM1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="M_LICENCE_NUM2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="D_LICENCE_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="E_LICENCE_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="M_LICENCE_NUM1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="M_LICENCE_NUM2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="D_LICENCE_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="E_LICENCE_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="REMARKS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="SHOP_OR_DEALER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
-          <Property Name="MODIFIED_ON" Type="DateTime" Precision="0" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
           <NavigationProperty Name="TBL_DEALER_PAYMENT_HD" Relationship="Self.FK_TBL_CUSTOMER_PAYMENT_HD_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" FromRole="TBL_SHOP_DEALER_REGISTER" ToRole="TBL_DEALER_PAYMENT_HD" />
           <NavigationProperty Name="TBL_PURCHASE_HD" Relationship="Self.FK_TBL_PURCHASE_HDR_DEALER_ID_TBL_SHOP_DEALER_REGISTER_ID" FromRole="TBL_SHOP_DEALER_REGISTER" ToRole="TBL_PURCHASE_HD" />
         </EntityType>
@@ -1334,7 +1341,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="MOB1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -1351,7 +1358,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="STAFF_ID" Type="Int64" Nullable="false" />
           <Property Name="DATE" Type="DateTime" Precision="3" />
           <Property Name="PAYMENT" Type="Decimal" Precision="15" Scale="2" />
@@ -1364,7 +1371,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NUMBER" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PURCHASE_DATE" Type="DateTime" Precision="3" />
           <Property Name="TEST_DATE" Type="DateTime" Precision="3" />
@@ -1382,7 +1389,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="VECHICLE_ID" Type="Int64" Nullable="false" />
           <Property Name="DATE" Type="DateTime" Precision="3" />
           <Property Name="PAYMENT" Type="Decimal" Precision="15" Scale="2" />
@@ -2129,6 +2136,7 @@
             <End Role="tblUserMaster" EntitySet="tblUserMasters" />
             <End Role="tblUserTeam" EntitySet="tblUserTeams" />
           </AssociationSet>
+          <FunctionImport Name="get_notification_users" ReturnType="Collection(String)" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -2153,6 +2161,7 @@
                 <ScalarProperty Name="PAID_VECHICLE_AMOUNT" ColumnName="PAID_VECHICLE_AMOUNT" />
                 <ScalarProperty Name="PAID_OTHER_AMOUNT" ColumnName="PAID_OTHER_AMOUNT" />
                 <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="SALE_ID" ColumnName="SALE_ID" />
                 <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
                 <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
               </MappingFragment>
@@ -2192,6 +2201,7 @@
                 <ScalarProperty Name="CLOSE_DATE" ColumnName="CLOSE_DATE" />
                 <ScalarProperty Name="DEPOSITE_RETURENED_AMOUNT" ColumnName="DEPOSITE_RETURENED_AMOUNT" />
                 <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="MODE" ColumnName="MODE" />
                 <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
                 <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
               </MappingFragment>
@@ -2255,6 +2265,7 @@
                 <ScalarProperty Name="PAID_VECHICLE_AMOUNT" ColumnName="PAID_VECHICLE_AMOUNT" />
                 <ScalarProperty Name="PAID_OTHER_AMOUNT" ColumnName="PAID_OTHER_AMOUNT" />
                 <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="PURCHASE_ID" ColumnName="PURCHASE_ID" />
                 <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
                 <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
               </MappingFragment>
@@ -2650,6 +2661,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="get_notification_users" FunctionName="QCONZModel.Store.get_notification_users" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

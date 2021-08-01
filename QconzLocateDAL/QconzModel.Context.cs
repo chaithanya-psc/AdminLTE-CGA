@@ -12,6 +12,8 @@ namespace QconzLocateDAL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class QCONZEntities : DbContext
     {
@@ -55,5 +57,10 @@ namespace QconzLocateDAL
         public virtual DbSet<tblUserMaster> tblUserMasters { get; set; }
         public virtual DbSet<tblUserRoaster> tblUserRoasters { get; set; }
         public virtual DbSet<tblUserTeam> tblUserTeams { get; set; }
+    
+        public virtual ObjectResult<string> get_notification_users()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("get_notification_users");
+        }
     }
 }

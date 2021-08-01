@@ -457,6 +457,7 @@
     <Content Include="Scripts\Company\Data.js" />
     <Content Include="Scripts\Customer\Customer-menu.js" />
     <Content Include="Scripts\Customer\Data.js" />
+    <Content Include="Scripts\CylinderRegister\CylinderRegister.js" />
     <Content Include="Scripts\Dealer\Dealer-menu.js" />
     <Content Include="Scripts\Documentation\Documentation-menu.js" />
     <Content Include="Scripts\Elements\Buttons-menu.js" />
@@ -498,6 +499,7 @@
     <Content Include="Scripts\Mailbox\Read-menu.js" />
     <Content Include="Scripts\Roster\Roster-menu.js" />
     <Content Include="Scripts\Shared\_Layout.js" />
+    <Content Include="Scripts\StaffRegister\StaffRegister.js" />
     <Content Include="Scripts\Tables\Data-menu.js" />
     <Content Include="Scripts\Tables\Data.js" />
     <Content Include="Scripts\Tables\Simple-menu.js" />
@@ -511,6 +513,7 @@
     <Content Include="Scripts\User\User-menu.js" />
     <Content Include="Scripts\User\UserDetails-menu.js" />
     <Content Include="Scripts\User\Data.js" />
+    <Content Include="Scripts\VechicleRegister\VechicleRegister.js" />
     <Content Include="Scripts\Widgets\Widgets-menu.js" />
     <Content Include="Styles\Elements\General.css" />
     <Content Include="Styles\Elements\Icons.css" />

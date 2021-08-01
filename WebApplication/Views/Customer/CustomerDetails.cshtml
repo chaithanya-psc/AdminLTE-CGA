@@ -38,96 +38,110 @@
                             <input type="text" class="form-control" id="NAME" tabindex="1" name="NAME" value="@Model.CustomerDetails.NAME" placeholder="Enter customer Name">
                         </div>
                     </div>
+
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Short Name<font color="red">*</font></label>
-                            <input type="text" class="form-control" id="SHORT_NAME" tabindex="3" name="SHORT_NAME" value="@Model.CustomerDetails.SHORT_NAME" placeholder="Enter Customer Code">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Address</label>
-                            <input type="text" class="form-control" id="ADDRESS" tabindex="5" name="ADDRESS" value="@Model.CustomerDetails.ADDRESS" placeholder="Enter Address">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Mob1</label>
-                            <input type="text" class="form-control" id="MOB1" tabindex="7" name="MOB1" value="@Model.CustomerDetails.MOB1" placeholder="Enter Mobile Number">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Mob2</label>
-                            <input type="text" class="form-control" id="MOB2" tabindex="9" name="MOB2" value="@Model.CustomerDetails.MOB2" placeholder="Enter Mobile Number">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Deposite</label>
-                            <input type="text" class="form-control" id="DEPOSITE" tabindex="11" name="DEPOSITE" value="@Model.CustomerDetails.DEPOSITE" placeholder="Enter Deposite">
+                            <label for="exampleInputEmail1">Address<font color="red">*</font></label>
+                            <textarea class="form-control" style="height: 108px;" rows="5" id="ADDRESS" name="ADDRESS" tabindex="3" value="@Model.CustomerDetails.ADDRESS" placeholder="Enter Address"></textarea>
+                            @*<input type="text" class="form-control" id="ADDRESS" tabindex="3" name="ADDRESS" value="@Model.CustomerDetails.ADDRESS" placeholder="Enter Address">*@
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="text" class="form-control" id="EMAIL_ID" tabindex="13" name="EMAIL_ID" value="@Model.CustomerDetails.EMAIL_ID" placeholder="Enter email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select id="Archive" name="Active" class="form-control select2" value="@Model.CustomerDetails.ACTIVE" style="width: 100%;">
-                            <option value="A">Active</option>
-                            <option value="N">Archived</option>
-                        </select>
-                    </div>
-
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Agreement Bill Number<font color="red">*</font></label>
-                            <input type="text" class="form-control" id="AGREEMENT_BILL_NUMER" tabindex="2" name="AGREEMENT_BILL_NUMER" value="@Model.CustomerDetails.AGREEMENT_BILL_NUMER" placeholder="Enter Agrement Bill Number">
+                            <input type="text" class="form-control" id="EMAIL_ID" tabindex="6" name="EMAIL_ID" value="@Model.CustomerDetails.EMAIL_ID" placeholder="Enter email">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Register Date<font color="red">*</font></label>
-                            <input type="text" class="form-control" id="REGISTER_DATE" tabindex="4" name="REGISTER_DATE" value="@Model.CustomerDetails.REGISTER_DATE" placeholder="Enter Register Date">
+                            <label for="exampleInputEmail1">Register Date</label>
+                            <input type="date" class="form-control" id="REGISTER_DATE" tabindex="8" name="REGISTER_DATE" value="@Model.CustomerDetails.REGISTER_DATE" placeholder="Enter Register Date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Deposite</label>
+                            <input type="number" class="form-control" id="DEPOSITE" tabindex="10" name="DEPOSITE" value="@Model.CustomerDetails.DEPOSITE" placeholder="Enter Deposite">
                         </div>
                     </div>
 
-
                     <div class="form-group">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Is Flow Meter Saled<font color="red">*</font></label>
-                            <input type="text" class="form-control" id="IS_FLOW_METER_SALED" tabindex="4" name="IS_FLOW_METER_SALED" value="@Model.CustomerDetails.IS_FLOW_METER_SALED" placeholder="Enter Is Flow Meter Saled">
-                        </div>
+
+                        @*<select id="Archive" name="Active" class="form-control select2" value="@Model.CustomerDetails.ACTIVE" style="width: 100%;" tabindex="12">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>*@
+                        
+                        <input type="checkbox" class="form-check-input" id="IS_FLOW_METER_SALED" tabindex="11" name="IS_FLOW_METER_SALED" value="@Model.CustomerDetails.IS_FLOW_METER_SALED" placeholder="Enter Is Flow Meter Saled"><label style="padding-left:25px;padding-right:25px;" for="exampleInputEmail1">Is Flow Meter Saled</label>
+
+
+                        <input  type="checkbox" class="form-check-input" id="ACTIVE" tabindex="12" name="ACTIVE" value="@Model.CustomerDetails.ACTIVE"> <label for="exampleInputEmail1" style="padding-left:25px">Active</label>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Closed Date</label>
-                            <input type="text" class="form-control" id="CLOSE_DATE" tabindex="10" name="CLOSE_DATE" value="@Model.CustomerDetails.CLOSE_DATE" placeholder="Enter Closed Date">
+                            <input type="date" class="form-control" id="CLOSE_DATE" tabindex="14" name="CLOSE_DATE" value="@Model.CustomerDetails.CLOSE_DATE" placeholder="Enter Closed Date">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Deposite Refund Amount</label>
-                            <input type="text" class="form-control" id="DEPOSITE_RETURENED_AMOUNT" tabindex="12" name="ZipCode" value="@Model.CustomerDetails.DEPOSITE_RETURENED_AMOUNT" placeholder="Enter Deposite Refund Amount">
+                            <input type="number" class="form-control" id="DEPOSITE_RETURENED_AMOUNT" tabindex="15" name="ZipCode" value="@Model.CustomerDetails.DEPOSITE_RETURENED_AMOUNT" placeholder="Enter Deposite Refund Amount">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Short Name<font color="red">*</font></label>
+                            <input type="text" class="form-control" id="SHORT_NAME" tabindex="2" name="SHORT_NAME" value="@Model.CustomerDetails.SHORT_NAME" placeholder="Enter Customer Code">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Remarks</label>
-                            <input type="text" class="form-control" id="REMARKS" tabindex="14" name="REMARKS" value="@Model.CustomerDetails.REMARKS" placeholder="Enter Remarks">
+                            <label for="exampleInputEmail1">Mob1<font color="red">*</font></label>
+                            <input type="text" class="form-control" id="MOB1" tabindex="4" name="MOB1" value="@Model.CustomerDetails.MOB1" placeholder="Enter Mobile Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mob2</label>
+                            <input type="text" class="form-control" id="MOB2" tabindex="5" name="MOB2" value="@Model.CustomerDetails.MOB2" placeholder="Enter Mobile Number">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mode</label>
-                            <input type="text" class="form-control" id="MODE" tabindex="16" name="MODE" value="@Model.CustomerDetails.MODE" placeholder="Enter Mode">
+                           
+                            <select id="MODE" name="MODE" class="form-control select2" value="@Model.CustomerDetails.MODE" style="width: 100%;" tabindex="7">
+                                <option value="WS">WorkShop</option>
+                                <option value="HM">Home</option>
+                                <option value="HP">Hospital</option>
+                                <option value="AM">Ambulance</option>
+                                <option value="IN">Industries</option>
+                                <option value="CO">Contract</option>
+                                <option value="OT">Other</option>
+                            </select>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Agreement Bill Number</label>
+                            <input type="text" class="form-control" id="AGREEMENT_BILL_NUMER" tabindex="9" name="AGREEMENT_BILL_NUMER" value="@Model.CustomerDetails.AGREEMENT_BILL_NUMER" placeholder="Enter Agrement Bill Number">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Remarks</label>
+                            <textarea class="form-control" style="height: 147px;" rows="7" id="REMARKS" name="REMARKS" tabindex="13" value="@Model.CustomerDetails.REMARKS" placeholder="Enter Remarks"></textarea>
+                            @*<input type="text" class="form-control" id="REMARKS" tabindex="14" name="REMARKS" value="@Model.CustomerDetails.REMARKS" placeholder="Enter Remarks">*@
+                        </div>
+                    </div>
+
 
 
                 </div>
@@ -181,15 +195,18 @@
             }
         })
 
-           
-            var data = JSON.parse(jsontext);
-          
+        //$("input[type='checkbox'].ShowOnMapSA").change(function () {
+        //    if ($('#ShowOnMapSA').is(':checked')) {
+        //        $(".ShowOnMap").prop('checked', true);
+        //    }
+        //    else {
+        //        $(".ShowOnMap").prop('checked', false);
+        //    }
+        //    loadData()
+        //});
             $(document).ready(function () {
                 // 1. prepare the validation rules and messages.
-                $('#ACTIVE').select2({
-
-                })
-                $("#ACTIVE").val("@Model.CustomerDetails.ACTIVE").trigger("change");
+              
                 $('#Second').hide();
                 $("#form1").validate({
                     rules: {
@@ -198,7 +215,7 @@
                         },
                         
                         SHORT_NAME: {
-                            email: true
+                            required: true
                         },
                         MOB1:{
                             required:true
@@ -208,7 +225,8 @@
                     messages: {
                         NAME: "Customer Name is required",
                         SHORT_NAME: "Customer Code is required",
-                        MOB1:"Please enter a Mobile Number",
+                        MOB1: "Please enter a Mobile Number",
+                        ADDRESS: "Please enter Address",
                         
                     }
                 });
@@ -227,9 +245,9 @@
                         DEPOSITE: $('#DEPOSITE').val(),
                         EMAIL_ID: $('#EMAIL_ID').val(),
                         AGREEMENT_BILL_NUMER: $('#AGREEMENT_BILL_NUMER').val(),
-                        ACTIVE: $('#ACTIVE').val(),
+                        ACTIVE: $('#ACTIVE').is(':checked'),
                         REGISTER_DATE: $('#REGISTER_DATE').val(),
-                        IS_FLOW_METER_SALED: $('#IS_FLOW_METER_SALED').val(),
+                        IS_FLOW_METER_SALED: $('#IS_FLOW_METER_SALED').is(':checked'),
                         CLOSE_DATE: $('#CLOSE_DATE').val(),
                         DEPOSITE_RETURENED_AMOUNT: $('#DEPOSITE_RETURENED_AMOUNT').val(),
                         REMARKS: $('#REMARKS').val(),

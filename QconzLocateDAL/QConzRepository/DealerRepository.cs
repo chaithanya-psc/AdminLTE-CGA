@@ -18,7 +18,7 @@ namespace QconzLocateDAL.QConzRepository
             try
             {
                 List<DealerModel> DealerList = new List<DealerModel>();
-                var y = (from t in entity.TBL_SHOP_DEALER_REGISTER select t).ToList();
+                var y = (from t in entity.TBL_SHOP_DEALER_REGISTER where (t.SHOP_OR_DEALER == "DL")select t).ToList();
                 DealerList = y.Select(c => new DealerModel
                 {
                     Id = c.ID,
@@ -87,7 +87,9 @@ namespace QconzLocateDAL.QConzRepository
                         REMARKS = c.Remarks,
                      
                         EMAIL = c.Email,
-                        SHOP_OR_DEALER = "DL"
+                        SHOP_OR_DEALER = "DL",
+                        CREATED_ON = DateTime.Now,
+                        MODIFIED_ON = DateTime.Now
                     };
                     entity.TBL_SHOP_DEALER_REGISTER.Add(Dealer);
                 }
@@ -104,6 +106,9 @@ namespace QconzLocateDAL.QConzRepository
                  
                     y.EMAIL = c.Email;
                     y.SHOP_OR_DEALER = c.Shop_Dealer;
+
+
+                    y.MODIFIED_ON = DateTime.Now;
                 }
                 entity.SaveChanges();
             }

@@ -47,23 +47,30 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">CylinderRegister</label>
-                            <input type="text" class="form-control required" id="Name" tabindex="1" name="CylinderRegister" value="@Model.CylinderRegisterDetails.Name" placeholder="Enter CylinderRegister">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control required" id="Name" tabindex="1" name="Name" value="@Model.CylinderRegisterDetails.Name" placeholder="Enter Name">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">HSN Code</label>
+                            <input type="text" class="form-control" id="HSN_Code" tabindex="3" name="HSN_Code" value="@Model.CylinderRegisterDetails.HSN_Code" placeholder="Enter HSN Code">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Address</label>
-                            <input type="text" class="form-control" id="Address" name="Address" tabindex="3" value="@Model.CylinderRegisterDetails.ShortName" placeholder="Enter address">
+                            <label for="exampleInputEmail1">Rent Slab 1</label>
+                            <input type="number" class="form-control" id="RentDaysSlab1" name="RentDaysSlab1" tabindex="5" value="@Model.CylinderRegisterDetails.RentDaysSlab1" placeholder="Enter Rent Slab 1">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Municipality Licence-1</label>
-                            <input type="text" class="form-control" id="M_Licence1" name="MunicipalityLicence1" tabindex="5" value="@Model.CylinderRegisterDetails.Remarks" placeholder="Enter Municipality Licence1">
+                            <label for="exampleInputEmail1">Remarks</label>
+                            <input type="text" class="form-control" id="Remarks" name="Remarks" tabindex="7" value="@Model.CylinderRegisterDetails.Remarks" placeholder="Enter Remarks">
                         </div>
                     </div>
-                   
 
 
                 </div>
@@ -71,19 +78,26 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Short Name</label>
-                            <input type="text" class="form-control" id="ShortName" tabindex="2" name="ShortName" value="@Model.CylinderRegisterDetails.Type" placeholder="Enter Short Name">
+                            <input type="text" class="form-control" id="ShortName" name="ShortName" tabindex="2" value="@Model.CylinderRegisterDetails.ShortName" placeholder="Enter Short Name">
                         </div>
                     </div>
+
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">GST Num</label>
-                            <input type="text" class="form-control" id="GST_Num" tabindex="4" name="GSTNum" value="@Model.CylinderRegisterDetails.HSN_COde" placeholder="Enter GST Num">
+                            <label for="exampleInputEmail1">Amount</label>
+                            <input type="number" class="form-control" id="SellingAmount" name="SellingAmount" tabindex="4" value="@Model.CylinderRegisterDetails.SellingAmount" placeholder="Enter Amount">
                         </div>
                     </div>
-                 
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Rent Slab 2</label>
+                            <input type="number" class="form-control" id="RentDaysSlab2" name="RentDaysSlab2" tabindex="6" value="@Model.CylinderRegisterDetails.RentDaysSlab2" placeholder="Enter Rent Slab 2">
+                        </div>
+                    </div>
+                   
 
 
-                 
                 </div>
             </div>
         </div>
@@ -148,15 +162,12 @@
                         ShortName: {
                             required: true
                         },
-                        Type: {
-                            required: true
-                        },
+                        
                        
                     },
                     messages: {
                         Name: "Name is required",
-                        ShortName: "Short Name is required",
-                        Type:"Please Valid Type address"
+                        ShortName: "Short Name is required"
                        
                     }
                 });
@@ -170,8 +181,11 @@
                         Id: @Model.CylinderRegisterDetails.Id,
                         Name: $('#Name').val(),
                         ShortName: $('#ShortName').val(),
-                        Type: $('#Type').val(),
-                        HSN_Code: $('#HSN_Code').val()
+                        RentDaysSlab1: $('#RentDaysSlab1').val(),
+                        HSN_Code: $('#HSN_Code').val(),
+                        RentDaysSlab2: $('#RentDaysSlab2').val(),
+                        Remarks: $('#Remarks').val(),
+                        SellingAmount: $('#SellingAmount').val(),
                        
                     }
 

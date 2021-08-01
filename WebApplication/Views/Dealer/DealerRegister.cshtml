@@ -48,13 +48,14 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Dealer</label>
-                            <input type="text" class="form-control required" id="Dealer" tabindex="1" name="Dealer" value="@Model.DealerDetails.Name" placeholder="Enter Dealer">
+                            <input type="text" class="form-control required" id="Name" tabindex="1" name="Name" value="@Model.DealerDetails.Name" placeholder="Enter Dealer">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Address</label>
-                            <input type="text" class="form-control" id="Address" name="Address" tabindex="3" value="@Model.DealerDetails.Address" placeholder="Enter address">
+                            <textarea class="form-control" style="height: 108px;" rows="5" id="Address" name="Address" tabindex="3" value="@Model.DealerDetails.Address" placeholder="Enter Address"></textarea>
+                            @*<input type="text" class="form-control" id="Address" name="Address" tabindex="3" value="@Model.DealerDetails.Address" placeholder="Enter address">*@
                         </div>
                     </div>
                     <div class="form-group">
@@ -63,14 +64,14 @@
                             <input type="text" class="form-control" id="Mob2" tabindex="8" name="Mob2" value="@Model.DealerDetails.Mob2" placeholder="Enter Enter second Mobile Number">
                         </div>
                     </div>
+
+
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Remarks</label>
-                            <input type="text" class="form-control" id="Remarks" tabindex="10" name="Remarks" value="@Model.DealerDetails.Remarks" placeholder="Enter Remarks">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="Email" tabindex="11" name="Email" value="@Model.DealerDetails.Email" placeholder="Enter Email">
                         </div>
                     </div>
-
-
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -82,7 +83,7 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label for="exampleInputEmail1">GST Num</label>
-                            <input type="text" class="form-control" id="GSTNum" tabindex="4" name="GSTNum" value="@Model.DealerDetails.GST_Num" placeholder="Enter GST Num">
+                            <input type="text" class="form-control" id="GST_Num" tabindex="4" name="GST_Num" value="@Model.DealerDetails.GST_Num" placeholder="Enter GST Num">
                         </div>
                     </div>
                     <div class="form-group">
@@ -91,8 +92,14 @@
                             <input type="text" class="form-control" id="Mob1" name="Mob1" tabindex="6" value="@Model.DealerDetails.Mob1" placeholder="Enter first Mobile Number">
                         </div>
                     </div>
-                   
 
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Remarks</label>
+                            <textarea class="form-control" style="height: 108px;" rows="5" id="Remarks" name="Remarks" tabindex="10" value="@Model.DealerDetails.Remarks" placeholder="Enter Remarks"></textarea>
+                            @*<input type="text" class="form-control" id="Remarks" tabindex="10" name="Remarks" value="@Model.DealerDetails.Remarks" placeholder="Enter Remarks">*@
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -190,12 +197,10 @@
                         Mob2: $('#Mob2').val(),
                         ShortName: $('#ShortName').val(),
                         Email: $('#Email').val(),
-                        M_Licence1: $('#M_Licence1').val(),
-                        M_Licence2: $('#M_Licence2').val(),
+                      
                         Remarks: $('#Remarks').val(),
-                        D_Licence: $('#D_Licence').val(),
-                        E_Licence: $('#E_Licence').val(),
-                        Shop_Dealer: "SH"
+                        Name: $('#Name').val(),
+                        Shop_Dealer: "DL"
                     }
 
                     var url='@Url.Action("SaveDetails", "Dealer")';
