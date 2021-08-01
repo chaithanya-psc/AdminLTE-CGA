@@ -22,7 +22,7 @@
         <header class="main-header">
             <a href="@Url.Action("DashboardV1", "Home")" class="logo">
                 <span class="logo-mini"><b>W</b>eb</span>
-                <span class="logo-lg"><b>Locate</b></span>
+                <span class="logo-lg"><b>CGA</b></span>
             </a>
             <nav class="navbar navbar-static-top" role="navigation">
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -242,16 +242,16 @@
                     </div>
                 </form>*@
                 <ul class="sidebar-menu">
-                    <li class="header">MAIN MENU</li>
+                    @*<li class="header">MAIN MENU</li>
                     <li id="left-sidebar-menu-dashboard">
                         <a href="@Url.Action("DashboardV1", "Home")">
                             <i class="fa fa-map-marker"></i> <span>Team Map</span>
-                        </a>
+                        </a>*@
                         @*<ul class="treeview-menu">
                 <li id="left-sidebar-menu-dashboard-dashboardV1"><a href="@Url.Action("DashboardV1", "Home")"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
                 <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardV2", "Home")"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
             </ul>*@
-                    </li>
+                    @*</li>*@
                     @*<li id="left-sidebar-menu-admin-locator">
             <a href="@Url.Action("Locator", "Home")">
                 <i class="fa fa-location-arrow"></i> <span>Locator</span>
@@ -264,14 +264,13 @@
             </a>
         </li>*@
 
-                    @if (User.IsInRole("ADMIN") || User.IsInRole("SUPER"))
-                    {
-                        <li class="header">ADMIN MENU</li>
-                        <li id="left-sidebar-menu-admin-user">
+                  
+                        <li class="header">MENU</li>
+                        @*<li id="left-sidebar-menu-admin-user">
                             <a href="@Url.Action("UserReport", "User")">
                                 <i class="fa fa-sitemap"></i> <span>Users</span>
                             </a>
-                        </li>
+                        </li>*@
                         @*<li id="left-sidebar-menu-admin-roster">
                 <a href="@Url.Action("RosterReport", "Roster")">
                     <i class="fa fa-calendar"></i> <span>Override</span>
@@ -294,38 +293,38 @@
             </li>*@
                         <li id="left-sidebar-menu-admin-agency">
                             <a href="@Url.Action("AgencyReport", "Agency")">
-                                <i class="fa fa-shopping-cart"></i> <span>Agency</span>
+                                  <span>Agency</span>
                             </a>
                         </li>
                         <li id="left-sidebar-menu-admin-dealer">
                             <a href="@Url.Action("DealerReport", "Dealer")">
-                                <i class="fa fa-shopping-cart"></i> <span>Dealer</span>
+                                  <span>Dealer</span>
                             </a>
                         </li>
                         <li id="left-sidebar-menu-admin-customer">
                             <a href="@Url.Action("CustomerReport", "Customer")">
-                                <i class="fa fa-shopping-cart"></i> <span>Customer</span>
+                                  <span>Customer</span>
                             </a>
                         </li>
                         <li id="left-sidebar-menu-admin-cylinderRegister">
                             <a href="@Url.Action("CylinderRegisterReport", "CylinderRegister")">
-                                <i class="fa fa-shopping-cart"></i> <span>Cylinder</span>
+                                  <span>Cylinder</span>
                             </a>
                         </li>
                         <li id="left-sidebar-menu-admin-staffRegister">
                             <a href="@Url.Action("StaffRegisterReport", "StaffRegister")">
-                                <i class="fa fa-shopping-cart"></i> <span>Staff</span>
+                                 <span>Staff</span>
                             </a>
                         </li>
                         <li id="left-sidebar-menu-admin-vechicleRegister">
                             <a href="@Url.Action("VechicleRegisterReport", "VechicleRegister")">
-                                <i class="fa fa-shopping-cart"></i> <span>Vechicle</span>
+                                  <span>Vechicle</span>
                             </a>
                         </li>
                        
                         <li id="left-sidebar-menu-admin-purchase">
                             <a href="@Url.Action("purchase", "purchase")">
-                                <i class="fa fa-bell"></i> <span>purchase</span>
+                                 <span>purchase</span>
                             </a>
                         </li>
                     }
@@ -349,13 +348,11 @@ background: url(Image/imageadd.jpg)
         </aside>
         <div class="content-wrapper">
             <section class="content-header">
-                <h1>
-                    @ViewBag.Title
-                    @*<small>@ViewBag.SubTitle</small>*@
-                </h1>
+
+             
                 <ol class="breadcrumb">
-                    <li><a href="@Url.Action("DashboardV1", "Home")"><i class="fa fa-map-marker"></i>@ViewBag.SubTitle</a></li>
-                    <li class="active">@ViewBag.Title</li>
+                    <li>  <img style="width: 1100px;height: 510px;" src="~/Image/dash.jpg" /></li>
+                   
                 </ol>
             </section>
             <section class="content">

@@ -435,6 +435,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Image\chaithanyagasagencylogo.jpg" />
+    <Content Include="Image\dash.jpg" />
     <Content Include="Image\imageadd.jpg" />
     <Content Include="Image\QCONZ.jpg" />
     <Content Include="Scripts\Account\Login.js" />
